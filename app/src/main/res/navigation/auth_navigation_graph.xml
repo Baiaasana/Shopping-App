@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/auth_navigation_graph"
     app:startDestination="@id/onBoardingFragment">
-
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.bendg.bg.presenter.ui.fragment.sign_up.SignUpFragment"
