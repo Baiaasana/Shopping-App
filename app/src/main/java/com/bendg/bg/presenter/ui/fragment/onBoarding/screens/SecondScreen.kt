@@ -1,18 +1,32 @@
 package com.bendg.bg.presenter.ui.fragment.onBoarding.screens
 
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.bendg.bg.R
 import com.bendg.bg.common.BaseFragment
 import com.bendg.bg.databinding.FragmentSecondScreenBinding
+import com.bendg.bg.presenter.ui.fragment.onBoarding.OnBoardingViewModel
+import com.bendg.bg.utility.Constants
+import kotlinx.coroutines.launch
 
 class SecondScreen : BaseFragment<FragmentSecondScreenBinding>(FragmentSecondScreenBinding::inflate) {
+
+    private val viewModel: OnBoardingViewModel by viewModels()
 
     override fun listeners() {
 
         val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPager2)
 
-        binding.skip.setOnClickListener {
+        binding.next.setOnClickListener {
             viewPager?.currentItem = 2
+        }
+        binding.skip.setOnClickListener {
+            saveState()
+            findNavController().navigate(R.id.action_onBoardingFragment_to_logInFragment)
         }
     }
 
@@ -20,5 +34,13 @@ class SecondScreen : BaseFragment<FragmentSecondScreenBinding>(FragmentSecondScr
     }
 
     override fun observers() {
+    }
+
+    private fun saveState() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.save(Constants.KEY, true)
+            }
+        }
     }
 }

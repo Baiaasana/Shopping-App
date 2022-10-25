@@ -49,7 +49,7 @@ class OnBoardingFragment : BaseFragment<FragmentOnBoardingBinding>(FragmentOnBoa
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.getPreferences().collect {
                     val k = it.contains(stringPreferencesKey(Constants.KEY))
-                    if (it.contains(stringPreferencesKey(Constants.KEY))== true) {
+                    if (it.contains(stringPreferencesKey(Constants.KEY))) {
                         Log.d("log", "$k")
                         findNavController().navigate(R.id.action_onBoardingFragment_to_logInFragment)
                     }
