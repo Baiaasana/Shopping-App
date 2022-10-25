@@ -3,9 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_d1.xml" value="0.2555" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_d2.xml" value="0.2555" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_d3.xml" value="0.2555" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_girl_sitiing_on_table_conducting_an_interview_by_oblik_studio_1.xml" value="0.2555" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_mail.xml" value="0.2555" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_narrow.xml" value="0.2555" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_onb1.xml" value="0.2555" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_onb2.xml" value="0.2555" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_onb3.xml" value="0.2555" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_padlock.xml" value="0.2555" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_saly_1.xml" value="0.2555" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/activity_auth.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/activity_main.xml" value="0.2388888888888889" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_first_screen.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_log_in.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_on_boarding.xml" value="0.20572916666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_second_screen.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_third_screen.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

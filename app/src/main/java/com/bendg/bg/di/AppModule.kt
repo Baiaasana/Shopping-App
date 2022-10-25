@@ -2,7 +2,7 @@ package com.bendg.bg.di
 
 import com.bendg.bg.common.ResponseHandler
 import com.bendg.bg.data.remote.network.ApiService
-import com.bendg.bg.utility.APIConstants
+import com.bendg.bg.utility.Constants
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -37,7 +37,7 @@ object AppModule {
     @Singleton
     @Provides
     fun apiService(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
-        .baseUrl(APIConstants.BASE)
+        .baseUrl(Constants.BASE)
         .addConverterFactory(
             MoshiConverterFactory.create(
                 Moshi.Builder()
