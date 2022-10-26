@@ -15,4 +15,7 @@
     <string name="get_your_order">Get Your Order</string>
     <string name="onb3_text">Business or commerce an order is a stated intention either spoken to engage in a commercial transaction specific products</string>
     <string name="get_started">Get Started</string>
+    <string name="my_cart">My Cart</string>
+    <string name="checkout">Checkout</string>
+    <string name="subtotal">Subtotal :</string>
 </resources>
