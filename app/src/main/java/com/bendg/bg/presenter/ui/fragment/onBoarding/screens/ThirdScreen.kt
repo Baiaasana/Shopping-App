@@ -18,8 +18,8 @@ class ThirdScreen : BaseFragment<FragmentThirdScreenBinding>(FragmentThirdScreen
     private val viewModel: OnBoardingViewModel by viewModels()
 
     override fun listeners() {
-        binding.finish.setOnClickListener {
-            observe()
+        binding.getStarted.setOnClickListener {
+            saveState()
             Log.d("log", "saved")
             findNavController().navigate(R.id.action_onBoardingFragment_to_logInFragment)
         }
@@ -31,7 +31,7 @@ class ThirdScreen : BaseFragment<FragmentThirdScreenBinding>(FragmentThirdScreen
     override fun observers() {
     }
 
-    private fun observe() {
+    private fun saveState() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.save(Constants.KEY, true)

@@ -1,30 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".presenter.ui.fragment.onBoarding.screens.SecondScreen">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/_2_3"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/skip"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="40dp"
+        android:src="@mipmap/onb2"
+        app:layout_constraintEnd_toStartOf="@+id/skip"
+        app:layout_constraintStart_toEndOf="@+id/appCompatTextView"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/ic_d2"
+        app:layout_constraintEnd_toEndOf="@+id/appCompatImageView"
+        app:layout_constraintStart_toStartOf="@+id/appCompatImageView"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="2"
-        android:textSize="22sp"/>
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/gordita_medium"
+        android:gravity="center"
+        android:text="@string/make_payment"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="@+id/appCompatImageView2"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView2" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="description"
-        android:textSize="22sp"/>
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="@string/onb2_text"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/text"
+        app:layout_constraintStart_toStartOf="@+id/text"
+        app:layout_constraintTop_toBottomOf="@+id/text" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/skip"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="skip"/>
-
-</androidx.appcompat.widget.LinearLayoutCompat>
+        android:backgroundTint="@color/orange"
+        android:drawableEnd="@drawable/ic_arrow_left"
+        android:fontFamily="@font/gordita_regular"
+        android:gravity="center"
+        android:paddingHorizontal="50dp"
+        android:paddingVertical="10dp"
+        android:text="@string/next"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description" />
+</androidx.constraintlayout.widget.ConstraintLayout>

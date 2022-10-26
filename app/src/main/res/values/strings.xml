@@ -2,4 +2,17 @@
     <string name="app_name">B&amp;G</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="_1_3"><font  color="#000000">1</font>/3</string>
+    <string name="_2_3"><font  color="#000000">2</font>/3</string>
+    <string name="_3_3"><font  color="#000000">3</font>/3</string>
+    <string name="HearMe">Listen to the best music everyday with <font  color="#05C149"> Hearme</font>  now!</string>
+    <string name="choose_product">Choose Product</string>
+    <string name="onb1_text">A product is the item offered for sale.\n A product can be a service or an item. It can be Physical or in virtual or cyber form.</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="make_payment">Make Payment</string>
+    <string name="onb2_text">Payment is the transfer of money services in exchange product or Payments typically made terms agreed</string>
+    <string name="get_your_order">Get Your Order</string>
+    <string name="onb3_text">Business or commerce an order is a stated intention either spoken to engage in a commercial transaction specific products</string>
+    <string name="get_started">Get Started</string>
 </resources>
