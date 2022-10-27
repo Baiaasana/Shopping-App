@@ -5,7 +5,6 @@
     <string name="_1_3"><font  color="#000000">1</font>/3</string>
     <string name="_2_3"><font  color="#000000">2</font>/3</string>
     <string name="_3_3"><font  color="#000000">3</font>/3</string>
-    <string name="HearMe">Listen to the best music everyday with <font  color="#05C149"> Hearme</font>  now!</string>
     <string name="choose_product">Choose Product</string>
     <string name="onb1_text">A product is the item offered for sale.\n A product can be a service or an item. It can be Physical or in virtual or cyber form.</string>
     <string name="next">Next</string>
@@ -15,4 +14,15 @@
     <string name="get_your_order">Get Your Order</string>
     <string name="onb3_text">Business or commerce an order is a stated intention either spoken to engage in a commercial transaction specific products</string>
     <string name="get_started">Get Started</string>
+    <string name="login">Log in</string>
+    <string name="sign_up">Sign up</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="email_address">Email</string>
+    <string name="log_in">Log in</string>
+    <string name="sign_up_question">Don\'t have an account? <font  color="#000000"> Sign Up</font></string>
+    <string name="repeat_password">Repeat Password</string>
+    <string name="terms_conditions">I accept all the <font  color="#hhhhhh"> Terms &amp; Conditions</font></string>
+    <string name="enter_an_email">Enter an email address:</string>
+    <string name="password_recovery">Password recovery</string>
 </resources>

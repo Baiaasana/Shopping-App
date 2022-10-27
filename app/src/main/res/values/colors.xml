@@ -10,4 +10,7 @@
 
     <color name="orange">#f77951</color>
     <color name="pink">#ffadb2</color>
+    <color name="background">#fbfbfd</color>
+
+    <color name="grey">#757171</color>
 </resources>
