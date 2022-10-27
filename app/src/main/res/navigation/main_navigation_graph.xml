@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation_graph"
-    app:startDestination="@id/cartsFragment">
-
+    app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/cartsFragment"
         android:name="com.bendg.bg.presenter.ui.fragment.carts.CartsFragment"

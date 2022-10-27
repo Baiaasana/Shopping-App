@@ -1,13 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presenter.ui.fragment.home.HomeFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.02" />
 
-</FrameLayout>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_menu"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_filter_left_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_outline_location_on_24"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:text="Tbilisi"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_explore"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/iv_menu"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_round_notifications_24"
+        app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_explore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Explore"
+        android:paddingTop="20dp"
+        android:paddingHorizontal="16dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/gordita_regular"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/iv_menu"
+        app:layout_constraintTop_toBottomOf="@+id/iv_menu" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gordita_regular"
+        android:text="Best Outfits for you"
+        android:textColor="@color/grey"
+        android:padding="16dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/tv_explore"
+        app:layout_constraintTop_toBottomOf="@+id/tv_explore" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/search_backgroun"
+        android:drawableStart="@drawable/ic_baseline_search_24"
+        android:drawablePadding="16dp"
+        android:focusable="false"
+        android:textColorHint="@color/grey"
+        android:textColor="@color/white"
+        android:gravity="start"
+        android:layout_marginVertical="24dp"
+        android:fontFamily="@font/gordita_regular"
+        android:hint="Search"
+        android:paddingVertical="10dp"
+        android:paddingEnd="150dp"
+        android:paddingStart="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/materialButton"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="@+id/appCompatTextView3"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView3" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButton"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/ic_filter_svgrepo_com"
+        app:backgroundTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/et_search"
+        app:layout_constraintEnd_toEndOf="@+id/appCompatTextView3"
+        app:layout_constraintTop_toTopOf="@+id/et_search" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.31" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_categories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        tools:itemCount="1"
+        tools:listitem="@layout/item_category" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_arrival"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gordita_regular"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="10dp"
+        android:text="New Arrival"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="@+id/rv_categories"
+        app:layout_constraintTop_toBottomOf="@+id/rv_categories" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_see_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gordita_medium"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:text="See All"
+        android:textColor="@color/grey"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_arrival"
+        app:layout_constraintEnd_toEndOf="@+id/rv_categories" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.60" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_items"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        tools:itemCount="1"
+        tools:listitem="@layout/single_item" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
