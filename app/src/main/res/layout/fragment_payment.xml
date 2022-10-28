@@ -6,14 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".presenter.ui.fragment.payment.PaymentFragment">
 
-
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginHorizontal="100dp"
         android:layout_marginBottom="370dp"
-        android:src="@drawable/ic_online_payment"
+        android:src="@mipmap/success"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

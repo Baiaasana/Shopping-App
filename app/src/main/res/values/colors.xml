@@ -13,4 +13,7 @@
     <color name="background">#fbfbfd</color>
 
     <color name="grey">#757171</color>
+    <color name="bold_grey">#514F4F</color>
+    <color name="back_color_details">#efeef3</color>
+
 </resources>
