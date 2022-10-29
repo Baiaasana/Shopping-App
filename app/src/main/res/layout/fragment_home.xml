@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue_white"
     tools:context=".presenter.ui.fragment.home.HomeFragment">
 
     <androidx.constraintlayout.widget.Guideline
@@ -31,6 +32,7 @@
         android:drawablePadding="5dp"
         android:gravity="center_vertical"
         android:text="Tbilisi"
+        android:textColor="@color/blue_bold"
         android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@+id/tv_explore"
         app:layout_constraintEnd_toStartOf="@+id/imageView"
@@ -54,7 +56,7 @@
         android:text="Explore"
         android:paddingTop="20dp"
         android:paddingHorizontal="16dp"
-        android:textColor="@color/black"
+        android:textColor="@color/blue_bold"
         android:fontFamily="@font/gordita_regular"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
@@ -102,7 +104,7 @@
         android:layout_height="35dp"
         android:layout_marginEnd="30dp"
         android:background="@drawable/ic_filter_svgrepo_com"
-        app:backgroundTint="@color/black"
+        app:backgroundTint="@color/grey"
         app:layout_constraintBottom_toBottomOf="@+id/et_search"
         app:layout_constraintEnd_toEndOf="@+id/appCompatTextView3"
         app:layout_constraintTop_toTopOf="@+id/et_search" />
@@ -133,7 +135,7 @@
         android:paddingHorizontal="16dp"
         android:paddingVertical="10dp"
         android:text="New Arrival"
-        android:textColor="@color/black"
+        android:textColor="@color/blue_bold"
         android:textSize="28sp"
         app:layout_constraintStart_toStartOf="@+id/rv_categories"
         app:layout_constraintTop_toBottomOf="@+id/rv_categories" />

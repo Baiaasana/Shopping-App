@@ -16,4 +16,14 @@
     <color name="bold_grey">#514F4F</color>
     <color name="back_color_details">#efeef3</color>
 
+    <color name="pink_bold">#A62639</color>
+    <color name="pink_light">#DB323D</color>
+    <color name="pink_grey">#56494E</color>
+
+    <color name="blue_bold">#064789</color>
+    <color name="blue_light">#427AA1</color>
+    <color name="blue_white">#EBF2FA</color>
+
+
+
 </resources>

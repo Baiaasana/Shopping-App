@@ -10,7 +10,6 @@ import com.bendg.bg.R
 import com.bendg.bg.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
-
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
