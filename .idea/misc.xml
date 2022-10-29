@@ -36,7 +36,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_twotone_lock_24.xml" value="0.184" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/search_backgroun.xml" value="0.144" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/activity_auth.xml" value="0.1" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/favorite_item.xml" value="0.2997007268063275" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_carts.xml" value="0.30055579307396324" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_change_password.xml" value="0.3009833262077811" />
@@ -61,7 +61,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/item_category.xml" value="0.22798887859128822" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/single_item.xml" value="0.29590544533558466" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/menu/main_bottom_nav_menu.xml" value="0.30012825994014536" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/menu/main_bottom_nav_menu.xml" value="0.2709677419354839" />
       </map>
     </option>
   </component>
