@@ -48,4 +48,6 @@
     <string name="notification">Notification</string>
     <string name="dark_mode">Dark Mode</string>
     <string name="languages">Languages</string>
+    <string name="all_products">All Products</string>
+    <string name="category">Category</string>
 </resources>

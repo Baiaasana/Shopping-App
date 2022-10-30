@@ -21,10 +21,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="10dp">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/btnBack"
+                android:id="@+id/btn_back"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:padding="24dp"
@@ -45,12 +45,29 @@
 
         </FrameLayout>
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/iv_item"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="40dp"
-            android:src="@mipmap/logo" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:layout_editor_absoluteX="210dp"
+                android:layout_gravity="center"
+                android:visibility="invisible"
+                tools:layout_editor_absoluteY="396dp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="40dp"
+                android:src="@mipmap/logo" />
+
+        </FrameLayout>
 
     </LinearLayout>
 

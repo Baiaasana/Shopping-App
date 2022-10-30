@@ -37,6 +37,9 @@
             android:name="id"
             app:argType="integer"
             android:defaultValue="1" />
+        <action
+            android:id="@+id/action_detailsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/favoritesFragment"
@@ -80,6 +83,9 @@
         <action
             android:id="@+id/action_homeFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_allProductsFragment"
+            app:destination="@id/allProductsFragment" />
     </fragment>
     <fragment
         android:id="@+id/ordersFragment"
@@ -115,4 +121,9 @@
         android:name="com.bendg.bg.presenter.ui.fragment.wallet.WalletFragment"
         android:label="fragment_wallet"
         tools:layout="@layout/fragment_wallet" />
+    <fragment
+        android:id="@+id/allProductsFragment"
+        android:name="com.bendg.bg.presenter.ui.all_products.AllProductsFragment"
+        android:label="fragment_all_products"
+        tools:layout="@layout/fragment_all_products" />
 </navigation>

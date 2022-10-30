@@ -114,13 +114,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.31" />
+        app:layout_constraintGuide_percent="0.35" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_categories"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:paddingVertical="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
@@ -160,15 +161,30 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.60" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_items"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline3"
-        tools:itemCount="1"
-        tools:listitem="@layout/single_item" />
+        app:layout_constraintTop_toTopOf="@+id/guideline3">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="210dp"
+            android:layout_gravity="center"
+            android:visibility="invisible"
+            tools:layout_editor_absoluteY="396dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_items"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:itemCount="1"
+            tools:listitem="@layout/single_item" />
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
