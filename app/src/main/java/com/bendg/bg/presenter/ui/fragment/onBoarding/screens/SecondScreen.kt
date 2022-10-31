@@ -10,7 +10,7 @@ import com.bendg.bg.R
 import com.bendg.bg.common.BaseFragment
 import com.bendg.bg.databinding.FragmentSecondScreenBinding
 import com.bendg.bg.presenter.ui.fragment.onBoarding.OnBoardingViewModel
-import com.bendg.bg.utility.Constants
+import com.bendg.bg.common.Constants
 import kotlinx.coroutines.launch
 
 class SecondScreen : BaseFragment<FragmentSecondScreenBinding>(FragmentSecondScreenBinding::inflate) {

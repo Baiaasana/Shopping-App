@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presenter.ui.all_products.AllProductsFragment">
+    tools:context=".presenter.ui.fragment.all_products.AllProductsFragment">
 
     <FrameLayout
         android:id="@+id/frame"
@@ -40,18 +40,6 @@
 
     </FrameLayout>
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_categories"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frame"
-        tools:itemCount="1"
-        tools:listitem="@layout/item_category" />
-
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
@@ -67,16 +55,17 @@
         android:id="@+id/rv_all_products"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginVertical="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="30dp"
         android:clipToPadding="false"
-        android:paddingHorizontal="45dp"
         android:paddingTop="12dp"
+        android:layout_marginHorizontal="30dp"
         android:paddingBottom="20dp"
         app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rv_categories"
+        app:layout_constraintTop_toBottomOf="@+id/frame"
         app:spanCount="2"
         tools:itemCount="2"
         tools:listitem="@layout/single_item" />

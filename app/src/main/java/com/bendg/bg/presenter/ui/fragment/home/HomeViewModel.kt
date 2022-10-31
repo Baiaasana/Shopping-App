@@ -3,10 +3,9 @@ package com.bendg.bg.presenter.ui.fragment.home
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bendg.bg.data.remote.model.CategoryTypes
-import com.bendg.bg.data.repository.CategoriesRepositoryImpl
 import com.bendg.bg.domain.use_case.ProductsByCategoryUseCase
 import com.bendg.bg.domain.use_case.ProductsUseCase
-import com.bendg.bg.utility.Resource
+import com.bendg.bg.common.Resource
 import com.bendg.bg.utility.viewStates.ItemViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -17,15 +16,11 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val productsUseCase: ProductsUseCase,
-    private val categoriesRepositoryImpl: CategoriesRepositoryImpl,
     private val productsByCategoryUseCase: ProductsByCategoryUseCase,
 ) : ViewModel() {
 
     private val _productsFlow = MutableStateFlow<ItemViewState>(ItemViewState())
     val productsFlow = _productsFlow.asStateFlow()
-
-//    private val _categoryFlow = MutableStateFlow<CategoryViewState>(CategoryViewState())
-//    val categoryFlow = _categoryFlow.asStateFlow()
 
     private val _categoryFlow = MutableStateFlow(CategoryTypes.TOPS)
     val categoryFlow = _categoryFlow.asStateFlow()
@@ -81,27 +76,4 @@ class HomeViewModel @Inject constructor(
         _categoryFlow.emit(category)
 
     }
-
-//    suspend fun getAllCategories() {
-//        viewModelScope.launch {
-//            val categories = categoriesRepositoryImpl.getAllCategories()
-//            categories.collect {
-//                when (it.status) {
-//                    Resource.Status.SUCCESS -> {
-//                        val result = it.data!!
-//                        _categoryFlow.value = _categoryFlow.value.copy(isLoading = false, data = result)
-//                        Log.d(" category log", "${_categoryFlow.value} \n ${it.data}")
-//                    }
-//                    Resource.Status.ERROR -> {
-//                        _categoryFlow.value = _categoryFlow.value.copy(isLoading = false,
-//                            errorMessage = it.message.toString())
-//                    }
-//                    Resource.Status.LOADING -> {
-//                        _categoryFlow.value = _categoryFlow.value.copy(isLoading = true)
-//                    }
-//                }
-//            }
-//        }
-//    }
-
 }

@@ -1,4 +1,4 @@
-package com.bendg.bg.adapter
+package com.bendg.bg.presenter.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bendg.bg.databinding.SingleItemBinding
-import com.bendg.bg.presenter.model_ui.ItemUI
+import com.bendg.bg.presenter.model.ItemUI
 import com.bendg.bg.utility.Glide
 
 class ProductsAdapter :

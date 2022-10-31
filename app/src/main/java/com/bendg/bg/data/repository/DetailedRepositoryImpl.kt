@@ -2,9 +2,9 @@ package com.bendg.bg.data.repository
 
 import com.bendg.bg.common.ResponseHandler
 import com.bendg.bg.data.remote.network.ApiService
-import com.bendg.bg.domain.model_domain.ItemModelDomain
+import com.bendg.bg.domain.model.ItemModelDomain
 import com.bendg.bg.domain.repository.RepositoryWithArgs
-import com.bendg.bg.utility.Resource
+import com.bendg.bg.common.Resource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject

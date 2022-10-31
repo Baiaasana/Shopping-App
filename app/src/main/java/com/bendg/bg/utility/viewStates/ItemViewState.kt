@@ -1,6 +1,6 @@
 package com.bendg.bg.utility.viewStates
 
-import com.bendg.bg.presenter.model_ui.ItemUI
+import com.bendg.bg.presenter.model.ItemUI
 
 data class ItemViewState(
     val isLoading: Boolean = false,

@@ -1,9 +1,9 @@
-package com.bendg.bg.presenter.ui.all_products
+package com.bendg.bg.presenter.ui.fragment.all_products
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bendg.bg.domain.use_case.ProductsUseCase
-import com.bendg.bg.utility.Resource
+import com.bendg.bg.common.Resource
 import com.bendg.bg.utility.viewStates.ItemViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

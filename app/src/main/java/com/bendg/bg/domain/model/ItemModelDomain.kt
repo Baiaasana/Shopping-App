@@ -1,7 +1,7 @@
-package com.bendg.bg.domain.model_domain
+package com.bendg.bg.domain.model
 
 import com.bendg.bg.data.remote.model.ItemModelDTO
-import com.bendg.bg.presenter.model_ui.ItemUI
+import com.bendg.bg.presenter.model.ItemUI
 
 data class ItemModelDomain(
     val limit: Int?,

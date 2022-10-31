@@ -1,7 +1,6 @@
-package com.bendg.bg.presenter.model_ui
+package com.bendg.bg.presenter.model
 
 import com.bendg.bg.data.remote.model.ItemModelDTO
-import com.bendg.bg.domain.model_domain.ItemModelDomain
 
 data class ItemUI(
     val limit: Int?,

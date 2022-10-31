@@ -9,13 +9,13 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.bendg.bg.R
-import com.bendg.bg.adapter.ViewPagerAdapter
+import com.bendg.bg.presenter.adapter.ViewPagerAdapter
 import com.bendg.bg.common.BaseFragment
 import com.bendg.bg.databinding.FragmentOnBoardingBinding
 import com.bendg.bg.presenter.ui.fragment.onBoarding.screens.FirstScreen
 import com.bendg.bg.presenter.ui.fragment.onBoarding.screens.SecondScreen
 import com.bendg.bg.presenter.ui.fragment.onBoarding.screens.ThirdScreen
-import com.bendg.bg.utility.Constants
+import com.bendg.bg.common.Constants
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

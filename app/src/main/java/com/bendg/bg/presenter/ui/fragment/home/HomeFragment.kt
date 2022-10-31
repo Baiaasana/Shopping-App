@@ -7,8 +7,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bendg.bg.adapter.CategoryAdapter
-import com.bendg.bg.adapter.ProductsAdapter
+import com.bendg.bg.presenter.adapter.CategoryAdapter
+import com.bendg.bg.presenter.adapter.ProductsAdapter
 import com.bendg.bg.common.BaseFragment
 import com.bendg.bg.data.remote.model.CategoryTypes
 import com.bendg.bg.databinding.FragmentHomeBinding
@@ -39,11 +39,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
     override fun init() {
         initRecycler()
-//        viewLifecycleOwner.lifecycleScope.launch {
-//            viewModel.getAllCategories()
-//            Log.d("log", "category")
-//            viewModel.getProductsInfo()
-//        }
     }
 
     private fun initRecycler() {

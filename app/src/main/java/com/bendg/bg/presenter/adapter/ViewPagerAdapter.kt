@@ -1,4 +1,4 @@
-package com.bendg.bg.adapter
+package com.bendg.bg.presenter.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

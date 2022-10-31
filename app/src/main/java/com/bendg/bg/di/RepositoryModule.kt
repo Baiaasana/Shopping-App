@@ -1,10 +1,8 @@
 package com.bendg.bg.di
 
-import com.bendg.bg.data.repository.CategoriesRepositoryImpl
 import com.bendg.bg.data.repository.DetailedRepositoryImpl
 import com.bendg.bg.data.repository.ProductsByCategoryRepositoryImpl
 import com.bendg.bg.data.repository.ProductsRepositoryImpl
-import com.bendg.bg.domain.repository.CategoryRepository
 import com.bendg.bg.domain.repository.ProductsByCategoryRepository
 import com.bendg.bg.domain.repository.Repository
 import com.bendg.bg.domain.repository.RepositoryWithArgs
@@ -23,12 +21,6 @@ abstract class RepositoryModule {
     abstract fun bindProductRepository(
         productsRepositoryImpl: ProductsRepositoryImpl,
     ): Repository
-
-    @Binds
-    @Singleton
-    abstract fun bindCategoryRepository(
-        categoriesRepositoryImpl: CategoriesRepositoryImpl,
-    ): CategoryRepository
 
     @Binds
     @Singleton

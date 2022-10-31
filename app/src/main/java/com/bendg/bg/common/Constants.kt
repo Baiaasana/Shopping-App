@@ -1,4 +1,4 @@
-package com.bendg.bg.utility
+package com.bendg.bg.common
 
 object Constants {
 

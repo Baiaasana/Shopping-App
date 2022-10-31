@@ -1,4 +1,4 @@
-package com.bendg.bg.utility
+package com.bendg.bg.common
 
 class Resource<out T>(val status: Status, val data: T?, val message: String?) {
 

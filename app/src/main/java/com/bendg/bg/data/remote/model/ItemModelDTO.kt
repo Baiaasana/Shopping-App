@@ -1,6 +1,6 @@
 package com.bendg.bg.data.remote.model
 
-import com.bendg.bg.domain.model_domain.ItemModelDomain
+import com.bendg.bg.domain.model.ItemModelDomain
 
 data class ItemModelDTO(
     val limit: Int?,

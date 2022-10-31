@@ -2,7 +2,7 @@ package com.bendg.bg.di
 
 import com.bendg.bg.common.ResponseHandler
 import com.bendg.bg.data.remote.network.ApiService
-import com.bendg.bg.utility.Constants
+import com.bendg.bg.common.Constants
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
