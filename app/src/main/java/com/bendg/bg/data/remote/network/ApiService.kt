@@ -1,6 +1,5 @@
 package com.bendg.bg.data.remote.network
 
-import com.bendg.bg.data.remote.model.CategoryModel
 import com.bendg.bg.data.remote.model.ItemModelDTO
 import com.bendg.bg.common.Constants
 import retrofit2.Response
