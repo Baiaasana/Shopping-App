@@ -21,6 +21,7 @@
     <string name="email_address">Email</string>
     <string name="log_in">Log in</string>
     <string name="sign_up_question">Don\'t have an account? <font  color="#000000"> Sign Up</font></string>
+    <string name="already_have_an_account">Already have an account? <font  color="#000000"> Log In</font></string>
     <string name="repeat_password">Repeat Password</string>
     <string name="terms_conditions">I accept all the <font  color="#hhhhhh"> Terms &amp; Conditions</font></string>
     <string name="enter_an_email">Enter an email address:</string>
@@ -50,4 +51,18 @@
     <string name="languages">Languages</string>
     <string name="all_products">All Products</string>
     <string name="category">Category</string>
+    <string name="register_success">\"You have registered successfully! \"</string>
+    <string name="mail_error">This mail is already used!</string>
+    <string name="pass_not_match">Passwords do not match!</string>
+    <string name="login_error">Email or password is not correct!</string>
+    <string name="empty_fields_error">Please fill in all the fields!</string>
+    <string name="invalid_email_error">Please enter the valid email!</string>
+    <string name="logged_success">You have logged in successfully!</string>
+    <string name="first_char_number_error">Username\'s first character cannot be a number</string>
+
+    <string name="email_password_incorrect">Email or password is not correct!</string>
+    <string name="password_length_limit">Password must contain at least 8 characters!</string>
+    <string name="already_registered">This email is already used. Please use another email!</string>
+    <string name="check_box">Please, check box</string>
+    <string name="login_success">You have log in successfully!</string>
 </resources>

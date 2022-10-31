@@ -25,14 +25,14 @@
         app:layout_constraintGuide_percent="0.29" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_recovery"
+        android:id="@+id/tv_logIN"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/gordita_medium"
         android:gravity="center"
         android:text="@string/log_in"
         android:textColor="@color/blue_bold"
-        android:textSize="22sp"
+        android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="@+id/iv_logo"
         app:layout_constraintStart_toStartOf="@+id/iv_logo"
         app:layout_constraintTop_toBottomOf="@+id/guideline" />
@@ -54,7 +54,7 @@
         app:hintTextColor="@color/orange"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_recovery"
+        app:layout_constraintTop_toBottomOf="@+id/tv_logIN"
         app:startIconDrawable="@drawable/ic_twotone_email_24">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -143,7 +143,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btn_login"
         app:layout_constraintStart_toStartOf="@+id/btn_login"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_login"
+        app:layout_constraintVertical_bias="0.505" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
