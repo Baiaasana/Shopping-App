@@ -28,7 +28,7 @@ class AllProductsFragment : BaseFragment<FragmentAllProductsBinding>(FragmentAll
 
     override fun listeners() {
         productsAdapter.onItemClickListener = {
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailsFragment(id = it.id!!.toInt()))
+            findNavController().navigate(AllProductsFragmentDirections.actionAllProductsFragmentToDetailsFragment(id = it.id!!.toInt()))
         }
     }
 

@@ -1,9 +1,5 @@
 package com.bendg.bg.data.remote.model
 
-data class CategoryModel(
-    val category: String?
-)
-
 enum class CategoryTypes(val value: String) {
     SMARTPHONES("smartphones"),
     LAPTOPS("laptops"),

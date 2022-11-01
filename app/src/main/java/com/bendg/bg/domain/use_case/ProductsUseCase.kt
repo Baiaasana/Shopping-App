@@ -11,5 +11,4 @@ class ProductsUseCase @Inject constructor(private val repository: Repository) {
     suspend fun invoke(): Flow<Resource<List<ItemModelDomain.ProductDomain>>>{
         return repository.doNetworkCallProducts()
     }
-
 }

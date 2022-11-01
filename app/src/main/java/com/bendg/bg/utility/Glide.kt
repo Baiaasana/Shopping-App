@@ -6,7 +6,7 @@ import com.bumptech.glide.Glide
 
 class Glide {
 
-    fun setImage(url: String, image: ImageView) {
+    fun setImage(url: String?, image: ImageView) {
         Glide
             .with(image.context)
             .load(url)

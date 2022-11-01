@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bendg.bg.data.remote.model.CategoryModel
 import com.bendg.bg.data.remote.model.CategoryTypes
 import com.bendg.bg.databinding.ItemCategoryBinding
 
