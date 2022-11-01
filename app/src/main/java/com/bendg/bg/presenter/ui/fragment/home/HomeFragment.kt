@@ -29,7 +29,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                 id = it.id!!.toInt()))
         }
         binding.tvSeeAll.setOnClickListener {
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAllProductsFragment())
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAllProductsFragment2())
         }
         categoryAdapter.onItemClickListener = {
             viewLifecycleOwner.lifecycleScope.launch {

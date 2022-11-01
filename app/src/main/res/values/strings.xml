@@ -51,4 +51,24 @@
     <string name="all_products">All Products</string>
     <string name="category">Category</string>
     <string name="search">Search</string>
+    <string name="register_success">\"You have registered successfully! \"</string>
+    <string name="mail_error">This mail is already used!</string>
+    <string name="pass_not_match">Passwords do not match!</string>
+    <string name="login_error">Email or password is not correct!</string>
+    <string name="empty_fields_error">Please fill in all the fields!</string>
+    <string name="invalid_email_error">Please enter the valid email!</string>
+    <string name="logged_success">You have logged in successfully!</string>
+    <string name="email_password_incorrect">Email or password is not correct!</string>
+    <string name="password_length_limit">Password must contain at least 8 characters!</string>
+    <string name="already_registered">This email is already used. Please use another email!</string>
+    <string name="send">Send</string>
+    <string name="recovery_success">A recovery message has been sent to your email, please check it</string>
+    <string name="recovery_error">Failed to send recovery message, please enter a valid email</string>
+    <string name="login_success">You have log in successfully!</string>
+    <string name="wallet">Wallet</string>
+    <string name="my_cart">My cart</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="first_char_number_error">Username\'s first character cannot be a number</string>
+    <string name="check_box">Please, check the box</string>
+
 </resources>

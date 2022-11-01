@@ -90,7 +90,7 @@
             android:id="@+id/action_homeFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_allProductsFragment"
+            android:id="@+id/action_homeFragment_to_allProductsFragment2"
             app:destination="@id/allProductsFragment" />
     </fragment>
     <fragment
@@ -133,7 +133,7 @@
         tools:layout="@layout/fragment_wallet" />
     <fragment
         android:id="@+id/allProductsFragment"
-        android:name="com.bendg.bg.presenter.ui.all_products.AllProductsFragment"
+        android:name="com.bendg.bg.presenter.ui.fragment.all_products.AllProductsFragment"
         android:label="fragment_all_products"
         tools:layout="@layout/fragment_all_products" >
         <action

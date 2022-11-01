@@ -1,8 +1,8 @@
 package com.bendg.bg.data.remote.network
 
+import com.bendg.bg.common.Constants
 import com.bendg.bg.data.remote.model.ItemModelDTO
 import com.bendg.bg.data.remote.model.ProductModelDto
-import com.bendg.bg.utility.Constants
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

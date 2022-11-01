@@ -6,9 +6,9 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
-import com.bendg.bg.adapter.ProductsAdapter
 import com.bendg.bg.common.BaseFragment
 import com.bendg.bg.databinding.FragmentSearchBinding
+import com.bendg.bg.presenter.adapter.ProductsAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

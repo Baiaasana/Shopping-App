@@ -1,4 +1,4 @@
-package com.bendg.bg.utility.viewStates
+package com.bendg.bg.utility.view_states
 
 import com.bendg.bg.presenter.model_ui.ProductModelUi
 
