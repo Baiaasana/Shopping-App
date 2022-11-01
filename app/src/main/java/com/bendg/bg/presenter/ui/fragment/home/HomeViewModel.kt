@@ -5,8 +5,8 @@ import androidx.lifecycle.viewModelScope
 import com.bendg.bg.data.remote.model.CategoryTypes
 import com.bendg.bg.domain.use_case.ProductsByCategoryUseCase
 import com.bendg.bg.domain.use_case.ProductsUseCase
-import com.bendg.bg.common.Resource
-import com.bendg.bg.utility.view_states.ItemViewState
+import com.bendg.bg.utility.Resource
+import com.bendg.bg.utility.viewStates.ItemViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -25,29 +25,29 @@ class HomeViewModel @Inject constructor(
     private val _categoryFlow = MutableStateFlow(CategoryTypes.TOPS)
     val categoryFlow = _categoryFlow.asStateFlow()
 
-    suspend fun getProductsInfo() {
-        viewModelScope.launch {
-            val data = productsUseCase.invoke()
-            data.collect {
-                when (it.status) {
-                    Resource.Status.SUCCESS -> {
-                        val result = it.data!!.map {
-                            it.toPresenterProduct()
-                        }
-                        _productsFlow.value =
-                            _productsFlow.value.copy(isLoading = false, data = result)
-                    }
-                    Resource.Status.ERROR -> {
-                        _productsFlow.value = _productsFlow.value.copy(isLoading = false,
-                            errorMessage = it.message.toString())
-                    }
-                    Resource.Status.LOADING -> {
-                        _productsFlow.value = _productsFlow.value.copy(isLoading = true)
-                    }
-                }
-            }
-        }
-    }
+//    suspend fun getProductsInfo() {
+//        viewModelScope.launch {
+//            val data = productsUseCase.invoke()
+//            data.collect {
+//                when (it.status) {
+//                    Resource.Status.SUCCESS -> {
+//                        val result = it.data!!.map {
+//                            it.toPresenterProduct()
+//                        }
+//                        _productsFlow.value =
+//                            _productsFlow.value.copy(isLoading = false, data = result)
+//                    }
+//                    Resource.Status.ERROR -> {
+//                        _productsFlow.value = _productsFlow.value.copy(isLoading = false,
+//                            errorMessage = it.message.toString())
+//                    }
+//                    Resource.Status.LOADING -> {
+//                        _productsFlow.value = _productsFlow.value.copy(isLoading = true)
+//                    }
+//                }
+//            }
+//        }
+//    }
     suspend fun getProductsByCategory(category:String){
         viewModelScope.launch {
             val data = productsByCategoryUseCase.invoke(category = category)
@@ -76,4 +76,6 @@ class HomeViewModel @Inject constructor(
         _categoryFlow.emit(category)
 
     }
+
+
 }

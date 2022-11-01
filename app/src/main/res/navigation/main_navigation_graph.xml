@@ -41,6 +41,9 @@
             android:id="@+id/action_detailsFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
         <action
+            android:id="@+id/action_detailsFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
             android:id="@+id/action_detailsFragment_to_allProductsFragment"
             app:destination="@id/allProductsFragment" />
     </fragment>
@@ -109,7 +112,11 @@
         android:id="@+id/searchFragment"
         android:name="com.bendg.bg.presenter.ui.fragment.search.SearchFragment"
         android:label="fragment_search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.bendg.bg.presenter.ui.fragment.settings.SettingsFragment"
@@ -126,7 +133,7 @@
         tools:layout="@layout/fragment_wallet" />
     <fragment
         android:id="@+id/allProductsFragment"
-        android:name="com.bendg.bg.presenter.ui.fragment.all_products.AllProductsFragment"
+        android:name="com.bendg.bg.presenter.ui.all_products.AllProductsFragment"
         android:label="fragment_all_products"
         tools:layout="@layout/fragment_all_products" >
         <action

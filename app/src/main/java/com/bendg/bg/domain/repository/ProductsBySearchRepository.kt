@@ -4,9 +4,8 @@ import com.bendg.bg.domain.model.ItemModelDomain
 import com.bendg.bg.common.Resource
 import kotlinx.coroutines.flow.Flow
 
+interface ProductsBySearchRepository {
 
-interface RepositoryWithArgs {
-
-    suspend fun getDetailsByArgs(id: Int): Flow<Resource<ItemModelDomain.ProductDomain>>
+    suspend fun getProductsBySearch(searchWord: String): Flow<Resource<List<ItemModelDomain.ProductDomain>>>
 
 }
