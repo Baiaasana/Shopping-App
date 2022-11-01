@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bendg.bg.domain.use_case.DetailedInfoUseCase
 import com.bendg.bg.common.Resource
-import com.bendg.bg.utility.viewStates.DetailedViewState
+import com.bendg.bg.utility.view_states.DetailedViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

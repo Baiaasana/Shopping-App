@@ -2,7 +2,7 @@ package com.bendg.bg.presenter.ui.fragment.sign_up
 
 import androidx.lifecycle.ViewModel
 import com.bendg.bg.presenter.model.UserModel
-import com.bendg.bg.utility.viewStates.AuthenticationViewState
+import com.bendg.bg.utility.view_states.AuthenticationViewState
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
