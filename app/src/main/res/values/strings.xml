@@ -65,4 +65,7 @@
     <string name="already_registered">This email is already used. Please use another email!</string>
     <string name="check_box">Please, check box</string>
     <string name="login_success">You have log in successfully!</string>
+    <string name="wallet">Wallet</string>
+    <string name="my_cart">My cart</string>
+
 </resources>

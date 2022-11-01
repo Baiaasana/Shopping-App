@@ -1,9 +1,9 @@
-package com.bendg.bg.utility.viewStates
+package com.bendg.bg.utility.view_states
 
 import com.bendg.bg.presenter.model.ItemUI
 
-data class ItemViewState(
+data class DetailedViewState(
     val isLoading: Boolean = false,
-    val data: List<ItemUI.Product>? = null,
+    val data: ItemUI.Product? = null,
     val errorMessage: String = "",
 )
