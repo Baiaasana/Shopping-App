@@ -1,32 +1,59 @@
 package com.bendg.bg.presenter.ui.fragment.profile
 
+import android.app.Activity.RESULT_OK
 import android.app.AlertDialog
+import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.net.Uri
+import android.util.Log
 import android.view.LayoutInflater
 import android.widget.Toast
+import androidx.core.graphics.drawable.toBitmap
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.bendg.bg.R
 import com.bendg.bg.common.BaseFragment
+import com.bendg.bg.common.Constants.PICK_IMAGE_REQUEST
 import com.bendg.bg.databinding.ChangeDialogBinding
 import com.bendg.bg.databinding.FragmentProfileBinding
 import com.bendg.bg.presenter.model.UserModel
+import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.storage.FirebaseStorage
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import java.io.ByteArrayOutputStream
+import java.io.File
 
 @AndroidEntryPoint
 class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBinding::inflate) {
 
+    private val viewModel: ProfileViewModel by viewModels()
     private lateinit var bindingDialog: ChangeDialogBinding
 
-    private val viewModel: ProfileViewModel by viewModels()
+    // For profile-image upload
+    private var imageUri: Uri? = null
+    private val auth: FirebaseAuth = FirebaseAuth.getInstance()
+    private var storageReference =
+        FirebaseStorage.getInstance().getReference("Images/${auth.currentUser?.uid!!}")
+
     override fun listeners() {
         binding.ivChange.setOnClickListener {
             openDialog()
+        }
+        binding.ivChangeImage.setOnClickListener {
+            selectImage()
         }
     }
 
     override fun init() {
         viewModel.showUserInfo()
+        try {
+            downloadImage()
+        } catch (e: Exception) {
+            Log.d("log", e.message.toString())
+        }
     }
 
     override fun observers() {
@@ -53,6 +80,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
                     etLastname.setText(it.userInfo.lastName)
                     etPhone.setText(it.userInfo.phone_number)
                     etLocation.setText(it.userInfo.location)
+                    etUsername.setText(it.userInfo.userName)
                 }
             }
         }
@@ -66,9 +94,11 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
                 val lastname = bindingDialog.etLastname.text.toString()
                 val location = bindingDialog.etLocation.text.toString()
                 val phoneNumber = bindingDialog.etPhone.text.toString()
+                val username = bindingDialog.etUsername.text.toString()
 
                 val newInfo = UserModel(firstName = firstName,
                     lastName = lastname,
+                    userName = username,
                     location = location,
                     phone_number = phoneNumber)
                 viewModel.updateUserInfo(newInfo)
@@ -84,5 +114,61 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
             .create()
             .show()
         true
+    }
+
+    private fun selectImage() {
+        val intent = Intent()
+        intent.type = "image/"
+        intent.action = Intent.ACTION_GET_CONTENT
+        startActivityForResult(Intent.createChooser(intent, "Images"), PICK_IMAGE_REQUEST)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK) {
+            if (data == null || data.data == null) {
+                return
+            }
+            imageUri = data.data
+            binding.ivProfileImage.setImageURI(imageUri)
+            uploadImage()
+        }
+    }
+
+    private fun uploadImage() {
+        try {
+            val bitmap = binding.ivProfileImage.drawable.toBitmap()
+            val byteArrayOutputStream = ByteArrayOutputStream()
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 10, byteArrayOutputStream)
+            val byteArray = byteArrayOutputStream.toByteArray()
+            val putBytes = storageReference.putBytes(byteArray)
+            val task = putBytes.continueWithTask {
+                storageReference.downloadUrl
+            }.addOnCompleteListener {
+                imageUri = it.result
+                Snackbar.make(binding.root, "image uploaded", Snackbar.LENGTH_SHORT).show()
+            }
+        } catch (e: Exception) {
+            Snackbar.make(binding.root, e.message.toString(), Snackbar.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun downloadImage() {
+        try {
+            val localFile: File = File.createTempFile("tempFile", "jpg")
+            val uid = auth.currentUser?.uid!!
+            val storageReference = FirebaseStorage.getInstance().getReference("Images/$uid")
+            storageReference.getFile(localFile).addOnSuccessListener {
+                binding.apply {
+                    val bitmap: Bitmap =
+                        BitmapFactory.decodeFile(localFile.absolutePath)
+                    ivProfileImage.setImageBitmap(bitmap)
+                }
+            }.addOnFailureListener {
+                it.printStackTrace()
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 }

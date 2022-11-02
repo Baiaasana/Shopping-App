@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "451236663138",
+    "firebase_url": "https://bendg-343c2-default-rtdb.firebaseio.com",
     "project_id": "bendg-343c2",
     "storage_bucket": "bendg-343c2.appspot.com"
   },
@@ -10,6 +11,35 @@
         "mobilesdk_app_id": "1:451236663138:android:8a2817a69549be7404e63b",
         "android_client_info": {
           "package_name": "com.bendg.bg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "451236663138-s2rvo1jaabhinkn2bg1serhddpo7h11n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-1R1ZF4wZBQICUhZmqWUvs9GLZo9iHWw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "451236663138-s2rvo1jaabhinkn2bg1serhddpo7h11n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:451236663138:android:33b26495bbb5bce304e63b",
+        "android_client_info": {
+          "package_name": "com.example.bg_pay"
         }
       },
       "oauth_client": [

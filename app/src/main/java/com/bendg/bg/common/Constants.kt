@@ -10,4 +10,7 @@ object Constants {
     const val BY_CATEGORIES_END_POINT = "products/category/{category}"
     const val SEARCH_END_POINT = "products/search?"
 
+    const val PICK_IMAGE_REQUEST = 404
+
+
 }
