@@ -34,6 +34,7 @@ class ProfileViewModel : ViewModel() {
     fun updateUserInfo(newUserInfo: UserModel){
         databaseReference.child(auth.currentUser?.uid!!).child("firstName").setValue(newUserInfo.firstName.toString())
         databaseReference.child(auth.currentUser?.uid!!).child("lastName").setValue(newUserInfo.lastName.toString())
+        databaseReference.child(auth.currentUser?.uid!!).child("userName").setValue(newUserInfo.userName.toString())
         databaseReference.child(auth.currentUser?.uid!!).child("location").setValue(newUserInfo.location.toString())
         databaseReference.child(auth.currentUser?.uid!!).child("phone_number").setValue(newUserInfo.phone_number.toString())
     }
