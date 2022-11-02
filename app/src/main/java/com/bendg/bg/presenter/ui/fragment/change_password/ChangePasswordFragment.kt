@@ -1,20 +1,53 @@
 package com.bendg.bg.presenter.ui.fragment.change_password
 
+import android.widget.Toast
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.bendg.bg.common.BaseFragment
 import com.bendg.bg.databinding.FragmentChangePasswordBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class ChangePasswordFragment : BaseFragment<FragmentChangePasswordBinding>(FragmentChangePasswordBinding::inflate) {
+
+    private val viewModel: ChangePasswordViewModel by viewModels()
+
     override fun listeners() {
+//        binding.btnChange.setOnClickListener {
+//            viewModel.updatePassword(binding.etNewPassword.text.toString())
+//            observer()
+//        }
+        binding.btnChange.setOnClickListener {
+            viewModel.updatePassword(binding.etOldPassword.text.toString(),
+                binding.etNewPassword.text.toString())
+            observer()
+        }
+        binding.btnBack.setOnClickListener {
+            findNavController().navigate(ChangePasswordFragmentDirections.actionChangePasswordFragmentToSettingsFragment())
+        }
+
 
     }
 
     override fun init() {
     }
 
-    override fun observers() {
+    private fun observer() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.updateState.collect {
+                if (it.message.toString() == "Enter the correct password" ||
+                    it.message.toString() == "Your password changed successfully!" ||
+                    it.message.toString() == "Password did not changed, try later!"
+                )
+                    Toast.makeText(context, it.message.toString(), Toast.LENGTH_SHORT).show()
+            }
+        }
+
     }
 
+    override fun observers() {
 
+    }
 }

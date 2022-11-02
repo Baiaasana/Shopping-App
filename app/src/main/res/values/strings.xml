@@ -2,9 +2,9 @@
     <string name="app_name">B&amp;G</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="_1_3"><font  color="#000000">1</font>/3</string>
-    <string name="_2_3"><font  color="#000000">2</font>/3</string>
-    <string name="_3_3"><font  color="#000000">3</font>/3</string>
+    <string name="_1_3"><font color="#000000">1</font>/3</string>
+    <string name="_2_3"><font color="#000000">2</font>/3</string>
+    <string name="_3_3"><font color="#000000">3</font>/3</string>
     <string name="choose_product">Choose Product</string>
     <string name="onb1_text">A product is the item offered for sale.\n A product can be a service or an item. It can be Physical or in virtual or cyber form.</string>
     <string name="next">Next</string>
@@ -20,9 +20,9 @@
     <string name="forgot_password">Forgot password?</string>
     <string name="email_address">Email</string>
     <string name="log_in">Log in</string>
-    <string name="sign_up_question">Don\'t have an account? <font  color="#000000"> Sign Up</font></string>
+    <string name="sign_up_question">Don\'t have an account? <font color="#000000"> Sign Up</font></string>
     <string name="repeat_password">Repeat Password</string>
-    <string name="terms_conditions">I accept all the <font  color="#hhhhhh"> Terms &amp; Conditions</font></string>
+    <string name="terms_conditions">I accept all the <font color="#hhhhhh"> Terms &amp; Conditions</font></string>
     <string name="enter_an_email">Enter an email address:</string>
     <string name="password_recovery">Password recovery</string>
     <string name="home">Home</string>

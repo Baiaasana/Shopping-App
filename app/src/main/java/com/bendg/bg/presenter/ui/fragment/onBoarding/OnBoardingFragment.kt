@@ -27,6 +27,7 @@ class OnBoardingFragment : BaseFragment<FragmentOnBoardingBinding>(FragmentOnBoa
     override fun listeners() {
     }
     override fun init() {
+        hasFinished()
 
         val fragmentList = mutableListOf<Fragment>(
             FirstScreen(),
@@ -35,10 +36,7 @@ class OnBoardingFragment : BaseFragment<FragmentOnBoardingBinding>(FragmentOnBoa
         )
 
         val adapter = ViewPagerAdapter(requireActivity().supportFragmentManager, lifecycle, fragmentList)
-
         binding.viewPager2.adapter = adapter
-
-        hasFinished()
 
     }
     override fun observers() {

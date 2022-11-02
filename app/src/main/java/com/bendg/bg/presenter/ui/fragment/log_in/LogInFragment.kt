@@ -51,7 +51,6 @@ class LogInFragment : BaseFragment<FragmentLogInBinding>(FragmentLogInBinding::i
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.loginStatus.collectLatest {
                     if(it.message!!.isNotEmpty()){
-                        Snackbar.make(binding.root, it.message.toString(), Snackbar.LENGTH_LONG).show()
                         if (it.message.toString() == getString(R.string.login_success)){
                             startActivity(Intent(requireActivity(), MainActivity::class.java))
                         }
