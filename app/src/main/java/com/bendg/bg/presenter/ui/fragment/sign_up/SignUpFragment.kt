@@ -60,6 +60,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
         val userName = binding.etUsername.text.toString()
         val email = binding.etEmail.text.toString()
         val password = binding.etPassword.text.toString()
+
         val userInfo = UserModel(firstName, lastName, userName, email, password)
         viewModel.signUpResponse(email = email, password = password, userInfo = userInfo)
     }

@@ -30,7 +30,6 @@ class FavoritesViewModel @Inject constructor(
         try {
             _favoritesFlow.value = _favoritesFlow.value.copy(data = repository.getFavorites())
         } catch (e: Exception) {
-            Log.d("log", " error favorite viewmodel".plus(e.message.toString()))
             _favoritesFlow.value = _favoritesFlow.value.copy(errorMessage = "error fav viewmodel")
         }
     }

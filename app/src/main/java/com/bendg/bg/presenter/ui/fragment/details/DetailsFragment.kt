@@ -27,16 +27,10 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>(FragmentDetailsBind
 
 
     override fun listeners() {
-        binding.btnBack.setOnClickListener {
-            findNavController().navigate(DetailsFragmentDirections.actionDetailsFragmentToHomeFragment())
-        }
         binding.ivSetFavorite.setOnClickListener {
             viewLifecycleOwner.lifecycleScope.launch {
                 saveProduct(getProduct())
                 isSaved = !isSaved
-                Log.d("log", "details fragment ".plus(isSaved.toString()))
-                Log.d("log", "details fragment ".plus(viewModel.favoritesFlow.value))
-
             }
         }
     }
@@ -45,11 +39,11 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>(FragmentDetailsBind
         when (isSaved) {
             true -> {
                 viewModel.removeProduct(product)
-                binding.ivSetFavorite.setImageResource(R.drawable.ic_baseline_settings_24)
+                binding.ivSetFavorite.setImageResource(R.drawable.ic_favorite_false)
             }
             false -> {
                 viewModel.addProduct(product)
-                binding.ivSetFavorite.setImageResource(R.drawable.ic_arrow_left)
+                binding.ivSetFavorite.setImageResource(R.drawable.ic_favorite_true)
             }
         }
     }
@@ -86,9 +80,9 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>(FragmentDetailsBind
                 val product = it.find { product ->
                     product.id == args.id
                 }
-                product.let {
+                product?.let {
                     isSaved = true
-                    binding.ivSetFavorite.setImageResource(R.drawable.ic_arrow_left)
+                    binding.ivSetFavorite.setImageResource(R.drawable.ic_favorite_true)
                 }
             }
         }

@@ -6,6 +6,8 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.bendg.bg.presenter.adapter.ProductsAdapter
 import com.bendg.bg.common.BaseFragment
 import com.bendg.bg.databinding.FragmentAllProductsBinding
@@ -33,6 +35,7 @@ class AllProductsFragment : BaseFragment<FragmentAllProductsBinding>(FragmentAll
 
     private fun initRecycler(){
         binding.rvAllProducts.apply {
+            layoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
             adapter = productsAdapter
         }
     }

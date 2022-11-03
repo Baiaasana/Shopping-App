@@ -28,7 +28,6 @@ class FavoritesFragment : BaseFragment<FragmentFavoritesBinding>(FragmentFavorit
 
     override fun init() {
         binding.rvFavorites.apply {
-                layoutManager = LinearLayoutManager(context)
                 adapter = favoriteAdapter
         }
         viewLifecycleOwner.lifecycleScope.launch {
@@ -40,8 +39,6 @@ class FavoritesFragment : BaseFragment<FragmentFavoritesBinding>(FragmentFavorit
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.favoritesFlow.collect{
                 favoriteAdapter.submitList(it.data)
-                Log.d("log", "fav freagment".plus(it.data))
-                Toast.makeText(context, it.errorMessage, Toast.LENGTH_SHORT).show()
             }
         }
     }

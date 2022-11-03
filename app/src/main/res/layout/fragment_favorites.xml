@@ -49,8 +49,10 @@
             android:id="@+id/rv_favorites"
             android:layout_width="match_parent"
             tools:itemCount="3"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
             tools:listitem="@layout/favorite_item"
-            android:layout_height="wrap_content"/>
+            app:spanCount="2" />
 
     </LinearLayout>
 
