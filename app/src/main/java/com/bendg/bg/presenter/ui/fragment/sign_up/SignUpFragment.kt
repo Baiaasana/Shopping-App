@@ -9,10 +9,13 @@ import com.bendg.bg.R
 import com.bendg.bg.common.BaseFragment
 import com.bendg.bg.databinding.FragmentSignUpBinding
 import com.bendg.bg.presenter.model.UserModel
+import com.bendg.bg.utility.generateCardNumber
 import com.bendg.bg.utility.snack
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -46,8 +49,9 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.registerStatus.collect {
-                    if(it.message!!.isNotEmpty()){
-                        Snackbar.make(binding.root, it.message.toString(), Snackbar.LENGTH_LONG).show()
+                    if (it.message!!.isNotEmpty()) {
+                        Snackbar.make(binding.root, it.message.toString(), Snackbar.LENGTH_LONG)
+                            .show()
                     }
                 }
             }
@@ -60,8 +64,8 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
         val userName = binding.etUsername.text.toString()
         val email = binding.etEmail.text.toString()
         val password = binding.etPassword.text.toString()
-
-        val userInfo = UserModel(firstName, lastName, userName, email, password)
+        val card = UserModel.Card(cardNumber = generateCardNumber())
+        val userInfo = UserModel(firstName, lastName, userName, email, password, cards = card)
         viewModel.signUpResponse(email = email, password = password, userInfo = userInfo)
     }
 
@@ -86,8 +90,10 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
     private fun isNotValidUsername(): Boolean = with(binding) {
         return@with etUsername.text.toString()[0].isDigit()
     }
+
     override fun observers() {
     }
+
     private fun isNotValidNames(): Boolean = with(binding) {
         return@with etFirstname.text.toString()[0].isDigit() ||
                 etLastname.text.toString()[0].isDigit()
