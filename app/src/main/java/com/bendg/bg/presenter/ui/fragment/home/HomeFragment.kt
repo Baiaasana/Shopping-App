@@ -1,6 +1,5 @@
 package com.bendg.bg.presenter.ui.fragment.home
 
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -8,11 +7,11 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bendg.bg.presenter.adapter.CategoryAdapter
-import com.bendg.bg.presenter.adapter.ProductsAdapter
 import com.bendg.bg.common.BaseFragment
 import com.bendg.bg.data.remote.model.CategoryTypes
 import com.bendg.bg.databinding.FragmentHomeBinding
+import com.bendg.bg.presenter.adapter.CategoryAdapter
+import com.bendg.bg.presenter.adapter.ProductsAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -25,8 +24,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
     override fun listeners() {
         productsAdapter.onItemClickListener = {
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailsFragment(
-                id = it.id!!.toInt()))
+            findNavController().navigate(
+                HomeFragmentDirections.actionHomeFragmentToDetailsFragment(
+                    id = it.id!!.toInt()
+                )
+            )
         }
         binding.tvSeeAll.setOnClickListener {
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAllProductsFragment2())
@@ -67,7 +69,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             }
         }
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.categoryFlow.collect{
+            viewModel.categoryFlow.collect {
                 getProductsByCategory(category = it.value)
             }
         }

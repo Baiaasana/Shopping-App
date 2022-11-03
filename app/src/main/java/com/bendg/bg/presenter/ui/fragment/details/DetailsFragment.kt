@@ -1,16 +1,16 @@
 package com.bendg.bg.presenter.ui.fragment.details
 
-import android.util.Log
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bendg.bg.R
 import com.bendg.bg.common.BaseFragment
 import com.bendg.bg.data.local.model.FavoriteProduct
 import com.bendg.bg.databinding.FragmentDetailsBinding
+import com.bendg.bg.presenter.model.CartModel
 import com.bendg.bg.presenter.model_ui.ProductModelUi
 import com.bendg.bg.utility.Glide
+import com.bendg.bg.utility.cartList
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import kotlin.properties.Delegates
@@ -25,8 +25,13 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>(FragmentDetailsBind
     private lateinit var image: String
     private var price by Delegates.notNull<Int>()
 
+    private lateinit var cart: CartModel
 
     override fun listeners() {
+        binding.btnAdd.setOnClickListener {
+            cartList.add(cart)
+        }
+
         binding.ivSetFavorite.setOnClickListener {
             viewLifecycleOwner.lifecycleScope.launch {
                 saveProduct(getProduct())
@@ -72,6 +77,11 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>(FragmentDetailsBind
                         tvRating.text = result.rating.toString()
                         Glide().setImage(result.thumbnail, ivItem)
                     }
+                    cart = CartModel(
+                        title = result.title,
+                        price = result.price,
+                        image = result.thumbnail
+                    )
                 }
             }
         }
