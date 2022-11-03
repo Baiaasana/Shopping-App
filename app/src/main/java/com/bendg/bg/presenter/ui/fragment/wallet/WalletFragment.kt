@@ -1,5 +1,6 @@
 package com.bendg.bg.presenter.ui.fragment.wallet
 
+import android.annotation.SuppressLint
 import android.widget.TextView
 import androidx.fragment.app.viewModels
 import com.bendg.bg.common.BaseFragment
@@ -22,15 +23,36 @@ class WalletFragment : BaseFragment<FragmentWalletBinding>(FragmentWalletBinding
 
     override fun init() {
         getMoney(binding.tvPrice)
+        getNumber(binding.tvCardNumber)
+        getUserName(binding.tvUserName)
     }
 
     override fun observers() {}
 
+    @SuppressLint("SetTextI18n")
     private fun getMoney(tvPrice: TextView) {
         db.child(auth.currentUser?.uid!!).get().addOnSuccessListener {
             if (it.exists()) {
                 val balance = it.child("cards").child("balance").value
-                tvPrice.text = balance.toString()
+                tvPrice.text = balance.toString() + "$"
+            }
+        }
+    }
+
+    private fun getNumber(tvCardNumber: TextView) {
+        db.child(auth.currentUser?.uid!!).get().addOnSuccessListener {
+            if (it.exists()) {
+                val cardNumber = it.child("cards").child("cardNumber").value
+                tvCardNumber.text = cardNumber.toString()
+            }
+        }
+    }
+
+    private fun getUserName(tvUserName: TextView) {
+        db.child(auth.currentUser?.uid!!).get().addOnSuccessListener {
+            if (it.exists()) {
+                val cardNumber = it.child("userName").value
+                tvUserName.text = cardNumber.toString()
             }
         }
     }
