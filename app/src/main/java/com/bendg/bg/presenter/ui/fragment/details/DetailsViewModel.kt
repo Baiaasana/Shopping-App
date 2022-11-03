@@ -14,10 +14,9 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
+
 class DetailsViewModel @Inject constructor(
-    private val useCase: ProductsByIdUseCase,
-    private val repository: ProductByIdRepositoryImpl
-) :
+    private val useCase: ProductsByIdUseCase) :
     ViewModel() {
 
     private val _detailedFlow = MutableStateFlow<DetailedViewState>(DetailedViewState())
@@ -50,16 +49,17 @@ class DetailsViewModel @Inject constructor(
         }
     }
 
-    suspend fun getFavorites() {
-        _favoritesFlow.emit(repository.getFavorites())
+    suspend fun getFavorites(){
+        _favoritesFlow.emit(useCase.getFavorites())
     }
 
-    suspend fun addProduct(product: FavoriteProduct) {
-        repository.addProduct(product = product)
+    suspend fun addProduct(product: FavoriteProduct){
+        useCase.addProduct(product = product)
     }
 
-    suspend fun removeProduct(product: FavoriteProduct) {
-        repository.removeProduct(product = product)
+    suspend fun removeProduct(product: FavoriteProduct){
+        useCase.removeProduct(product = product)
+
     }
 
     fun saveItem(id: Int) {
