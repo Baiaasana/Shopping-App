@@ -25,8 +25,8 @@ class WalletViewModel : ViewModel() {
         })
     }
 
-    fun updateMoney(newMoney: Float) {
-        val balance = newMoney + _newMoney.value.cards!!.balance!!
-        db.child(auth.currentUser?.uid!!).child("cards").child("balance").setValue(balance)
-    }
+//    fun updateMoney(newMoney: Float) {
+//        val balance = newMoney + _newMoney.value.cards!!.balance!!
+//        db.child(auth.currentUser?.uid!!).child("cards").child("balance").setValue(balance)
+//    }
 }

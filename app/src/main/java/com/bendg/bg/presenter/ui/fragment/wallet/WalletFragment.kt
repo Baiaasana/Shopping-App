@@ -13,9 +13,8 @@ class WalletFragment : BaseFragment<FragmentWalletBinding>(FragmentWalletBinding
     override fun listeners() {}
 
     override fun init() {
-        viewModel.getMoney()
         binding.tvPrice.text =
-            viewModel.updateMoney(binding.tvPrice.text.toString().toFloat()).toString()
+            viewModel.getMoney().toString()
 
 
     }
