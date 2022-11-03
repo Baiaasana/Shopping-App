@@ -2,6 +2,8 @@ package com.bendg.bg.data.repository
 
 import com.bendg.bg.common.Resource
 import com.bendg.bg.common.ResponseHandler
+import com.bendg.bg.data.local.dao.ProductsDatabase
+import com.bendg.bg.data.local.model.FavoriteProduct
 import com.bendg.bg.data.remote.network.ApiService
 import com.bendg.bg.domain.model_domain.ProductModelDomain
 import com.bendg.bg.domain.repository.ProductByIdRepository
@@ -12,6 +14,7 @@ import javax.inject.Inject
 class ProductByIdRepositoryImpl @Inject constructor(
     private val apiService: ApiService,
     private val responseHandler: ResponseHandler,
+    private val database: ProductsDatabase,
 ) : ProductByIdRepository {
 
     override suspend fun getDetailsByArgs(id: Int): Flow<Resource<ProductModelDomain>> =
@@ -29,4 +32,16 @@ class ProductByIdRepositoryImpl @Inject constructor(
                 }
             }
         }
+
+    override suspend fun getFavorites(): List<FavoriteProduct>{
+        return database.getFavoriteProductsDao().getAllProducts()
+    }
+
+    override suspend fun addProduct(product: FavoriteProduct){
+        database.getFavoriteProductsDao().addProduct(product = product)
+    }
+
+    override suspend fun removeProduct(product: FavoriteProduct){
+        database.getFavoriteProductsDao().removeProduct(product = product)
+    }
 }
