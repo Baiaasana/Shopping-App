@@ -40,7 +40,6 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
                     registerObserver()
                 }
             }
-            generateCardNumber()
         }
     }
 
