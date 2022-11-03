@@ -50,12 +50,19 @@
         <action
             android:id="@+id/action_detailsFragment_to_allProductsFragment"
             app:destination="@id/allProductsFragment" />
+        <action
+            android:id="@+id/action_detailsFragment_to_favoritesFragment"
+            app:destination="@id/favoritesFragment" />
     </fragment>
     <fragment
         android:id="@+id/favoritesFragment"
         android:name="com.bendg.bg.presenter.ui.fragment.favorites.FavoritesFragment"
         android:label="fragment_favorites"
-        tools:layout="@layout/fragment_favorites" />
+        tools:layout="@layout/fragment_favorites" >
+        <action
+            android:id="@+id/action_favoritesFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/filterFragment"
         android:name="com.bendg.bg.presenter.ui.fragment.filter.FilterFragment"
