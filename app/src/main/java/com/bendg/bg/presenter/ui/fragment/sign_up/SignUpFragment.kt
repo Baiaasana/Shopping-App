@@ -9,6 +9,7 @@ import com.bendg.bg.R
 import com.bendg.bg.common.BaseFragment
 import com.bendg.bg.databinding.FragmentSignUpBinding
 import com.bendg.bg.presenter.model.UserModel
+import com.bendg.bg.utility.generateCardNumber
 import com.bendg.bg.utility.snack
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint

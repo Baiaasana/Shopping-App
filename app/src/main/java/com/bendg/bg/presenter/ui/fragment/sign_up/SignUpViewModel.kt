@@ -17,7 +17,8 @@ class SignUpViewModel : ViewModel() {
     private val databaseReference: DatabaseReference =
         FirebaseDatabase.getInstance().getReference("userInfo")
 
-    private val _registerStatus = MutableStateFlow<AuthenticationViewState>(AuthenticationViewState())
+    private val _registerStatus =
+        MutableStateFlow<AuthenticationViewState>(AuthenticationViewState())
     val registerStatus = _registerStatus.asStateFlow()
 
     fun signUpResponse(email: String, password: String, userInfo: UserModel) {
