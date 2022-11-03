@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="16dp"
-    app:cardBackgroundColor="@color/back_color_details"
+    android:layout_margin="12dp"
+    app:strokeWidth="1dp"
+    app:strokeColor="@color/blue_bold"
     app:cardCornerRadius="24dp"
     app:cardElevation="15dp">
 
@@ -56,10 +58,8 @@
             android:layout_gravity="center_horizontal"
             android:paddingBottom="8dp"
             android:text="120 $"
-
             android:textColor="@color/grey"
             android:textSize="20sp" />
-
 
     </LinearLayout>
 

@@ -43,6 +43,7 @@ data class ItemModelDTO(
                 stock = stock,
                 thumbnail = thumbnail,
                 title = title
+
             )
         }
     }
