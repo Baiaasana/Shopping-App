@@ -8,10 +8,27 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bendg.bg.databinding.CartItemBinding
 import com.bendg.bg.presenter.model.CartModel
 import com.bendg.bg.utility.Glide
+import javax.security.auth.callback.Callback
 
 class CartAdapter : ListAdapter<CartModel, CartAdapter.CartViewHolder>(ItemCallback) {
 
-    var counter = 0
+//    var onPlusClick: ((CartModel) -> Int)? = null
+
+//    var onMinusClick: ((CartModel) -> Int)? = null
+
+    private var callback: Callback ?= null
+
+    interface Callback{
+
+        fun onPlusClick(itemID:Int)
+
+        fun onMinusCLick(itemID: Int)
+    }
+
+    fun setCallback(callback: Callback){
+        this.callback = callback
+
+    }
 
     inner class CartViewHolder(private val binding: CartItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -24,17 +41,21 @@ class CartAdapter : ListAdapter<CartModel, CartAdapter.CartViewHolder>(ItemCallb
                 tvPrice.text = item.price.toString()
 
                 ivPlus.setOnClickListener {
-                    counter++
-                    tvCounter.text = counter.toString()
+//                    onPlusClick?.invoke(item)
+                    callback?.onPlusClick(item.id!!)
+                    tvCounter.text = item.counter.toString()
+
                 }
 
                 ivMinus.setOnClickListener {
-                    if (counter != 0) {
-                        counter--
-                        tvCounter.text = counter.toString()
+                    if (item.counter > 0) {
+                        callback?.onMinusCLick(item.id!!)
+                        tvCounter.text = item.counter.toString()
                     }
                 }
             }
+
+
         }
     }
 
@@ -57,7 +78,7 @@ class CartAdapter : ListAdapter<CartModel, CartAdapter.CartViewHolder>(ItemCallb
             oldItem: CartModel,
             newItem: CartModel,
         ): Boolean {
-            return oldItem == newItem
+            return oldItem.title == newItem.title
         }
 
         override fun areContentsTheSame(

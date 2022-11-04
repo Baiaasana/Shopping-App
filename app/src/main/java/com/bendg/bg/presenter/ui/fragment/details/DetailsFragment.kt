@@ -1,5 +1,7 @@
 package com.bendg.bg.presenter.ui.fragment.details
 
+import android.util.Log
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
@@ -12,6 +14,7 @@ import com.bendg.bg.presenter.model_ui.ProductModelUi
 import com.bendg.bg.utility.Glide
 import com.bendg.bg.utility.cartList
 import com.denzcoskun.imageslider.models.SlideModel
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import kotlin.properties.Delegates
@@ -30,7 +33,13 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>(FragmentDetailsBind
 
     override fun listeners() {
         binding.btnAdd.setOnClickListener {
+            if(!cartList.contains(cart)){
                 cartList.add(cart)
+                Log.d("log", "list details".plus(cartList))
+                Snackbar.make(binding.root, "added successfully", Snackbar.LENGTH_LONG).show()
+            }else{
+                Snackbar.make(binding.root, "already added", Snackbar.LENGTH_LONG).show()
+            }
         }
 
         binding.ivSetFavorite.setOnClickListener {
@@ -87,6 +96,7 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>(FragmentDetailsBind
                         binding.ivItem.setImageList(slideList)
                     }
                     cart = CartModel(
+                        id = result.id,
                         title = result.title,
                         price = result.price,
                         image = result.thumbnail

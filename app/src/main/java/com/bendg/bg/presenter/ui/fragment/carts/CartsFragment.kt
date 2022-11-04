@@ -1,6 +1,5 @@
 package com.bendg.bg.presenter.ui.fragment.carts
 
-import android.annotation.SuppressLint
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bendg.bg.common.BaseFragment
@@ -12,10 +11,9 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class CartsFragment : BaseFragment<FragmentCartsBinding>(FragmentCartsBinding::inflate) {
 
-
     private val cartsAdapter = CartAdapter()
 
-    private val sum = cartList.sumOf { it.price!! }
+    private var sum = cartList.sumOf { it.price!! }
 
     override fun listeners() {
         binding.btnCheckout.setOnClickListener {
@@ -27,13 +25,50 @@ class CartsFragment : BaseFragment<FragmentCartsBinding>(FragmentCartsBinding::i
         }
     }
 
-    @SuppressLint("SetTextI18n")
     override fun init() {
         initRecycle()
         cartsAdapter.submitList(cartList)
+        binding.tvPrice.text = sum.toString()
 
-        binding.tvPrice.text = "$sum$"
+        cartsAdapter.setCallback(object : CartAdapter.Callback{
+            override fun onPlusClick(itemID: Int) {
+               plus(itemID)
+                    var totalsum = 0
+                    for(x in cartList){
+                        sum = x.counter * x.price!!
+                        totalsum += sum
+                    }
+                    binding.tvPrice.text = totalsum.toString()
+            }
 
+            override fun onMinusCLick(itemID: Int) {
+                minus(itemID)
+                var totalsum = 0
+                for(x in cartList){
+                    sum = x.counter * x.price!!
+                    totalsum -= sum
+                }
+                binding.tvPrice.text = totalsum.toString()
+            }
+        })
+    }
+
+    private fun minus(itemID:Int){
+        val item = cartList.find { item ->
+            item.id == itemID
+        }
+        val index = cartList.indexOf(item)
+        cartList[index].counter--
+        cartsAdapter.submitList(cartList.toList())
+    }
+
+    private fun plus(itemID: Int){
+        val item = cartList.find { item ->
+            item.id == itemID
+        }
+        val index = cartList.indexOf(item)
+        cartList[index].counter++
+        cartsAdapter.submitList(cartList.toList())
     }
 
     override fun observers() {
@@ -45,5 +80,4 @@ class CartsFragment : BaseFragment<FragmentCartsBinding>(FragmentCartsBinding::i
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         }
     }
-
 }
