@@ -11,7 +11,6 @@ import com.bendg.bg.common.BaseFragment
 import com.bendg.bg.databinding.FragmentLogInBinding
 import com.bendg.bg.presenter.ui.activity.MainActivity
 import com.bendg.bg.utility.snack
-import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -22,14 +21,19 @@ class LogInFragment : BaseFragment<FragmentLogInBinding>(FragmentLogInBinding::i
     private val viewModel: LogInViewModel by viewModels()
 
     override fun listeners() {
-        binding.btnLogin.setOnClickListener {
+        binding.btnLogin.setOnClickListener { snack ->
 
             when {
-                isEmptyField() -> it.snack(getString(R.string.empty_fields_error))
-                !isValidEmail() -> it.snack(getString(R.string.invalid_email_error))
-                else ->{
+                isEmptyField() -> snack.snack(getString(R.string.empty_fields_error))
+                !isValidEmail() -> snack.snack(getString(R.string.invalid_email_error))
+                else -> {
                     login()
                     loginObserver()
+                    viewLifecycleOwner.lifecycleScope.launch {
+                        viewModel.loginStatus.collectLatest {
+                            snack.snack(it.message.toString())
+                        }
+                    }
                 }
             }
         }
@@ -49,11 +53,9 @@ class LogInFragment : BaseFragment<FragmentLogInBinding>(FragmentLogInBinding::i
     private fun loginObserver() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.loginStatus.collectLatest {
-                    if(it.message!!.isNotEmpty()){
-                        if (it.message.toString() == getString(R.string.login_success)){
-                            startActivity(Intent(requireActivity(), MainActivity::class.java))
-                        }
+                viewModel.loginStatus.collect {
+                    if (it.message.toString() == getString(R.string.login_success)){
+                        startActivity(Intent(requireActivity(), MainActivity::class.java))
                     }
                 }
             }
