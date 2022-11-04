@@ -1,6 +1,7 @@
 package com.bendg.bg.presenter.ui.fragment.carts
 
 import android.annotation.SuppressLint
+import android.util.Log.d
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bendg.bg.common.BaseFragment
@@ -8,6 +9,7 @@ import com.bendg.bg.databinding.FragmentCartsBinding
 import com.bendg.bg.presenter.adapter.CartAdapter
 import com.bendg.bg.utility.cartList
 import dagger.hilt.android.AndroidEntryPoint
+import kotlin.properties.Delegates
 
 @AndroidEntryPoint
 class CartsFragment : BaseFragment<FragmentCartsBinding>(FragmentCartsBinding::inflate) {
@@ -15,7 +17,7 @@ class CartsFragment : BaseFragment<FragmentCartsBinding>(FragmentCartsBinding::i
 
     private val cartsAdapter = CartAdapter()
 
-    private val sum = cartList.sumOf { it.price!! }
+    private var sum = 0
 
     override fun listeners() {
         binding.btnCheckout.setOnClickListener {
@@ -24,6 +26,24 @@ class CartsFragment : BaseFragment<FragmentCartsBinding>(FragmentCartsBinding::i
                     totalMoney = sum
                 )
             )
+        }
+
+        cartsAdapter.onPlusClick = {
+            it.counter++
+            totalSum()
+            binding.tvPrice.text = "$sum$"
+        }
+
+        cartsAdapter.onMinusClick = {
+            it.counter--
+            totalSum()
+            binding.tvPrice.text = "$sum$"
+        }
+    }
+
+    private fun totalSum() {
+        cartList.forEach {
+            sum += it.counter * it.price!!
         }
     }
 
