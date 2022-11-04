@@ -70,5 +70,6 @@
     <string name="already_have_an_account">Already have an account?</string>
     <string name="first_char_number_error">Username\'s first character cannot be a number</string>
     <string name="check_box">Please, check the box</string>
+    <string name="b_g"><![CDATA[B&G]]></string>
 
 </resources>

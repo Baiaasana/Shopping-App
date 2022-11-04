@@ -37,8 +37,8 @@ class OnBoardingFragment : BaseFragment<FragmentOnBoardingBinding>(FragmentOnBoa
 
         val adapter = ViewPagerAdapter(requireActivity().supportFragmentManager, lifecycle, fragmentList)
         binding.viewPager2.adapter = adapter
-
     }
+
     override fun observers() {
     }
 

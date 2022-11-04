@@ -106,6 +106,9 @@ dependencies {
     implementation "androidx.room:room-ktx:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
 
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.25'
+
+
 
 }
 kapt {
