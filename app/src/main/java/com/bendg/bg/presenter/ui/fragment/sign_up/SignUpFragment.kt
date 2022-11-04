@@ -12,9 +12,6 @@ import com.bendg.bg.presenter.model.UserModel
 import com.bendg.bg.utility.generateCardNumber
 import com.bendg.bg.utility.snack
 import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -40,9 +37,14 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
                 else -> {
                     register()
                     registerObserver()
+                    navigateToLogin()
                 }
             }
         }
+    }
+
+    private fun navigateToLogin(){
+        findNavController().navigate(SignUpFragmentDirections.actionSignUpFragmentToLogInFragment())
     }
 
     private fun registerObserver() {
