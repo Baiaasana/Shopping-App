@@ -29,7 +29,7 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>(FragmentDetailsBind
 
     override fun listeners() {
         binding.btnAdd.setOnClickListener {
-            cartList.add(cart)
+                cartList.add(cart)
         }
 
         binding.ivSetFavorite.setOnClickListener {
