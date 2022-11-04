@@ -23,6 +23,8 @@ class CartAdapter : ListAdapter<CartModel, CartAdapter.CartViewHolder>(ItemCallb
         fun onPlusClick(itemID:Int)
 
         fun onMinusCLick(itemID: Int)
+
+//        fun deleteClick(itemID: Int)
     }
 
     fun setCallback(callback: Callback){
@@ -39,13 +41,16 @@ class CartAdapter : ListAdapter<CartModel, CartAdapter.CartViewHolder>(ItemCallb
                 Glide().setImage(item.image, ivCart)
                 tvItemName.text = item.title
                 tvPrice.text = item.price.toString()
+                itemView.tag = item.id
 
                 ivPlus.setOnClickListener {
 //                    onPlusClick?.invoke(item)
                     callback?.onPlusClick(item.id!!)
                     tvCounter.text = item.counter.toString()
-
                 }
+//                ivCart.setOnClickListener {
+//                    callback?.deleteClick(item.id!!)
+//                }
 
                 ivMinus.setOnClickListener {
                     if (item.counter > 0) {
