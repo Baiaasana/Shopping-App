@@ -6,7 +6,7 @@ data class UserModel(
     val userName: String? = "test",
     val email: String? = "test",
     val password: String? = "test",
-    val location: String? = "...",
+    val location: String? = "Your Location",
     val phone_number: String? = "xxx xx xx xx",
     val cards: Card? = Card(),
 ) {

@@ -45,6 +45,9 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
         binding.ivChangeImage.setOnClickListener {
             selectImage()
         }
+        binding.btnBack.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
     }
 
     override fun init() {

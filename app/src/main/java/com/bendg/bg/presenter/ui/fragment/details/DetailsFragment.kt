@@ -11,6 +11,7 @@ import com.bendg.bg.presenter.model.CartModel
 import com.bendg.bg.presenter.model_ui.ProductModelUi
 import com.bendg.bg.utility.Glide
 import com.bendg.bg.utility.cartList
+import com.denzcoskun.imageslider.models.SlideModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import kotlin.properties.Delegates
@@ -37,6 +38,9 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>(FragmentDetailsBind
                 saveProduct(getProduct())
                 isSaved = !isSaved
             }
+        }
+        binding.btnBack.setOnClickListener {
+            requireActivity().onBackPressed()
         }
     }
 
@@ -66,7 +70,12 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>(FragmentDetailsBind
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.detailedFlow.collect {
                 if (it.data != null) {
-                    val result = it.data as ProductModelUi
+                    val result = it.data
+                    val slideList = ArrayList<SlideModel>()
+                    it.data.images!!.forEach { imageUrl ->
+                        val slideItem = SlideModel(imageUrl = imageUrl)
+                        slideList.add(slideItem)
+                    }
                     image = result.thumbnail ?: ""
                     price = result.price.toString().toInt()
                     binding.apply {
@@ -75,7 +84,7 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>(FragmentDetailsBind
                         tvBrand.text = result.brand.toString()
                         tvDescription.text = result.description.toString()
                         tvRating.text = result.rating.toString()
-                        Glide().setImage(result.thumbnail, ivItem)
+                        binding.ivItem.setImageList(slideList)
                     }
                     cart = CartModel(
                         title = result.title,

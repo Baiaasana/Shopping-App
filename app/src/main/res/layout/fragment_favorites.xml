@@ -40,7 +40,6 @@
                 android:fontFamily="@font/gordita_medium"
                 android:textSize="24sp"
                 android:text="Favorites"
-                android:src="@drawable/ic_heart_black"
                 android:visibility="visible" />
 
         </FrameLayout>
