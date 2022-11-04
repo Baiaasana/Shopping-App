@@ -8,12 +8,27 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bendg.bg.databinding.CartItemBinding
 import com.bendg.bg.presenter.model.CartModel
 import com.bendg.bg.utility.Glide
-import com.bendg.bg.utility.cartList
+import javax.security.auth.callback.Callback
 
 class CartAdapter : ListAdapter<CartModel, CartAdapter.CartViewHolder>(ItemCallback) {
 
-    var onPlusClick: ((CartModel) -> Unit)? = null
-    var onMinusClick: ((CartModel) -> Unit)? = null
+//    var onPlusClick: ((CartModel) -> Int)? = null
+
+//    var onMinusClick: ((CartModel) -> Int)? = null
+
+    private var callback: Callback ?= null
+
+    interface Callback{
+
+        fun onPlusClick(itemID:Int)
+
+        fun onMinusCLick(itemID: Int)
+    }
+
+    fun setCallback(callback: Callback){
+        this.callback = callback
+
+    }
 
     inner class CartViewHolder(private val binding: CartItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -26,17 +41,21 @@ class CartAdapter : ListAdapter<CartModel, CartAdapter.CartViewHolder>(ItemCallb
                 tvPrice.text = item.price.toString()
 
                 ivPlus.setOnClickListener {
-                    onPlusClick?.invoke(item)
+//                    onPlusClick?.invoke(item)
+                    callback?.onPlusClick(item.id!!)
                     tvCounter.text = item.counter.toString()
+
                 }
 
                 ivMinus.setOnClickListener {
                     if (item.counter > 0) {
-                        onMinusClick?.invoke(item)
+                        callback?.onMinusCLick(item.id!!)
                         tvCounter.text = item.counter.toString()
                     }
                 }
             }
+
+
         }
     }
 
@@ -59,7 +78,7 @@ class CartAdapter : ListAdapter<CartModel, CartAdapter.CartViewHolder>(ItemCallb
             oldItem: CartModel,
             newItem: CartModel,
         ): Boolean {
-            return oldItem == newItem
+            return oldItem.title == newItem.title
         }
 
         override fun areContentsTheSame(

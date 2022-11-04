@@ -24,12 +24,11 @@ class CheckoutFragment : BaseFragment<FragmentCheckoutBinding>(FragmentCheckoutB
         binding.btnPayment.setOnClickListener {
             when {
                 isCheckPayment() -> it.snack("please check payment method")
-
                 else -> {
                     db.child(auth.currentUser?.uid!!).get().addOnSuccessListener {
                         if (it.exists()) {
                             val balance = it.child("cards").child("balance").value
-                            if (balance.toString().toInt() < args.totalMoney) {
+                            if (balance.toString().toInt() < binding.tvTotal.text.toString().toInt()) {
                                 Snackbar.make(
                                     binding.root,
                                     "Please fill the balance",
@@ -37,7 +36,8 @@ class CheckoutFragment : BaseFragment<FragmentCheckoutBinding>(FragmentCheckoutB
                                 )
                                     .show()
                             } else {
-                                val newBalance = balance.toString().toInt().minus(args.totalMoney)
+                                val newBalance = balance.toString().toInt()
+                                    .minus(binding.tvTotal.text.toString().toInt())
                                 db.child(auth.currentUser?.uid!!).child("cards").child("balance")
                                     .setValue(newBalance)
                                 navigate()
@@ -52,7 +52,10 @@ class CheckoutFragment : BaseFragment<FragmentCheckoutBinding>(FragmentCheckoutB
     @SuppressLint("SetTextI18n")
     override fun init() {
         binding.apply {
-            tvTotal.text = args.totalMoney.toString() + "$"
+            tvSubtotal.text = args.totalMoney.toString()
+            tvTotal.text =
+                (args.totalMoney + binding.tvFee.text.toString().toInt()).toString()
+
         }
     }
 
