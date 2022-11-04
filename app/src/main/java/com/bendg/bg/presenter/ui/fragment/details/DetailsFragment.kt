@@ -80,7 +80,7 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>(FragmentDetailsBind
                     price = result.price.toString().toInt()
                     binding.apply {
                         tvTitle.text = result.title.toString()
-                        tvPrice.text = result.price.toString().plus(" $")
+                        tvPrice.text = result.price.toString()
                         tvBrand.text = result.brand.toString()
                         tvDescription.text = result.description.toString()
                         tvRating.text = result.rating.toString()
