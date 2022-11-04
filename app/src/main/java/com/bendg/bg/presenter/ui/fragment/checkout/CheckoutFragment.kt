@@ -5,6 +5,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bendg.bg.common.BaseFragment
 import com.bendg.bg.databinding.FragmentCheckoutBinding
+import com.bendg.bg.utility.cartList
 import com.bendg.bg.utility.snack
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
@@ -42,6 +43,7 @@ class CheckoutFragment : BaseFragment<FragmentCheckoutBinding>(FragmentCheckoutB
                                     .setValue(newBalance)
                                 navigate()
                             }
+                            cartList.removeAll(cartList)
                         }
                     }
                 }
