@@ -24,8 +24,6 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    private val auth: FirebaseAuth = FirebaseAuth.getInstance()
-
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding!!
 
@@ -62,8 +60,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, AuthActivity::class.java))
         }
     }
-
-
 
     override fun onDestroy() {
         super.onDestroy()
