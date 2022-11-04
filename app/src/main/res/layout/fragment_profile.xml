@@ -245,7 +245,6 @@
                 android:fontFamily="@font/gordita_regular"
                 android:text="Lastname:"
                 android:textColor="@color/black"
-
                 android:textSize="18sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
