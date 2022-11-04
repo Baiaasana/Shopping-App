@@ -38,6 +38,9 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>(FragmentDetailsBind
                 isSaved = !isSaved
             }
         }
+        binding.btnBack.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
     }
 
     private suspend fun saveProduct(product: FavoriteProduct) {

@@ -9,6 +9,8 @@ import androidx.navigation.fragment.findNavController
 import com.bendg.bg.common.BaseFragment
 import com.bendg.bg.databinding.FragmentSearchBinding
 import com.bendg.bg.presenter.adapter.ProductsAdapter
+import com.bendg.bg.utility.extensions.hideKeyboard
+import com.bendg.bg.utility.extensions.showKeyboardFor
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -28,11 +30,15 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding
                 viewModel.getProductsBySearch(binding.etSearch.text.toString())
                 observe()
             }
-
+            requireActivity().hideKeyboard()
         }
     }
 
     override fun init() {
+        binding.apply {
+            etSearch.requestFocusFromTouch()
+            requireContext().showKeyboardFor(etSearch)
+        }
         initRecycler()
     }
 

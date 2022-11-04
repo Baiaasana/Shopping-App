@@ -24,6 +24,9 @@ class FavoritesFragment : BaseFragment<FragmentFavoritesBinding>(FragmentFavorit
             findNavController().navigate(FavoritesFragmentDirections.actionFavoritesFragmentToDetailsFragment(
                 id = it.id ?: 1))
         }
+        binding.btnBack.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
     }
 
     override fun init() {
