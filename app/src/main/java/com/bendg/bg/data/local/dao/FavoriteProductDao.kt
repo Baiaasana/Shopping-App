@@ -21,6 +21,4 @@ interface FavoriteProductDao {
     @Query("SELECT * FROM favorite_products WHERE title = :title")
     suspend fun getProductByTitle(title: String): FavoriteProduct
 
-
-
 }
