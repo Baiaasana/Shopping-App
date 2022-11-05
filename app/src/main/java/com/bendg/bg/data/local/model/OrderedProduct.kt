@@ -4,8 +4,8 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "favorite_products")
-data class FavoriteProduct(
+@Entity(tableName = "ordered_products")
+data class OrderedProduct(
 
     @ColumnInfo(name = "id")
     @PrimaryKey(autoGenerate = true)
@@ -16,5 +16,7 @@ data class FavoriteProduct(
     val image: String?,
     @ColumnInfo(name = "price")
     val price: Int?,
+    @ColumnInfo(name = "date", defaultValue = "0")
+    val date: Long?,
 
 )

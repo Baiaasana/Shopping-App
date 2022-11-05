@@ -5,6 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import com.bendg.bg.data.local.model.FavoriteProduct
+import com.bendg.bg.data.local.model.OrderedProduct
 
 @Dao
 interface FavoriteProductDao {
@@ -20,6 +21,7 @@ interface FavoriteProductDao {
 
     @Query("SELECT * FROM favorite_products WHERE title = :title")
     suspend fun getProductByTitle(title: String): FavoriteProduct
+
 
 
 

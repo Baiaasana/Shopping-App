@@ -2,7 +2,9 @@ package com.bendg.bg.di
 
 import android.content.Context
 import androidx.room.Room
+import androidx.room.RoomDatabase
 import com.bendg.bg.data.local.dao.FavoriteProductDao
+import com.bendg.bg.data.local.dao.OrderedProductDao
 import com.bendg.bg.data.local.dao.ProductsDatabase
 import dagger.Module
 import dagger.Provides
@@ -20,7 +22,9 @@ object DBModule {
     fun provideDatabase(@ApplicationContext context: Context) : ProductsDatabase{
         return Room.databaseBuilder(
             context, ProductsDatabase::class.java, "Product_database"
-        ).build()
+        ).fallbackToDestructiveMigration()
+            .build()
+
     }
 
     @Provides
@@ -29,5 +33,10 @@ object DBModule {
         return database.getFavoriteProductsDao()
     }
 
+    @Provides
+    @Singleton
+    fun provideOrdersDao(database: ProductsDatabase): OrderedProductDao{
+        return database.getOrderedProductsDao()
+    }
 
 }
