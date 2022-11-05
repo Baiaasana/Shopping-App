@@ -18,6 +18,7 @@ import com.bendg.bg.common.Constants.PICK_IMAGE_REQUEST
 import com.bendg.bg.databinding.ChangeDialogBinding
 import com.bendg.bg.databinding.FragmentProfileBinding
 import com.bendg.bg.presenter.model.UserModel
+import com.bendg.bg.presenter.ui.activity.MainActivity
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
@@ -98,16 +99,24 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
                 val phoneNumber = bindingDialog.etPhone.text.toString()
                 val username = bindingDialog.etUsername.text.toString()
 
-                val newInfo = UserModel(firstName = firstName,
-                    lastName = lastname,
-                    userName = username,
-                    location = location,
-                    phone_number = phoneNumber)
-                viewModel.updateUserInfo(newInfo)
-                Toast.makeText(context, "User information is changed", Toast.LENGTH_SHORT)
-                    .show()
-                viewModel.showUserInfo()
-                observers()
+                when {
+                    isEmptyField() -> Snackbar.make(binding.root,
+                        getString(R.string.empty_fields_error),
+                        Snackbar.LENGTH_LONG)
+                        .show()
+                    else -> {
+                        val newInfo = UserModel(firstName = firstName,
+                            lastName = lastname,
+                            userName = username,
+                            location = location,
+                            phone_number = phoneNumber)
+                        viewModel.updateUserInfo(newInfo)
+                        Toast.makeText(context, "User information is changed", Toast.LENGTH_SHORT)
+                            .show()
+                        viewModel.showUserInfo()
+                        observers()
+                    }
+                }
                 dialog.dismiss()
             }
             .setNegativeButton("Cancel") { dialog, _ ->
@@ -115,7 +124,6 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
             }
             .create()
             .show()
-//        true
     }
 
     private fun selectImage() {
@@ -133,6 +141,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
             }
             imageUri = data.data
             binding.ivProfileImage.setImageURI(imageUri)
+            (activity as MainActivity).disableNavBar()
             uploadImage()
         }
     }
@@ -149,6 +158,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
             }.addOnCompleteListener {
                 imageUri = it.result
                 Snackbar.make(binding.root, "image uploaded", Snackbar.LENGTH_SHORT).show()
+                (activity as MainActivity).enableNavBar()
             }
         } catch (e: Exception) {
             Snackbar.make(binding.root, e.message.toString(), Snackbar.LENGTH_SHORT).show()
@@ -157,20 +167,29 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
 
     private fun downloadImage() {
         try {
+            (activity as MainActivity).disableNavBar()
             val localFile: File = File.createTempFile("tempFile", "jpg")
             val uid = auth.currentUser?.uid!!
             val storageReference = FirebaseStorage.getInstance().getReference("Images/$uid")
             storageReference.getFile(localFile).addOnSuccessListener {
                 binding.apply {
-                    val bitmap: Bitmap =
-                        BitmapFactory.decodeFile(localFile.absolutePath)
-                    ivProfileImage.setImageBitmap(bitmap)
+                    ivProfileImage.setImageBitmap(BitmapFactory.decodeFile(localFile.absolutePath))
                 }
             }.addOnFailureListener {
                 it.printStackTrace()
             }
+            (activity as MainActivity).enableNavBar()
         } catch (e: Exception) {
             e.printStackTrace()
         }
     }
+
+    private fun isEmptyField(): Boolean = with(bindingDialog) {
+        return@with etFirstname.text.toString().isEmpty() ||
+                etUsername.text.toString().isEmpty() ||
+                etPhone.text.toString().isEmpty() ||
+                etLastname.text.toString().isEmpty() ||
+                etLocation.text.toString().isEmpty()
+    }
+
 }
