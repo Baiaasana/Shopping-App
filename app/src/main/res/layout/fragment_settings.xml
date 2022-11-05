@@ -224,7 +224,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Change password"
+            android:text="@string/change_password"
             android:textColor="@color/black"
             android:textSize="18sp" />
 

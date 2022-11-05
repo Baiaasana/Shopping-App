@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/gordita_medium"
         android:gravity="center"
-        android:text="@string/log_in"
+        android:text="@string/login"
         android:textColor="@color/blue_bold"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="@+id/iv_logo"

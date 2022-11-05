@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:paddingVertical="10dp"
-            android:text="Email Support"
+            android:text="@string/email_support"
             android:textColor="@color/black"
             android:textSize="28sp" />
 
@@ -73,7 +73,7 @@
                 android:drawableEnd="@drawable/ic_arrow_left"
                 android:paddingHorizontal="15dp"
                 android:paddingVertical="10dp"
-                android:text="What is B&amp;G?"
+                android:text="@string/what_is_b_amp_g"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -86,7 +86,7 @@
                 android:paddingHorizontal="20dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="20dp"
-                android:text="B&amp;G is a shopping app where you can buy different types of products."
+                android:text="@string/support_answer"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
@@ -100,7 +100,7 @@
                 android:drawableEnd="@drawable/ic_arrow_left"
                 android:paddingHorizontal="15dp"
                 android:paddingVertical="10dp"
-                android:text="Who created B&amp;G"
+                android:text="@string/who_created_b_amp_g"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -113,7 +113,7 @@
                 android:paddingHorizontal="20dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="20dp"
-                android:text="The application was created by Baia Asanidze and Gaga Lomidze in 2022 especially for TBC Bootcamp."
+                android:text="@string/support_answer2"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 

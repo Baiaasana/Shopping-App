@@ -39,7 +39,7 @@
                 android:textColor="@color/blue_bold"
                 android:fontFamily="@font/gordita_medium"
                 android:textSize="24sp"
-                android:text="Favorites"
+                android:text="@string/favorites"
                 android:visibility="visible" />
 
         </FrameLayout>
