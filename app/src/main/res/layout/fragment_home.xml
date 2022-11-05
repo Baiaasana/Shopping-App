@@ -59,41 +59,38 @@
         android:fontFamily="@font/gordita_regular"
         android:text="@string/best_outfits_for_you"
         android:textColor="@color/grey"
-        android:padding="16dp"
+        android:paddingHorizontal="16dp"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/tv_explore"
         app:layout_constraintStart_toStartOf="@+id/tv_explore"
         app:layout_constraintTop_toBottomOf="@+id/tv_explore" />
 
-    <androidx.appcompat.widget.AppCompatEditText
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/et_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
-        android:layout_marginVertical="24dp"
         android:background="@drawable/search_backgroun"
         android:drawableStart="@drawable/ic_baseline_search_24"
         android:drawablePadding="16dp"
-        android:focusable="false"
         android:fontFamily="@font/gordita_regular"
-        android:gravity="start"
         android:hint="@string/search"
+        android:layout_marginVertical="5dp"
         android:paddingVertical="10dp"
-        android:paddingStart="20dp"
-        android:paddingEnd="150dp"
+        android:paddingHorizontal="20dp"
         android:textColor="@color/white"
         android:textColorHint="@color/grey"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintBottom_toTopOf="@+id/tv_arrival"
         app:layout_constraintEnd_toEndOf="@+id/appCompatTextView3"
         app:layout_constraintStart_toStartOf="@+id/appCompatTextView3"
         app:layout_constraintTop_toBottomOf="@+id/appCompatTextView3" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.35" />
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/guideline2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_begin="312dp" />-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_categories"
@@ -118,7 +115,7 @@
         android:textSize="28sp"
         app:layout_constraintBottom_toTopOf="@+id/rv_categories"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView3" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_see_all"
@@ -131,7 +128,9 @@
         android:textColor="@color/grey"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/rv_categories"
-        app:layout_constraintEnd_toEndOf="@+id/rv_categories" />
+        app:layout_constraintEnd_toEndOf="@+id/rv_categories"
+        app:layout_constraintStart_toEndOf="@+id/tv_arrival"
+        app:layout_constraintTop_toBottomOf="@+id/et_search" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"

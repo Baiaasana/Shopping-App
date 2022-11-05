@@ -4,6 +4,7 @@ import com.bendg.bg.data.repository.*
 import com.bendg.bg.domain.repository.*
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
@@ -17,6 +18,12 @@ abstract class RepositoryModule {
     abstract fun bindProductRepository(
         productsRepositoryImpl: ProductsRepositoryImpl,
     ): Repository
+
+    @Binds
+    @Singleton
+    abstract fun bindFavoriteRepository(
+        favoriteRepositoryImpl: FavoriteRepositoryImpl
+    ): FavoriteRepository
 
     @Binds
     @Singleton
@@ -38,8 +45,10 @@ abstract class RepositoryModule {
 
     @Binds
     @Singleton
-    abstract fun bindOrdersPerository(
+    abstract fun bindOrdersRepository(
         ordersRepositoryImpl: OrdersRepositoryImpl
     ): OrdersRepository
+
+
 
 }

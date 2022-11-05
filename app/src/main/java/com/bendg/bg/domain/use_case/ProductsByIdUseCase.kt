@@ -15,15 +15,5 @@ class ProductsByIdUseCase @Inject constructor(
         return repository.getDetailsByArgs(id = id)
     }
 
-    suspend fun getFavorites(): List<FavoriteProduct>{
-        return repository.getFavorites()
-    }
 
-    suspend fun addProduct(product: FavoriteProduct){
-        repository.addProduct(product)
-    }
-
-    suspend fun removeProduct(product: FavoriteProduct){
-        repository.removeProduct(product)
-    }
 }

@@ -1,4 +1,4 @@
-package com.bendg.bg.presenter.ui.fragment.settings.faq
+package com.bendg.bg.presenter.ui.fragment.faq
 
 import androidx.navigation.fragment.findNavController
 import com.bendg.bg.common.BaseFragment

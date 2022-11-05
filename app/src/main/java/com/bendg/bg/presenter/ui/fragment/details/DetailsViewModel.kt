@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bendg.bg.common.Resource
 import com.bendg.bg.data.local.model.FavoriteProduct
-import com.bendg.bg.data.repository.ProductByIdRepositoryImpl
+import com.bendg.bg.domain.use_case.FavoritesUseCase
 import com.bendg.bg.domain.use_case.ProductsByIdUseCase
 import com.bendg.bg.utility.view_states.DetailedViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -14,10 +14,10 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-
 class DetailsViewModel @Inject constructor(
-    private val useCase: ProductsByIdUseCase) :
-    ViewModel() {
+    private val useCase: ProductsByIdUseCase,
+    private val favoritesUseCase: FavoritesUseCase,
+) : ViewModel() {
 
     private val _detailedFlow = MutableStateFlow<DetailedViewState>(DetailedViewState())
     val detailedFlow = _detailedFlow.asStateFlow()
@@ -50,22 +50,15 @@ class DetailsViewModel @Inject constructor(
     }
 
     suspend fun getFavorites(){
-        _favoritesFlow.emit(useCase.getFavorites())
+        _favoritesFlow.emit(favoritesUseCase.getFavorites())
     }
 
     suspend fun addProduct(product: FavoriteProduct){
-        useCase.addProduct(product = product)
+        favoritesUseCase.addFavorite(product = product)
     }
 
     suspend fun removeProduct(product: FavoriteProduct){
-        useCase.removeProduct(product = product)
-
-    }
-
-    fun saveItem(id: Int) {
-        viewModelScope.launch {
-
-        }
+        favoritesUseCase.removeFavorite(product = product)
     }
 
 }

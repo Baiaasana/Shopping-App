@@ -14,7 +14,6 @@ import javax.inject.Inject
 class ProductByIdRepositoryImpl @Inject constructor(
     private val apiService: ApiService,
     private val responseHandler: ResponseHandler,
-    private val database: ProductsDatabase,
 ) : ProductByIdRepository {
 
     override suspend fun getDetailsByArgs(id: Int): Flow<Resource<ProductModelDomain>> =
@@ -33,15 +32,5 @@ class ProductByIdRepositoryImpl @Inject constructor(
             }
         }
 
-    override suspend fun getFavorites(): List<FavoriteProduct>{
-        return database.getFavoriteProductsDao().getAllProducts()
-    }
 
-    override suspend fun addProduct(product: FavoriteProduct){
-        database.getFavoriteProductsDao().addProduct(product = product)
-    }
-
-    override suspend fun removeProduct(product: FavoriteProduct){
-        database.getFavoriteProductsDao().removeProduct(product = product)
-    }
 }

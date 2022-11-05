@@ -24,6 +24,9 @@ class AllProductsFragment : BaseFragment<FragmentAllProductsBinding>(FragmentAll
         productsAdapter.onItemClickListener = {
             findNavController().navigate(AllProductsFragmentDirections.actionAllProductsFragmentToDetailsFragment(id = it.id!!.toInt()))
         }
+        binding.btnBack.setOnClickListener {
+            findNavController().navigate(AllProductsFragmentDirections.actionAllProductsFragmentToHomeFragment())
+        }
     }
 
     override fun init() {

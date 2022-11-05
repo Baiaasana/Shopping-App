@@ -10,10 +10,10 @@ interface ProductByIdRepository {
 
     suspend fun getDetailsByArgs(id: Int): Flow<Resource<ProductModelDomain>>
 
-    suspend fun getFavorites(): List<FavoriteProduct>
-
-    suspend fun addProduct(product: FavoriteProduct){}
-
-    suspend fun removeProduct(product: FavoriteProduct){}
+//    suspend fun getFavorites(): List<FavoriteProduct>
+//
+//    suspend fun addProduct(product: FavoriteProduct){}
+//
+//    suspend fun removeProduct(product: FavoriteProduct){}
 
 }
