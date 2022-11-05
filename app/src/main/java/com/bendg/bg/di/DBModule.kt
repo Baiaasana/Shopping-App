@@ -3,6 +3,8 @@ package com.bendg.bg.di
 import android.content.Context
 import androidx.room.Room
 import com.bendg.bg.data.local.dao.FavoriteProductDao
+import com.bendg.bg.data.local.dao.OrderedProductDao
+import com.bendg.bg.data.local.dao.OrdersDatabase
 import com.bendg.bg.data.local.dao.ProductsDatabase
 import dagger.Module
 import dagger.Provides
@@ -29,5 +31,17 @@ object DBModule {
         return database.getFavoriteProductsDao()
     }
 
+    @Provides
+    @Singleton
+    fun provideOrdersDatabase(@ApplicationContext context: Context) : OrdersDatabase{
+        return Room.databaseBuilder(
+            context, OrdersDatabase::class.java, "Orders_database"
+        ).build()
+    }
 
+    @Provides
+    @Singleton
+    fun provideOrderDao(database: OrdersDatabase): OrderedProductDao{
+        return database.getOrderedProductsDao()
+    }
 }

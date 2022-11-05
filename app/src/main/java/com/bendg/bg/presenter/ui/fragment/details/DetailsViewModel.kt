@@ -61,11 +61,4 @@ class DetailsViewModel @Inject constructor(
         useCase.removeProduct(product = product)
 
     }
-
-    fun saveItem(id: Int) {
-        viewModelScope.launch {
-
-        }
-    }
-
 }

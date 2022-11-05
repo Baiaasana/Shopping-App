@@ -1,13 +1,7 @@
 package com.bendg.bg.di
 
-import com.bendg.bg.data.repository.ProductByIdRepositoryImpl
-import com.bendg.bg.data.repository.ProductsByCategoryRepositoryImpl
-import com.bendg.bg.data.repository.ProductsBySearchRepositoryImpl
-import com.bendg.bg.data.repository.ProductsRepositoryImpl
-import com.bendg.bg.domain.repository.ProductsByCategoryRepository
-import com.bendg.bg.domain.repository.Repository
-import com.bendg.bg.domain.repository.ProductByIdRepository
-import com.bendg.bg.domain.repository.ProductsBySearchRepository
+import com.bendg.bg.data.repository.*
+import com.bendg.bg.domain.repository.*
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -42,4 +36,9 @@ abstract class RepositoryModule {
         productsBySearchRepositoryImpl: ProductsBySearchRepositoryImpl,
     ): ProductsBySearchRepository
 
+    @Binds
+    @Singleton
+    abstract fun bindOrdersRepository(
+        ordersRepositoryImpl: OrdersRepositoryImpl,
+    ): OrdersRepository
 }
