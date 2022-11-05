@@ -25,12 +25,19 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding
             findNavController().navigate(SearchFragmentDirections.actionSearchFragmentToDetailsFragment(
                 id = it.id!!.toInt()))
         }
-        binding.btnSearch.setOnClickListener {
-            viewLifecycleOwner.lifecycleScope.launch {
-                viewModel.getProductsBySearch(binding.etSearch.text.toString())
-                observe()
+        binding.apply {
+            btnSearch.setOnClickListener {
+                if(etSearch.text!!.isNotEmpty()){
+                    viewLifecycleOwner.lifecycleScope.launch {
+                        viewModel.getProductsBySearch(binding.etSearch.text.toString())
+                        observe()
+                    }
+                }
+                requireActivity().hideKeyboard()
             }
-            requireActivity().hideKeyboard()
+            btnBack.setOnClickListener {
+                findNavController().navigate(SearchFragmentDirections.actionSearchFragmentToHomeFragment())
+            }
         }
     }
 
@@ -49,7 +56,6 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding
     }
 
     override fun observers() {
-
     }
 
     private fun observe() {

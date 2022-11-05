@@ -27,7 +27,6 @@ class WalletFragment : BaseFragment<FragmentWalletBinding>(FragmentWalletBinding
     private val auth: FirebaseAuth = FirebaseAuth.getInstance()
 
     override fun listeners() {
-
         transactionAdapter.onItemClickListener = { trans ->
             viewLifecycleOwner.lifecycleScope.launch{
                 viewModel.transactionsFlow.collect{
