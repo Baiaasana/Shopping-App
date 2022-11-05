@@ -1,6 +1,7 @@
 package com.bendg.bg.presenter.ui.fragment.log_in
 
 import android.content.Intent
+import androidx.core.util.PatternsCompat.EMAIL_ADDRESS
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -44,6 +45,7 @@ class LogInFragment : BaseFragment<FragmentLogInBinding>(FragmentLogInBinding::i
             findNavController().navigate(R.id.action_logInFragment_to_forgotPasswordFragment)
         }
     }
+
     private fun login() {
         val email = binding.etEmail.text.toString()
         val password = binding.etPassword.text.toString()
@@ -54,7 +56,7 @@ class LogInFragment : BaseFragment<FragmentLogInBinding>(FragmentLogInBinding::i
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.loginStatus.collect {
-                    if (it.message.toString() == getString(R.string.login_success)){
+                    if (it.message.toString() == "1") {
                         startActivity(Intent(requireActivity(), MainActivity::class.java))
                     }
                 }
@@ -69,7 +71,7 @@ class LogInFragment : BaseFragment<FragmentLogInBinding>(FragmentLogInBinding::i
     }
 
     private fun isValidEmail(): Boolean =
-        android.util.Patterns.EMAIL_ADDRESS.matcher(binding.etEmail.text.toString()).matches()
+        EMAIL_ADDRESS.matcher(binding.etEmail.text.toString()).matches()
 
     private fun isEmptyField(): Boolean = with(binding) {
         return@with binding.etEmail.text.toString().isEmpty() ||

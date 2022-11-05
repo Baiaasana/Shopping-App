@@ -23,7 +23,7 @@ class LogInViewModel : ViewModel() {
                     .addOnCompleteListener { task ->
                         viewModelScope.launch {
                             if (task.isSuccessful) {
-                                _loginStatus.emit(AuthenticationViewState(message = "You have log in successfully!"))
+                                _loginStatus.emit(AuthenticationViewState(message = "1"))
                             } else {
                                 _loginStatus.emit(AuthenticationViewState(message = "Email or Password is not correct!"))
                             }

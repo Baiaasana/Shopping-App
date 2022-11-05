@@ -1,5 +1,7 @@
 package com.bendg.bg.presenter.ui.fragment.settings
 
+import android.content.Intent
+import android.provider.Settings.ACTION_HOME_SETTINGS
 import androidx.navigation.fragment.findNavController
 import com.bendg.bg.common.BaseFragment
 import com.bendg.bg.databinding.FragmentSettingsBinding
@@ -18,6 +20,10 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding>(FragmentSettingsB
 
         binding.llEmailSupport.setOnClickListener {
             findNavController().navigate(SettingsFragmentDirections.actionSettingsFragmentToSupportFragment())
+        }
+
+        binding.llLanguages.setOnClickListener {
+            startActivity(Intent(ACTION_HOME_SETTINGS))
         }
     }
 
