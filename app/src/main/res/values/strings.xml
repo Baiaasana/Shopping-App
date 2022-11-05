@@ -21,7 +21,8 @@
     <string name="email_address">Email</string>
     <string name="sign_up_question">Don\'t have an account? <font color="#000000"> Sign Up</font></string>
     <string name="repeat_password">Repeat Password</string>
-    <string name="terms_conditions">I accept all the <font color="#hhhhhh"> Terms &amp; Conditions</font></string>
+    <string name="terms" translatable="false">I accept all the</string>
+    <string name="conditions" translatable="false"><font color="#970C10"> Terms &amp; Conditions</font></string>
     <string name="enter_an_email">Enter an email address:</string>
     <string name="password_recovery">Password recovery</string>
     <string name="home">Home</string>
