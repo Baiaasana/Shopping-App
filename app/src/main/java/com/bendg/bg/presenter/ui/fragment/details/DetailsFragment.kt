@@ -80,6 +80,12 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>(FragmentDetailsBind
             viewModel.detailedFlow.collect {
                 if (it.data != null) {
                     val result = it.data
+                    cart = CartModel(
+                        id = result.id,
+                        title = result.title,
+                        price = result.price,
+                        image = result.thumbnail
+                    )
                     val slideList = ArrayList<SlideModel>()
                     it.data.images!!.forEach { imageUrl ->
                         val slideItem = SlideModel(imageUrl = imageUrl)
@@ -95,12 +101,6 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>(FragmentDetailsBind
                         tvRating.text = result.rating.toString()
                         binding.ivItem.setImageList(slideList)
                     }
-                    cart = CartModel(
-                        id = result.id,
-                        title = result.title,
-                        price = result.price,
-                        image = result.thumbnail
-                    )
                 }
             }
         }
@@ -116,6 +116,7 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>(FragmentDetailsBind
             }
         }
     }
+
 
     private fun getProduct() = FavoriteProduct(
         id = args.id,

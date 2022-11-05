@@ -46,6 +46,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_saly_1.xml" value="0.2555" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_twotone_email_24.xml" value="0.184" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_twotone_lock_24.xml" value="0.184" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/item_transaction.xml" value="0.282" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/question_background.xml" value="0.2805" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/search_backgroun.xml" value="0.144" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/activity_auth.xml" value="0.1" />
@@ -83,6 +84,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_third_screen.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_wallet.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/item_category.xml" value="0.22798887859128822" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/item_transaction.xml" value="0.30012825994014536" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/nav_header.xml" value="0.30012825994014536" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/order_item.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/single_item.xml" value="0.1" />
