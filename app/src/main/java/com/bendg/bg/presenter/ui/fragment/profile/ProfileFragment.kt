@@ -39,14 +39,13 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
         FirebaseStorage.getInstance().getReference("Images/${auth.currentUser?.uid!!}")
 
     override fun listeners() {
-        binding.ivChange.setOnClickListener {
-            openDialog()
-        }
-        binding.ivChangeImage.setOnClickListener {
-            selectImage()
-        }
-        binding.btnBack.setOnClickListener {
-            requireActivity().onBackPressed()
+        binding.apply {
+            ivChange.setOnClickListener {
+                openDialog()
+            }
+            ivChangeImage.setOnClickListener {
+                selectImage()
+            }
         }
     }
 
@@ -116,7 +115,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
             }
             .create()
             .show()
-        true
+//        true
     }
 
     private fun selectImage() {

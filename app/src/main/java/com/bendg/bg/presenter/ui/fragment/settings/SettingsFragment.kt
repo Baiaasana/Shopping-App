@@ -2,6 +2,7 @@ package com.bendg.bg.presenter.ui.fragment.settings
 
 import android.content.Intent
 import android.provider.Settings.ACTION_HOME_SETTINGS
+import android.provider.Settings.ACTION_SETTINGS
 import androidx.navigation.fragment.findNavController
 import com.bendg.bg.common.BaseFragment
 import com.bendg.bg.databinding.FragmentSettingsBinding
@@ -23,7 +24,7 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding>(FragmentSettingsB
         }
 
         binding.llLanguages.setOnClickListener {
-            startActivity(Intent(ACTION_HOME_SETTINGS))
+            startActivity(Intent(ACTION_SETTINGS))
         }
     }
 

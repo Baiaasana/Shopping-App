@@ -24,7 +24,6 @@ object DBModule {
             context, ProductsDatabase::class.java, "Product_database"
         ).fallbackToDestructiveMigration()
             .build()
-
     }
 
     @Provides

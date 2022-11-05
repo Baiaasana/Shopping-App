@@ -34,7 +34,7 @@ class SplashScreenActivity : AppCompatActivity() {
     fun init() {
         lifecycleScope.launch {
             getPreferences().collect {
-                val isSkipped = it.contains(stringPreferencesKey(Constants.KEY))
+                it.contains(stringPreferencesKey(Constants.KEY))
             }
         }
     }

@@ -1,4 +1,4 @@
-package com.bendg.bg.presenter.ui.fragment.settings.email_support
+package com.bendg.bg.presenter.ui.fragment.email_support
 
 import androidx.navigation.fragment.findNavController
 import com.bendg.bg.common.BaseFragment

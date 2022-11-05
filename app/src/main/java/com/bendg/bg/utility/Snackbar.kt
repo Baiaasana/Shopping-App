@@ -29,7 +29,7 @@ import com.google.android.material.snackbar.Snackbar
 /**
  * Show a snackbar with [message], execute [f] and show it
  */
-inline fun View.snack(message: String, length: Int = Snackbar.LENGTH_LONG) {
+fun View.snack(message: String, length: Int = Snackbar.LENGTH_LONG) {
     val snack = Snackbar.make(this, message, length)
     snack.show()
 }

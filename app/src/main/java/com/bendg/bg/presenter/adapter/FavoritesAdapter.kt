@@ -28,7 +28,6 @@ class FavoritesAdapter :
                     onItemClickListener?.invoke(item)
                 }
             }
-
         }
     }
 

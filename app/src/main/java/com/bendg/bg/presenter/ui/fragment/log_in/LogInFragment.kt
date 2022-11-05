@@ -23,7 +23,6 @@ class LogInFragment : BaseFragment<FragmentLogInBinding>(FragmentLogInBinding::i
 
     override fun listeners() {
         binding.btnLogin.setOnClickListener { snack ->
-
             when {
                 isEmptyField() -> snack.snack(getString(R.string.empty_fields_error))
                 !isValidEmail() -> snack.snack(getString(R.string.invalid_email_error))

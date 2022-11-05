@@ -58,6 +58,7 @@ class MainActivity : AppCompatActivity() {
         binding.logOutView.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
             startActivity(Intent(this, AuthActivity::class.java))
+            finish()
         }
     }
 
