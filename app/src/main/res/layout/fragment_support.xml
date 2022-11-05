@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:paddingVertical="10dp"
-            android:text="Email Support"
+            android:text="@string/email_support"
             android:textColor="@color/black"
             android:textSize="28sp" />
 
@@ -67,7 +67,7 @@
             android:drawableEnd="@drawable/ic_arrow_left"
             android:paddingHorizontal="15dp"
             android:paddingVertical="10dp"
-            android:text="Email support"
+            android:text="@string/email_support"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
@@ -80,7 +80,7 @@
             android:paddingHorizontal="20dp"
             android:paddingTop="10dp"
             android:paddingBottom="20dp"
-            android:text="In case of additional questions, do not contact us at the email address supportBG@gmail.com"
+            android:text="@string/email_support_text"
             android:textColor="@color/black"
             android:textSize="18sp" />
 

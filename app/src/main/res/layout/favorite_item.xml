@@ -43,7 +43,6 @@
             android:fontFamily="@font/gordita_medium"
             android:gravity="bottom|center_horizontal"
             android:paddingBottom="8dp"
-            android:text="Title"
             android:layout_gravity="center_horizontal"
             android:textColor="@color/grey"
             android:textSize="20sp" />
@@ -57,7 +56,6 @@
             android:gravity="center_horizontal"
             android:layout_gravity="center_horizontal"
             android:paddingBottom="8dp"
-            android:text="120 $"
             android:textColor="@color/grey"
             android:textSize="20sp" />
 

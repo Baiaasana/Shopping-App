@@ -30,7 +30,6 @@
             android:ellipsize="end"
             android:maxEms="6"
             android:maxLines="1"
-            android:text="macbook pro"
             app:layout_constraintStart_toEndOf="@+id/ivCart"
             app:layout_constraintTop_toTopOf="@+id/ivCart" />
 
@@ -40,7 +39,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="64dp"
             android:layout_marginBottom="4dp"
-            android:text="99$"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -72,7 +70,6 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:layout_marginHorizontal="10dp"
-                android:text="1"
                 android:textColor="@color/black"
                 android:textSize="25sp" />
 
