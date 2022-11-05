@@ -12,24 +12,15 @@ import javax.security.auth.callback.Callback
 
 class CartAdapter : ListAdapter<CartModel, CartAdapter.CartViewHolder>(ItemCallback) {
 
-//    var onPlusClick: ((CartModel) -> Int)? = null
-
-//    var onMinusClick: ((CartModel) -> Int)? = null
-
     private var callback: Callback ?= null
 
     interface Callback{
-
         fun onPlusClick(itemID:Int)
-
         fun onMinusCLick(itemID: Int)
-
-//        fun deleteClick(itemID: Int)
     }
 
     fun setCallback(callback: Callback){
         this.callback = callback
-
     }
 
     inner class CartViewHolder(private val binding: CartItemBinding) :
@@ -44,13 +35,9 @@ class CartAdapter : ListAdapter<CartModel, CartAdapter.CartViewHolder>(ItemCallb
                 itemView.tag = item.id
 
                 ivPlus.setOnClickListener {
-//                    onPlusClick?.invoke(item)
                     callback?.onPlusClick(item.id!!)
                     tvCounter.text = item.counter.toString()
                 }
-//                ivCart.setOnClickListener {
-//                    callback?.deleteClick(item.id!!)
-//                }
 
                 ivMinus.setOnClickListener {
                     if (item.counter > 0) {
@@ -59,8 +46,6 @@ class CartAdapter : ListAdapter<CartModel, CartAdapter.CartViewHolder>(ItemCallb
                     }
                 }
             }
-
-
         }
     }
 
