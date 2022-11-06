@@ -51,11 +51,11 @@
     <string name="mail_error">mail უკვე გამოყენებულია!</string>
     <string name="pass_not_match">პაროლები არ ემთხვევა!</string>
     <string name="login_error">ელფოსტა ან პაროლი არასწორია!</string>
-    <string name="empty_fields_error">გთხოვთ შეავსოთ ყველა ველი!</string>
-    <string name="invalid_email_error">გთხოვთ შეიყვანოთ ვალიდური email!</string>
+    <string name="empty_fields_error">Please fill in all the fields!</string>
+    <string name="invalid_email_error">Please enter the valid email!</string>
     <string name="logged_success">აუთენთიფიკაცია დასრულდა წარმატებით!</string>
     <string name="email_password_incorrect">ელფოსტა ან პაროლი არასწორია!</string>
-    <string name="password_length_limit">პაროლი უნდა შეიცავდეს მინიმუმ 8 სიმბოლოს!</string>
+    <string name="password_length_limit">Password must contain at least 8 characters!</string>
     <string name="already_registered">ელფოსტა უკვე გამოყენებულია. გთხოვთ სცადოთ სხვა email!</string>
     <string name="send">გაგზავნა</string>
     <string name="recovery_success">აღდგენის შეტყობინება გაგზავნილია თქვენს ელექტრონულ მისამართზე, გთხოვთ შეამოწმოთ</string>
@@ -64,8 +64,8 @@
     <string name="wallet">საფულე</string>
     <string name="my_cart">ჩემი კალათა</string>
     <string name="already_have_an_account">უკვე გაქვთ ანგარიში?</string>
-    <string name="first_char_number_error">მომხმარებლის სახელის პირველი სიმბოლო ციფრი ვერ იქნება</string>
-    <string name="check_box">გთხოვთ, მონიშნოთ გადახდის მეთოდი</string>
+    <string name="first_char_number_error">Username\'s first character cannot be a number</string>
+    <string name="check_box">Please, check the box</string>
     <string name="b_g"><![CDATA[B&G]]></string>
     <string name="firstname">სახელი</string>
     <string name="lastname">გვარი</string>
