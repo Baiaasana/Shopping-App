@@ -9,8 +9,9 @@ import androidx.navigation.fragment.findNavController
 import com.bendg.bg.common.BaseFragment
 import com.bendg.bg.databinding.FragmentSearchBinding
 import com.bendg.bg.presenter.adapter.ProductsAdapter
-import com.bendg.bg.utility.extensions.hideKeyboard
-import com.bendg.bg.utility.extensions.showKeyboardFor
+import com.bendg.bg.presenter.model.ItemUI
+import com.bendg.bg.common.extensions.hideKeyboard
+import com.bendg.bg.common.extensions.showKeyboardFor
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -22,21 +23,15 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding
 
     override fun listeners() {
         productsAdapter.onItemClickListener = {
-            findNavController().navigate(SearchFragmentDirections.actionSearchFragmentToDetailsFragment(
-                id = it.id!!.toInt()))
+            navigateToDetails(it)
         }
         binding.apply {
             btnSearch.setOnClickListener {
-                when{
+                when {
                     isEmptyField() -> return@setOnClickListener
-                    else -> {
-                        viewLifecycleOwner.lifecycleScope.launch {
-                            viewModel.getProductsBySearch(binding.etSearch.text.toString())
-                            observe()
-                        }
-                    }
+                    else -> search()
                 }
-                requireActivity().hideKeyboard()
+                hideKeyboard()
             }
             btnBack.setOnClickListener {
                 findNavController().navigate(SearchFragmentDirections.actionSearchFragmentToHomeFragment())
@@ -44,15 +39,36 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding
         }
     }
 
+    private fun navigateToDetails(product: ItemUI.Product) {
+        findNavController().navigate(SearchFragmentDirections.actionSearchFragmentToDetailsFragment(
+            id = product.id!!.toInt()))
+    }
+
+    private fun search() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.getProductsBySearch(binding.etSearch.text.toString())
+            observe()
+        }
+    }
+
+    private fun hideKeyboard() {
+        requireActivity().hideKeyboard()
+    }
+
     private fun isEmptyField(): Boolean = with(binding) {
         return@with etSearch.text.toString().isEmpty()
     }
+
     override fun init() {
+        showKeyBoard()
+        initRecycler()
+    }
+
+    private fun showKeyBoard() {
         binding.apply {
             etSearch.requestFocusFromTouch()
             requireContext().showKeyboardFor(etSearch)
         }
-        initRecycler()
     }
 
     private fun initRecycler() {

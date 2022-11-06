@@ -6,7 +6,7 @@ import com.bendg.bg.common.Resource
 import com.bendg.bg.data.local.model.FavoriteProduct
 import com.bendg.bg.domain.use_case.FavoritesUseCase
 import com.bendg.bg.domain.use_case.ProductsByIdUseCase
-import com.bendg.bg.utility.view_states.DetailedViewState
+import com.bendg.bg.extensions.view_states.DetailedViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

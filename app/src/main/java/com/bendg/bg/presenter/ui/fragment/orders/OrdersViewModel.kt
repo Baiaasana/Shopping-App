@@ -3,7 +3,7 @@ package com.bendg.bg.presenter.ui.fragment.orders
 import androidx.lifecycle.ViewModel
 import com.bendg.bg.data.local.model.OrderedProduct
 import com.bendg.bg.domain.use_case.OrdersUseCase
-import com.bendg.bg.utility.view_states.OrdersViewState
+import com.bendg.bg.extensions.view_states.OrdersViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

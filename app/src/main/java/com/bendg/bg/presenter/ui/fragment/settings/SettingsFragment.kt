@@ -1,7 +1,6 @@
 package com.bendg.bg.presenter.ui.fragment.settings
 
 import android.content.Intent
-import android.provider.Settings.ACTION_HOME_SETTINGS
 import android.provider.Settings.ACTION_SETTINGS
 import androidx.navigation.fragment.findNavController
 import com.bendg.bg.common.BaseFragment

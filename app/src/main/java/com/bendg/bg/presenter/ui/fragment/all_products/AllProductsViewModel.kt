@@ -2,9 +2,9 @@ package com.bendg.bg.presenter.ui.fragment.all_products
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.bendg.bg.domain.use_case.ProductsUseCase
 import com.bendg.bg.common.Resource
-import com.bendg.bg.utility.view_states.ItemViewState
+import com.bendg.bg.domain.use_case.ProductsUseCase
+import com.bendg.bg.extensions.view_states.ItemViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -15,7 +15,7 @@ import javax.inject.Inject
 class AllProductsViewModel @Inject constructor(private val productsUseCase: ProductsUseCase) :
     ViewModel() {
 
-    private val _productsFlow = MutableStateFlow<ItemViewState>(ItemViewState())
+    private val _productsFlow = MutableStateFlow(ItemViewState())
     val productsFlow = _productsFlow.asStateFlow()
 
     suspend fun getProductsInfo() {
@@ -24,8 +24,8 @@ class AllProductsViewModel @Inject constructor(private val productsUseCase: Prod
             data.collect {
                 when (it.status) {
                     Resource.Status.SUCCESS -> {
-                        val result = it.data!!.map {
-                            it.toPresenterProduct()
+                        val result = it.data!!.map { productDomain ->
+                            productDomain.toPresenterProduct()
                         }
                         _productsFlow.value =
                             _productsFlow.value.copy(isLoading = false, data = result)
@@ -41,6 +41,4 @@ class AllProductsViewModel @Inject constructor(private val productsUseCase: Prod
             }
         }
     }
-
-
 }

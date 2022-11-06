@@ -1,20 +1,18 @@
 package com.bendg.bg.presenter.model
 
-import okhttp3.internal.immutableListOf
-
 data class UserModel(
-    val firstName: String? = "test",
-    val lastName: String? = "test",
-    val userName: String? = "test",
-    val email: String? = "test",
-    val password: String? = "test",
-    val location: String? = "Your Location",
-    val phone_number: String? = "xxx xx xx xx",
+    val firstName: String? = "",
+    val lastName: String? = "",
+    val userName: String? = "",
+    val email: String? = "",
+    val password: String? = "",
+    val location: String? = "",
+    val phone_number: String? = "",
     val cards: Card? = Card(),
     val transactions: MutableList<Transaction>? = mutableListOf()
 ) {
     data class Card(
-        val cardNumber: String? = "xxxx xxxx xxxx xxxx",
+        val cardNumber: String? = "",
         val balance: Float? = 0.0F,
         )
     data class Transaction(

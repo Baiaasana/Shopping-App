@@ -11,8 +11,8 @@ import com.bendg.bg.R
 import com.bendg.bg.common.BaseFragment
 import com.bendg.bg.databinding.FragmentSignUpBinding
 import com.bendg.bg.presenter.model.UserModel
-import com.bendg.bg.utility.generateCardNumber
-import com.bendg.bg.utility.snack
+import com.bendg.bg.extensions.generateCardNumber
+import com.bendg.bg.extensions.snack
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -31,7 +31,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
         binding.tvConditions.setOnClickListener {
             val openURL = Intent(Intent.ACTION_VIEW)
             openURL.data =
-                Uri.parse("https://www.termsfeed.com/public/uploads/2021/12/sample-terms-conditions-agreement.pdf")
+                Uri.parse(getString(R.string.Terms_and_conditions))
             startActivity(openURL)
         }
 

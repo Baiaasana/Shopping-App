@@ -1,6 +1,6 @@
-package com.bendg.bg.domain.model_domain
+package com.bendg.bg.domain.model
 
-import com.bendg.bg.presenter.model_ui.ProductModelUi
+import com.bendg.bg.presenter.model.ProductModelUi
 
 class ProductModelDomain(
     val brand: String?,

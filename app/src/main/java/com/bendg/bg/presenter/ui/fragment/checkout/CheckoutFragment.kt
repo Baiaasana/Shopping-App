@@ -5,13 +5,14 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.bendg.bg.R
 import com.bendg.bg.common.BaseFragment
 import com.bendg.bg.data.local.model.OrderedProduct
 import com.bendg.bg.databinding.FragmentCheckoutBinding
 import com.bendg.bg.presenter.model.CartModel
 import com.bendg.bg.presenter.model.UserModel
-import com.bendg.bg.utility.cartList
-import com.bendg.bg.utility.snack
+import com.bendg.bg.extensions.cartList
+import com.bendg.bg.extensions.snack
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -23,7 +24,6 @@ import kotlinx.coroutines.launch
 class CheckoutFragment : BaseFragment<FragmentCheckoutBinding>(FragmentCheckoutBinding::inflate) {
 
     private val args: CheckoutFragmentArgs by navArgs()
-
     private val viewModel: CheckoutViewModel by viewModels()
 
     private val database: DatabaseReference =
@@ -33,54 +33,58 @@ class CheckoutFragment : BaseFragment<FragmentCheckoutBinding>(FragmentCheckoutB
     override fun listeners() {
         binding.btnPayment.setOnClickListener {
             when {
-                isCheckPayment() -> it.snack("please check payment method")
+                isCheckPayment() -> it.snack(getString(R.string.check_method))
                 else -> {
-                    database.child(auth.currentUser?.uid!!).get().addOnSuccessListener {
-                        if (it.exists()) {
-                            val balance = it.child("cards").child("balance").value
+                    database.child(auth.currentUser?.uid!!).get().addOnSuccessListener { snapshot ->
+                        if (snapshot.exists()) {
+                            val balance = snapshot.child(getString(R.string.cards)).child(getString(
+                                                            R.string.balance)).value
                             if (balance.toString().toInt() < binding.tvTotal.text.toString()
                                     .toInt()
                             ) {
                                 Snackbar.make(
                                     binding.root,
-                                    "Please fill the balance",
+                                    getString(R.string.fill_balance),
                                     Snackbar.LENGTH_LONG
                                 )
                                     .show()
                             } else {
                                 val newBalance = balance.toString().toInt()
                                     .minus(binding.tvTotal.text.toString().toInt())
-                                database.child(auth.currentUser?.uid!!).child("cards")
-                                    .child("balance")
+                                database.child(auth.currentUser?.uid!!).child(getString(R.string.cards))
+                                    .child(getString(R.string.balance))
                                     .setValue(newBalance)
                                 navigate()
-
-                                // save in orders
-                                val orderList = getOrders(cartList)
-                                orderList.forEach { orderedProduct ->
-                                    viewLifecycleOwner.lifecycleScope.launch {
-                                        viewModel.addOrder(orderedProduct)
-                                    }
-                                }
-
-                                // save in transactions
-                                val transactionList = getTransactions(cartList)
-                                viewModel.showTransactions()
-                                viewLifecycleOwner.lifecycleScope.launch {
-                                    viewModel.transactionsFlow.collect { transactions ->
-                                        val oldlist = transactions.data
-                                        oldlist!!.addAll(transactionList)
-                                        database.child(auth.currentUser?.uid!!)
-                                            .child("transactions")
-                                            .setValue(oldlist)
-                                    }
-                                }
-
+                                saveOrders()
+                                saveTransactions()
                                 cartList.removeAll(cartList)
                             }
                         }
                     }
                 }
+            }
+        }
+    }
+
+    private fun saveTransactions() {
+        val transactionList = getTransactions(cartList)
+        viewModel.showTransactions()
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.transactionsFlow.collect { transactions ->
+                val oldList = transactions.data
+                oldList!!.addAll(transactionList)
+                database.child(auth.currentUser?.uid!!)
+                    .child("transactions")
+                    .setValue(oldList)
+            }
+        }
+    }
+
+    private fun saveOrders() {
+        val orderList = getOrders(cartList)
+        orderList.forEach { orderedProduct ->
+            viewLifecycleOwner.lifecycleScope.launch {
+                viewModel.addOrder(orderedProduct)
             }
         }
     }
@@ -121,9 +125,9 @@ class CheckoutFragment : BaseFragment<FragmentCheckoutBinding>(FragmentCheckoutB
     @SuppressLint("SetTextI18n")
     override fun init() {
         binding.apply {
-            tvSubtotal.text = args.totalMoney.toString() + "$"
+            tvSubtotal.text = args.totalMoney.toString()
             tvTotal.text =
-                (args.totalMoney + binding.tvFee.text.toString().toInt()).toString() + "$"
+                (args.totalMoney + binding.tvFee.text.toString().toInt()).toString()
         }
     }
 

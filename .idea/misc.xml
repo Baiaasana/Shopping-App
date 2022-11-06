@@ -20,6 +20,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_baseline_account_balance_wallet_24.xml" value="0.241" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_baseline_dark_mode_24.xml" value="0.2685" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.241" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.3535" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.153" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_baseline_file_upload_24.xml" value="0.2945" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_baseline_language_24.xml" value="0.2685" />
@@ -104,7 +105,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/item_category.xml" value="0.33" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/item_transaction.xml" value="0.30012825994014536" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/nav_header.xml" value="0.30012825994014536" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/order_item.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/order_item.xml" value="0.5" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/profile_background.xml" value="0.30012825994014536" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/single_item.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1" />

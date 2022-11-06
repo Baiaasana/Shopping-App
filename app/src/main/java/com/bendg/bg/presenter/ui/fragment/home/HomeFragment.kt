@@ -12,6 +12,7 @@ import com.bendg.bg.data.remote.model.CategoryTypes
 import com.bendg.bg.databinding.FragmentHomeBinding
 import com.bendg.bg.presenter.adapter.CategoryAdapter
 import com.bendg.bg.presenter.adapter.ProductsAdapter
+import com.bendg.bg.presenter.model.ItemUI
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -23,24 +24,40 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     private val categoryAdapter: CategoryAdapter = CategoryAdapter()
 
     override fun listeners() {
-        productsAdapter.onItemClickListener = {
-            findNavController().navigate(
-                HomeFragmentDirections.actionHomeFragmentToDetailsFragment(
-                    id = it.id!!.toInt()
-                )
-            )
-        }
         binding.tvSeeAll.setOnClickListener {
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAllProductsFragment2())
-        }
-        categoryAdapter.onItemClickListener = {
-            viewLifecycleOwner.lifecycleScope.launch {
-                viewModel.setCategory(it)
-            }
+            navigateToAllProducts()
         }
         binding.etSearch.setOnClickListener {
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToSearchFragment())
+            navigateToSearch()
         }
+        productsAdapter.onItemClickListener = {
+            navigateToDetails(it)
+        }
+        categoryAdapter.onItemClickListener = {
+            setCategory(it)
+        }
+    }
+
+    private fun setCategory(category: CategoryTypes) {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.setCategory(category)
+        }
+    }
+
+    private fun navigateToDetails(product: ItemUI.Product) {
+        findNavController().navigate(
+            HomeFragmentDirections.actionHomeFragmentToDetailsFragment(
+                id = product.id!!.toInt()
+            )
+        )
+    }
+
+    private fun navigateToSearch() {
+        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToSearchFragment())
+    }
+
+    private fun navigateToAllProducts() {
+        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAllProductsFragment2())
     }
 
     override fun init() {

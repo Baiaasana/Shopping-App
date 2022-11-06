@@ -8,9 +8,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.bendg.bg.R
 import com.bendg.bg.common.BaseFragment
+import com.bendg.bg.common.Constants
 import com.bendg.bg.databinding.FragmentFirstScreenBinding
 import com.bendg.bg.presenter.ui.fragment.onBoarding.OnBoardingViewModel
-import com.bendg.bg.common.Constants
 import kotlinx.coroutines.launch
 
 class FirstScreen : BaseFragment<FragmentFirstScreenBinding>(FragmentFirstScreenBinding::inflate) {
@@ -19,15 +19,20 @@ class FirstScreen : BaseFragment<FragmentFirstScreenBinding>(FragmentFirstScreen
 
     override fun listeners() {
 
-        val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPager2)
+         val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPager2)
 
         binding.next.setOnClickListener {
             viewPager?.currentItem = 1
         }
+
         binding.skip.setOnClickListener {
             saveState()
-            findNavController().navigate(R.id.action_onBoardingFragment_to_logInFragment)
+            navigateToLogin()
         }
+    }
+
+    private fun navigateToLogin() {
+        findNavController().navigate(R.id.action_onBoardingFragment_to_logInFragment)
     }
 
     override fun init() {
@@ -35,6 +40,7 @@ class FirstScreen : BaseFragment<FragmentFirstScreenBinding>(FragmentFirstScreen
 
     override fun observers() {
     }
+
     private fun saveState() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -42,5 +48,4 @@ class FirstScreen : BaseFragment<FragmentFirstScreenBinding>(FragmentFirstScreen
             }
         }
     }
-
 }

@@ -126,10 +126,22 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
-                    android:paddingEnd="30dp"
                     android:paddingStart="1dp"
                     android:gravity="end"
                     android:text="@string/price"
+                    android:textColor="@color/red_back"
+                    android:textSize="18sp"
+                    tools:layout_editor_absoluteX="41dp"
+                    tools:layout_editor_absoluteY="409dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_dollar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:paddingStart="3dp"
+                    android:text="@string/dollar"
                     android:textColor="@color/red_back"
                     android:textSize="18sp"
                     tools:layout_editor_absoluteX="41dp"

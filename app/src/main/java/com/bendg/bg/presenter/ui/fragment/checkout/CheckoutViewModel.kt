@@ -1,11 +1,10 @@
 package com.bendg.bg.presenter.ui.fragment.checkout
 
 import androidx.lifecycle.ViewModel
-import com.bendg.bg.data.local.model.FavoriteProduct
 import com.bendg.bg.data.local.model.OrderedProduct
 import com.bendg.bg.domain.use_case.OrdersUseCase
 import com.bendg.bg.presenter.model.UserModel
-import com.bendg.bg.utility.view_states.TransactionsViewState
+import com.bendg.bg.extensions.view_states.TransactionsViewState
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -21,7 +20,6 @@ class CheckoutViewModel @Inject constructor(
     suspend fun addOrder(order: OrderedProduct){
         useCase.addOrder(order = order)
     }
-
     private val auth: FirebaseAuth = FirebaseAuth.getInstance()
     private val databaseReference: DatabaseReference =
         FirebaseDatabase.getInstance().getReference("userInfo")
@@ -41,6 +39,4 @@ class CheckoutViewModel @Inject constructor(
                 }
             })
     }
-
-
 }

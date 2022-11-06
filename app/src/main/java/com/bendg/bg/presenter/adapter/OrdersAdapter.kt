@@ -9,11 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bendg.bg.R
 import com.bendg.bg.data.local.model.OrderedProduct
 import com.bendg.bg.databinding.OrderItemBinding
-import com.bendg.bg.utility.Glide
+import com.bendg.bg.common.extensions.Glide
 import java.text.SimpleDateFormat
 import java.util.*
 
-class OrdersAdapter()  :
+class OrdersAdapter :
     ListAdapter<OrderedProduct, OrdersAdapter.OrdersViewHolder>(OrdersItemCallBack) {
 
     var onItemClickListener: ((OrderedProduct) -> Unit)? = null
@@ -25,7 +25,7 @@ class OrdersAdapter()  :
             binding.apply {
                 Glide().setImage(item.image, binding.ivOrder)
                 tvTitle.text = item.title.toString()
-                ivRemove.setImageResource(R.drawable.ic_favorite_true)
+                ivRemove.setImageResource(R.drawable.ic_baseline_restore_from_trash_24)
                 tvPrice.text = item.price.toString().plus(" $")
                 tvDate.text = item.date.let { getData(it!!.toLong(), "yyyy-MM-dd").toString() }
                 ivRemove.setOnClickListener {

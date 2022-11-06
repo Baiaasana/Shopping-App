@@ -2,8 +2,7 @@ package com.bendg.bg.presenter.ui.fragment.profile
 
 import androidx.lifecycle.ViewModel
 import com.bendg.bg.presenter.model.UserModel
-import com.bendg.bg.utility.view_states.AuthenticationViewState
-import com.bendg.bg.utility.view_states.UserInfoState
+import com.bendg.bg.extensions.view_states.UserInfoState
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.coroutines.flow.MutableStateFlow
