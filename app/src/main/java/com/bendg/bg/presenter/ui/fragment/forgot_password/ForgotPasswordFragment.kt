@@ -7,7 +7,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.bendg.bg.R
 import com.bendg.bg.common.BaseFragment
 import com.bendg.bg.databinding.FragmentForgotPasswordBinding
-import com.bendg.bg.utility.snack
+import com.bendg.bg.extensions.snack
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -18,6 +18,10 @@ class ForgotPasswordFragment : BaseFragment<FragmentForgotPasswordBinding>(Fragm
     private val viewModel: ForgotPasswordViewModel by viewModels()
 
     override fun listeners() {
+       sendListener()
+    }
+
+    private fun sendListener(){
         binding.btnSend.setOnClickListener {
             if (binding.etEmail.text.toString().isEmpty()) {
                 it.snack(getString(R.string.empty_fields_error))
@@ -27,6 +31,7 @@ class ForgotPasswordFragment : BaseFragment<FragmentForgotPasswordBinding>(Fragm
             }
         }
     }
+
     override fun init() {
     }
 
@@ -46,6 +51,7 @@ class ForgotPasswordFragment : BaseFragment<FragmentForgotPasswordBinding>(Fragm
             }
         }
     }
+
     override fun observers() {
     }
 }

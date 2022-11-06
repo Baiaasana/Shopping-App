@@ -104,4 +104,12 @@
     <string name="my_wallet">ჩემი საფულე</string>
     <string name="recent_transactions">Recent transactions</string>
     <string name="clear">გასუფთავება</string>
+    <string name="Terms_and_conditions">https://www.termsfeed.com/public/uploads/2021/12/sample-terms-conditions-agreement.pdf</string>
+    <string name="add_success">პროდუქტი დაემატა წარმატებით!</string>
+    <string name="already_added">პროდუქტი უკვე დამატებულია კალათაში!</string>
+    <string name="check_method">შეამოწმეთ გადახდის მეთოდი!</string>
+    <string name="database_path">userInfo</string>
+    <string name="cards">cards</string>
+    <string name="balance">balance</string>
+    <string name="fill_balance">შეავსეთ ბალანსი!</string>
 </resources>

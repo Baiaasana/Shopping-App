@@ -5,17 +5,20 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bendg.bg.common.BaseFragment
 import com.bendg.bg.databinding.FragmentCartsBinding
 import com.bendg.bg.presenter.adapter.CartAdapter
-import com.bendg.bg.utility.cartList
+import com.bendg.bg.extensions.cartList
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class CartsFragment : BaseFragment<FragmentCartsBinding>(FragmentCartsBinding::inflate) {
 
     private val cartsAdapter = CartAdapter()
-
     private var sum = cartList.sumOf { it.price!! }
 
     override fun listeners() {
+        checkOut()
+    }
+
+    private fun checkOut() {
         binding.btnCheckout.setOnClickListener {
             findNavController().navigate(
                 CartsFragmentDirections.actionCartsFragmentToCheckoutFragment(
@@ -33,7 +36,10 @@ class CartsFragment : BaseFragment<FragmentCartsBinding>(FragmentCartsBinding::i
         initRecycle()
         cartsAdapter.submitList(cartList)
         binding.tvPrice.text = sum.toString()
+        adapterCallback()
+    }
 
+    private fun adapterCallback() {
         cartsAdapter.setCallback(object : CartAdapter.Callback {
             override fun onPlusClick(itemID: Int) {
                 plus(itemID)

@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:layout_marginHorizontal="100dp"
         android:layout_marginBottom="370dp"
-        android:src="@mipmap/success"
+        android:src="@mipmap/logo_red_150"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

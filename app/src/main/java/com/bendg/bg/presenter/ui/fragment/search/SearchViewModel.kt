@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bendg.bg.common.Resource
 import com.bendg.bg.domain.use_case.ProductsBySearchUseCase
-import com.bendg.bg.utility.view_states.ItemViewState
+import com.bendg.bg.extensions.view_states.ItemViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -20,10 +20,7 @@ class SearchViewModel @Inject constructor(private val useCase: ProductsBySearchU
 
     suspend fun getProductsBySearch(searchWord : String){
         viewModelScope.launch {
-            Log.d("log", " viewModel searchWord - $searchWord")
             val data = useCase.invoke(searchWord = searchWord)
-            Log.d("log", " viewModel data - $data")
-
             data.collect {
                 when (it.status) {
                     Resource.Status.SUCCESS -> {

@@ -1,8 +1,6 @@
 package com.bendg.bg.domain.repository
 
-
 import com.bendg.bg.data.local.model.OrderedProduct
-
 
 interface OrdersRepository {
 

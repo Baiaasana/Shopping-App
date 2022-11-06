@@ -1,7 +1,7 @@
 package com.bendg.bg.presenter.ui.fragment.onBoarding
 
 import androidx.lifecycle.ViewModel
-import com.bendg.bg.utility.DataStore
+import com.bendg.bg.common.DataStore
 
 class OnBoardingViewModel : ViewModel() {
 

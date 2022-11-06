@@ -12,7 +12,7 @@
         android:id="@+id/tv_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/black300"
+        android:src="@mipmap/logo_red_300"
         android:layout_margin="30dp"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
