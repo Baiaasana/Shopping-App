@@ -123,6 +123,7 @@
         android:fontFamily="@font/gordita_medium"
         android:paddingVertical="15dp"
         android:text="@string/login"
+        android:layout_marginBottom="50dp"
         android:textAllCaps="false"
         android:textColor="@color/red_back"
         android:textSize="20sp"

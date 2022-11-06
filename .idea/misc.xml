@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable-v24/ic_heart_black.xml" value="0.258" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.241" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/answer_background.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/background_btn.xml" value="0.1325" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/background_search.xml" value="0.1" />
@@ -15,7 +16,9 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_add.xml" value="0.248" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_arrow_back.xml" value="0.296" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_arrow_left.xml" value="0.112" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_baseline_account_balance_wallet_24.xml" value="0.241" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_baseline_dark_mode_24.xml" value="0.2685" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.241" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.153" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_baseline_file_upload_24.xml" value="0.2945" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_baseline_language_24.xml" value="0.2685" />
@@ -23,30 +26,40 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_baseline_notifications_24.xml" value="0.142" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_baseline_question_mark_24.xml" value="0.2685" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.3295" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.241" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_baseline_shopping_cart_24.xml" value="0.241" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_credit_card.xml" value="0.241" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_d1.xml" value="0.2555" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_d2.xml" value="0.2555" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_d3.xml" value="0.2555" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_email_24.xml" value="0.241" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_favorite_false.xml" value="0.241" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_favorite_true.xml" value="0.153" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_filter_left_menu.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_filter_left_svgrepo_com.xml" value="0.3295" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_filter_svgrepo_com.xml" value="0.3295" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_filter_svgrepo_com__1_.xml" value="0.3295" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_girl_sitiing_on_table_conducting_an_interview_by_oblik_studio_1.xml" value="0.2555" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_launcher_background.xml" value="0.241" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_mail.xml" value="0.2555" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_menu_svgrepo_com.xml" value="0.142" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_minus.xml" value="0.241" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_narrow.xml" value="0.2555" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_notification.xml" value="0.241" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_onb1.xml" value="0.2555" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_onb2.xml" value="0.2555" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_onb3.xml" value="0.2555" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_online_payment.xml" value="0.248" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_outline_location_on_24.xml" value="0.297" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_padlock.xml" value="0.2555" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_password_lock_24.xml" value="0.241" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_round_account_circle_24.xml" value="0.248" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_round_home_24.xml" value="0.248" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_round_notifications_24.xml" value="0.2885" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_saly_1.xml" value="0.2555" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_twotone_email_24.xml" value="0.184" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_twotone_lock_24.xml" value="0.184" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/item_bottom_back.xml" value="0.19" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/item_transaction.xml" value="0.282" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/question_background.xml" value="0.2805" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/search_backgroun.xml" value="0.144" />
@@ -88,7 +101,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/item_transaction.xml" value="0.30012825994014536" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/nav_header.xml" value="0.30012825994014536" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/order_item.xml" value="0.3009833262077811" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/single_item.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/single_item.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/menu/main_bottom_nav_menu.xml" value="0.2709677419354839" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/menu/navigation_drawer_menu.xml" value="0.30012825994014536" />
