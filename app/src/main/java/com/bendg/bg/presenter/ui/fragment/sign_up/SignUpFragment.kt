@@ -30,7 +30,8 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
 
         binding.tvConditions.setOnClickListener {
             val openURL = Intent(Intent.ACTION_VIEW)
-            openURL.data = Uri.parse("https://www.termsfeed.com/public/uploads/2021/12/sample-terms-conditions-agreement.pdf")
+            openURL.data =
+                Uri.parse("https://www.termsfeed.com/public/uploads/2021/12/sample-terms-conditions-agreement.pdf")
             startActivity(openURL)
         }
 
@@ -51,7 +52,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
         }
     }
 
-    private fun navigateToLogin(){
+    private fun navigateToLogin() {
         findNavController().navigate(SignUpFragmentDirections.actionSignUpFragmentToLogInFragment())
     }
 
