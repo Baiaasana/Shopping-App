@@ -17,7 +17,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -68,10 +67,11 @@ class CheckoutFragment : BaseFragment<FragmentCheckoutBinding>(FragmentCheckoutB
                                 val transactionList = getTransactions(cartList)
                                 viewModel.showTransactions()
                                 viewLifecycleOwner.lifecycleScope.launch {
-                                    viewModel.transactionsFlow.collect{ transactions ->
+                                    viewModel.transactionsFlow.collect { transactions ->
                                         val oldlist = transactions.data
                                         oldlist!!.addAll(transactionList)
-                                        database.child(auth.currentUser?.uid!!).child("transactions")
+                                        database.child(auth.currentUser?.uid!!)
+                                            .child("transactions")
                                             .setValue(oldlist)
                                     }
                                 }
@@ -88,13 +88,15 @@ class CheckoutFragment : BaseFragment<FragmentCheckoutBinding>(FragmentCheckoutB
     private fun getOrders(cartList: List<CartModel>): List<OrderedProduct> {
         val orderList = mutableListOf<OrderedProduct>()
         for (item in cartList) {
-            orderList.add(OrderedProduct(
-                id = item.id!!.toInt(),
-                title = item.title,
-                price = item.price,
-                image = item.image,
-                date = System.currentTimeMillis()
-            ))
+            orderList.add(
+                OrderedProduct(
+                    id = item.id!!.toInt(),
+                    title = item.title,
+                    price = item.price,
+                    image = item.image,
+                    date = System.currentTimeMillis()
+                )
+            )
         }
         return orderList
     }
@@ -102,14 +104,16 @@ class CheckoutFragment : BaseFragment<FragmentCheckoutBinding>(FragmentCheckoutB
     private fun getTransactions(cartList: List<CartModel>): List<UserModel.Transaction> {
         val transactionList = mutableListOf<UserModel.Transaction>()
         for (item in cartList) {
-            transactionList.add(UserModel.Transaction(
-                id = item.id!!.toInt(),
-                title = item.title,
-                price = item.price,
-                image = item.image,
-                date = System.currentTimeMillis(),
-                counter = item.counter
-            ))
+            transactionList.add(
+                UserModel.Transaction(
+                    id = item.id!!.toInt(),
+                    title = item.title,
+                    price = item.price,
+                    image = item.image,
+                    date = System.currentTimeMillis(),
+                    counter = item.counter
+                )
+            )
         }
         return transactionList
     }
@@ -117,9 +121,9 @@ class CheckoutFragment : BaseFragment<FragmentCheckoutBinding>(FragmentCheckoutB
     @SuppressLint("SetTextI18n")
     override fun init() {
         binding.apply {
-            tvSubtotal.text = args.totalMoney.toString()
+            tvSubtotal.text = args.totalMoney.toString() + "$"
             tvTotal.text =
-                (args.totalMoney + binding.tvFee.text.toString().toInt()).toString()
+                (args.totalMoney + binding.tvFee.text.toString().toInt()).toString() + "$"
         }
     }
 
