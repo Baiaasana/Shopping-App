@@ -3,22 +3,22 @@
 
     <item android:id="@+id/favoritesFragment"
         android:icon="@drawable/ic_favorite_false"
-        android:fontFamily="@font/gordita_regular"
+        android:fontFamily="@font/font_gordita_regular"
         android:title="@string/favorites"/>
 
     <item android:id="@+id/walletFragment"
         android:icon="@drawable/ic_baseline_account_balance_wallet_24"
-        android:fontFamily="@font/gordita_regular"
+        android:fontFamily="@font/font_gordita_regular"
         android:title="@string/wallet"/>
 
     <item android:id="@+id/cartsFragment"
         android:icon="@drawable/ic_baseline_shopping_cart_24"
-        android:fontFamily="@font/gordita_regular"
+        android:fontFamily="@font/font_gordita_regular"
         android:title="@string/my_cart"/>
 
     <item android:id="@+id/settingsFragment"
         android:icon="@drawable/ic_baseline_settings_24"
-        android:fontFamily="@font/gordita_regular"
+        android:fontFamily="@font/font_gordita_regular"
         android:title="@string/settings"/>
 
 </menu>

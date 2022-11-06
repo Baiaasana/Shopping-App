@@ -1,5 +1,6 @@
 package com.bendg.bg.presenter.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -9,6 +10,8 @@ import com.bendg.bg.R
 import com.bendg.bg.databinding.ItemTransactionBinding
 import com.bendg.bg.presenter.model.UserModel
 import com.bendg.bg.utility.Glide
+import java.text.SimpleDateFormat
+import java.util.*
 
 class TransactionAdapter :
     ListAdapter<UserModel.Transaction, TransactionAdapter.TransactionViewHolder>(OrdersItemCallBack) {
@@ -24,13 +27,20 @@ class TransactionAdapter :
                 tvTitle.text = item.title.toString()
                 ivRemove.setImageResource(R.drawable.ic_favorite_true)
                 tvPrice.text = item.price.toString().plus(" $")
-                tvDate.text = item.date.toString()
+                tvDate.text = item.date.let { getData(it!!.toLong(), "yyyy-MM-dd").toString() }
                 ivRemove.setOnClickListener {
                     onItemClickListener?.invoke(item)
                 }
             }
-
         }
+    }
+
+    @SuppressLint("SimpleDateFormat")
+    fun getData(milliSeconds: Long, dateFormat: String?): String? {
+        val formatter = SimpleDateFormat(dateFormat)
+        val calendar = Calendar.getInstance()
+        calendar.timeInMillis = milliSeconds
+        return formatter.format(calendar.time)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =

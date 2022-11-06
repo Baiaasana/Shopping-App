@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/red_back"
     tools:context=".presenter.ui.fragment.onBoarding.screens.ThirdScreen">
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -54,7 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:fontFamily="@font/gordita_regular"
+        android:fontFamily="@font/font_gordita_regular"
         android:gravity="center"
         android:text="@string/get_your_order"
         android:textColor="@color/red_warwera"
@@ -83,7 +84,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/red_btn"
         android:drawableEnd="@drawable/arrow_left_onboarding"
-        android:fontFamily="@font/gordita_regular"
+        android:fontFamily="@font/font_gordita_regular"
         android:gravity="center"
         android:paddingHorizontal="50dp"
         android:paddingVertical="10dp"
