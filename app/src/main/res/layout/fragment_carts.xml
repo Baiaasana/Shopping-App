@@ -34,7 +34,7 @@
             android:fontFamily="@font/gordita_medium"
             android:gravity="center"
             android:text="@string/my_cart"
-            android:textColor="@color/black"
+            android:textColor="@color/red_warwera"
             android:textSize="24sp"
             android:visibility="visible" />
     </FrameLayout>
@@ -96,7 +96,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/checkout"
-        android:backgroundTint="#0F1B07"
+        android:backgroundTint="@color/red_btn"
         android:textColor="@color/white"
         android:paddingVertical="18dp"
         android:textSize="20sp"

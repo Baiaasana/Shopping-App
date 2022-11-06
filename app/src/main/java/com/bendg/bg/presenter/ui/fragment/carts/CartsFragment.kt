@@ -1,17 +1,12 @@
 package com.bendg.bg.presenter.ui.fragment.carts
 
-import android.util.Log
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.bendg.bg.common.BaseFragment
 import com.bendg.bg.databinding.FragmentCartsBinding
 import com.bendg.bg.presenter.adapter.CartAdapter
 import com.bendg.bg.utility.cartList
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class CartsFragment : BaseFragment<FragmentCartsBinding>(FragmentCartsBinding::inflate) {
@@ -27,7 +22,7 @@ class CartsFragment : BaseFragment<FragmentCartsBinding>(FragmentCartsBinding::i
                     totalMoney = binding.tvPrice.text.toString().toInt()
                 )
             )
-            for (x in cartList){
+            for (x in cartList) {
                 x.counter = 1
             }
             sum = cartList.sumOf { it.price!! }
@@ -39,26 +34,26 @@ class CartsFragment : BaseFragment<FragmentCartsBinding>(FragmentCartsBinding::i
         cartsAdapter.submitList(cartList)
         binding.tvPrice.text = sum.toString()
 
-        cartsAdapter.setCallback(object : CartAdapter.Callback{
+        cartsAdapter.setCallback(object : CartAdapter.Callback {
             override fun onPlusClick(itemID: Int) {
-               plus(itemID)
-                    var totalsum = 0
-                    for(x in cartList){
-                        sum = x.counter * x.price!!
-                        totalsum += sum
-                    }
-                    binding.tvPrice.text = totalsum.toString()
+                plus(itemID)
+                var totalsum = 0
+                for (x in cartList) {
+                    sum = x.counter * x.price!!
+                    totalsum += sum
+                }
+                binding.tvPrice.text = totalsum.toString()
             }
 
             override fun onMinusCLick(itemID: Int) {
                 minus(itemID)
                 var totalsum = 0
-                for(x in cartList){
+                for (x in cartList) {
                     sum = x.counter * x.price!!
                     totalsum -= sum
                 }
                 var total = totalsum.toString()
-                if(total.contains("-")){
+                if (total.contains("-")) {
                     total = total.toString().drop(1)
                     totalsum = total.toInt()
                 }
@@ -67,7 +62,7 @@ class CartsFragment : BaseFragment<FragmentCartsBinding>(FragmentCartsBinding::i
         })
     }
 
-    private fun minus(itemID:Int){
+    private fun minus(itemID: Int) {
         val item = cartList.find { item ->
             item.id == itemID
         }
@@ -76,7 +71,7 @@ class CartsFragment : BaseFragment<FragmentCartsBinding>(FragmentCartsBinding::i
         cartsAdapter.submitList(cartList.toList())
     }
 
-    private fun plus(itemID: Int){
+    private fun plus(itemID: Int) {
         val item = cartList.find { item ->
             item.id == itemID
         }
@@ -85,8 +80,7 @@ class CartsFragment : BaseFragment<FragmentCartsBinding>(FragmentCartsBinding::i
         cartsAdapter.submitList(cartList.toList())
     }
 
-    override fun observers() {
-    }
+    override fun observers() {}
 
     private fun initRecycle() {
         binding.rvCarts.apply {

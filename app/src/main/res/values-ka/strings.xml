@@ -20,7 +20,7 @@
     <string name="password">პაროლი</string>
     <string name="forgot_password">დაგავიწყდათ პაროლი?</string>
     <string name="email_address">Email</string>
-    <string name="sign_up_question">Don\'t have an account? <font color="#000000"> Sign Up</font></string>
+    <string name="sign_up_question">არ გაქვთ ანგარიში? <font color="#000000"> რეგისტრაცია</font></string>
     <string name="repeat_password">გაიმეორეთ პაროლი</string>
     <string name="enter_an_email">შეიყვანეთ email:</string>
     <string name="password_recovery">პაროლის აღდგენა</string>
@@ -103,4 +103,5 @@
     <string name="email_support_text">In case of additional questions, do not contact us at the email address supportBG@gmail.com</string>
     <string name="my_wallet">ჩემი საფულე</string>
     <string name="recent_transactions">Recent transactions</string>
+    <string name="clear">გასუფთავება</string>
 </resources>
