@@ -42,6 +42,7 @@ class AllProductsFragment : BaseFragment<FragmentAllProductsBinding>(FragmentAll
             adapter = productsAdapter
         }
     }
+
     override fun observers() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED){

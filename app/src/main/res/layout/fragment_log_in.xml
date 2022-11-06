@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_white"
+    android:background="@color/red_back"
     tools:context=".presenter.ui.fragment.log_in.LogInFragment">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iv_logo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@mipmap/logo"
+        android:src="@mipmap/black300"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.29" />
+        app:layout_constraintGuide_percent="0.3" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_logIN"
@@ -31,7 +31,7 @@
         android:fontFamily="@font/gordita_medium"
         android:gravity="center"
         android:text="@string/login"
-        android:textColor="@color/blue_bold"
+        android:textColor="@color/red_warwera"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="@+id/iv_logo"
         app:layout_constraintStart_toStartOf="@+id/iv_logo"
@@ -45,17 +45,18 @@
         android:layout_marginHorizontal="40dp"
         android:layout_marginVertical="20dp"
         android:hint="@string/email_address"
-        app:boxBackgroundColor="@color/white"
         app:boxCornerRadiusTopEnd="20dp"
         app:boxCornerRadiusTopStart="20dp"
-        app:boxStrokeColor="@color/orange"
         app:boxStrokeWidth="1dp"
+        android:textColorHint="@color/grey"
+        app:boxBackgroundColor="@color/red_back"
+        app:boxStrokeColor="@color/red_warwera"
+        app:hintTextColor="@color/red_warwera"
         app:boxStrokeWidthFocused="2dp"
-        app:hintTextColor="@color/orange"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_logIN"
-        app:startIconDrawable="@drawable/ic_twotone_email_24">
+        app:startIconDrawable="@drawable/ic_email_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_email"
@@ -77,18 +78,17 @@
         android:layout_marginHorizontal="40dp"
         android:layout_marginVertical="10dp"
         android:hint="@string/password"
-        app:boxBackgroundColor="@color/white"
-        app:boxCornerRadiusTopEnd="20dp"
-        app:boxCornerRadiusTopStart="20dp"
-        app:boxStrokeColor="@color/blue_bold"
+        android:textColorHint="@color/grey"
+        app:boxBackgroundColor="@color/red_back"
+        app:boxStrokeColor="@color/red_warwera"
+        app:hintTextColor="@color/red_warwera"
         app:boxStrokeWidth="1dp"
         app:boxStrokeWidthFocused="2dp"
         app:endIconMode="password_toggle"
-        app:hintTextColor="@color/blue_bold"
         app:layout_constraintEnd_toEndOf="@+id/til_email"
         app:layout_constraintStart_toStartOf="@+id/til_email"
         app:layout_constraintTop_toBottomOf="@+id/til_email"
-        app:startIconDrawable="@drawable/ic_twotone_lock_24">
+        app:startIconDrawable="@drawable/ic_password_lock_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_password"
@@ -106,9 +106,9 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="10dp"
         android:layout_marginEnd="20dp"
-        android:fontFamily="@font/gordita_medium"
         android:text="@string/forgot_password"
         android:textSize="16sp"
+        android:textColor="@color/red_warwera"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/til_password" />
@@ -118,13 +118,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:backgroundTint="@color/blue_light"
-        android:fontFamily="@font/gordita_medium"
         android:layout_marginHorizontal="60dp"
+        android:backgroundTint="@color/red_btn"
+        android:fontFamily="@font/gordita_medium"
         android:paddingVertical="15dp"
         android:text="@string/login"
         android:textAllCaps="false"
-        android:textColor="@color/blue_white"
+        android:textColor="@color/red_back"
         android:textSize="20sp"
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -137,9 +137,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="10dp"
-        android:fontFamily="@font/gordita_medium"
         android:text="@string/sign_up_question"
         android:textSize="16sp"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btn_login"
         app:layout_constraintStart_toStartOf="@+id/btn_login"
@@ -151,6 +151,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.65" />
+        app:layout_constraintGuide_percent="0.75" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

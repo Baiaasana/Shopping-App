@@ -25,10 +25,16 @@
     <color name="blue_white">#EBF2FA</color>
     <color name="blue_light_2">#3B89BD</color>
 
-    <color name="btn">#970C10</color>
-    <color name="back">#FEFCFF</color>
-    <color name="warwera">#970C10</color>
-    <color name="field">#000000</color>
+
+
+    <color name="red_gia">#ADD3D0</color>
+    <color name="red_bold">#153250</color>
+    <color name="red_btn">#970C10</color>
+    <color name="red_back">#FEFCFF</color>
+    <color name="red_warwera">#970C10</color>
+
+    <color name="red_field">#000000</color>
+
 
 
 </resources>

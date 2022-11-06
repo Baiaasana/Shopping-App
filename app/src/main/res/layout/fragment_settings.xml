@@ -40,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="12dp"
-                android:src="@drawable/ic_twotone_email_24" />
+                android:src="@drawable/ic_email_24" />
 
         </androidx.cardview.widget.CardView>
 
@@ -199,7 +199,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="12dp"
-                android:src="@drawable/ic_twotone_lock_24" />
+                android:src="@drawable/ic_password_lock_24" />
 
         </androidx.cardview.widget.CardView>
 

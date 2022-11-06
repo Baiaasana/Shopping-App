@@ -40,11 +40,11 @@
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        app:itemTextColor="@color/blue_white"
+        app:itemTextColor="@color/red_warwera"
         android:layout_gravity="start"
-        android:backgroundTint="#3B89BD"
+        android:backgroundTint="@color/red_back"
         android:fitsSystemWindows="true"
-        app:itemIconTint="@color/blue_white"
+        app:itemIconTint="@color/red_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:headerLayout="@layout/nav_header"
@@ -58,7 +58,7 @@
             android:layout_gravity="bottom"
             android:layout_marginHorizontal="10dp"
             android:layout_marginVertical="100dp"
-            android:background="@color/blue_white" />
+            android:background="@color/black" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/log_out_view"
@@ -77,7 +77,7 @@
                 android:layout_weight="4"
                 android:text="Log out"
                 android:fontFamily="@font/gordita_medium"
-                android:textColor="@color/blue_white"
+                android:textColor="@color/red_warwera"
                 android:textSize="14sp" />
 
             <androidx.appcompat.widget.AppCompatImageView
