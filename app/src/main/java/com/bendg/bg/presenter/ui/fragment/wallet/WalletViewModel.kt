@@ -17,7 +17,7 @@ class WalletViewModel : ViewModel() {
     private val _transactionsFlow = MutableStateFlow<TransactionsViewState>(TransactionsViewState())
     val transactionsFlow = _transactionsFlow.asStateFlow()
 
-     fun showTransactions() {
+    fun showTransactions() {
         databaseReference.child(auth.currentUser?.uid!!)
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
@@ -25,12 +25,13 @@ class WalletViewModel : ViewModel() {
                     val list = userInformation.transactions
                     _transactionsFlow.value = _transactionsFlow.value.copy(data = list)
                 }
+
                 override fun onCancelled(error: DatabaseError) {
                 }
             })
     }
 
-    fun updateUserInfo(list: MutableList<UserModel.Transaction>){
+    fun updateUserInfo(list: MutableList<UserModel.Transaction>) {
         databaseReference.child(auth.currentUser?.uid!!).child("transactions").setValue(list)
     }
 
