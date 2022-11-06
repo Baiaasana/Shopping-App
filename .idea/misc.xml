@@ -6,6 +6,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable-v24/ic_heart_black.xml" value="0.258" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.241" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/answer_background.xml" value="0.2" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/arrow_left_onboarding.xml" value="0.301" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/background_btn.xml" value="0.1325" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/background_search.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/card_background.xml" value="0.27" />
@@ -91,11 +92,11 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_payment.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_search.xml" value="0.22" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_second_screen.xml" value="0.25" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_second_screen.xml" value="0.33" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_settings.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_sign_up.xml" value="0.33" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_support.xml" value="0.3009833262077811" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_third_screen.xml" value="0.25" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_third_screen.xml" value="0.33" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_wallet.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/item_category.xml" value="0.22798887859128822" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/item_transaction.xml" value="0.30012825994014536" />
