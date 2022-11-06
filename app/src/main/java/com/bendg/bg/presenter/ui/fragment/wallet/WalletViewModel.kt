@@ -2,7 +2,7 @@ package com.bendg.bg.presenter.ui.fragment.wallet
 
 import androidx.lifecycle.ViewModel
 import com.bendg.bg.presenter.model.UserModel
-import com.bendg.bg.utility.view_states.TransactionsViewState
+import com.bendg.bg.extensions.view_states.TransactionsViewState
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -25,7 +25,6 @@ class WalletViewModel : ViewModel() {
                     val list = userInformation.transactions
                     _transactionsFlow.value = _transactionsFlow.value.copy(data = list)
                 }
-
                 override fun onCancelled(error: DatabaseError) {
                 }
             })

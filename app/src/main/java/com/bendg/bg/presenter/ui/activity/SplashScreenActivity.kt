@@ -2,13 +2,12 @@ package com.bendg.bg.presenter.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.lifecycle.lifecycleScope
 import com.bendg.bg.common.Constants
 import com.bendg.bg.databinding.ActivitySplashScreenBinding
-import com.bendg.bg.utility.DataStore
+import com.bendg.bg.common.DataStore
 import kotlinx.coroutines.launch
 
 class SplashScreenActivity : AppCompatActivity() {
@@ -18,24 +17,31 @@ class SplashScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        showLogo()
+    }
 
+    private fun showLogo() {
         binding.ivLogo.apply {
             alpha = 0f
             animate().setDuration(1500).alpha(1f).withEndAction {
-                init()
-                startActivity(Intent(this@SplashScreenActivity, AuthActivity::class.java))
-                finish()
+                initPreference()
+                navigateToAuth()
             }
         }
     }
 
     private fun getPreferences() = DataStore.getPreferences()
 
-    fun init() {
+    fun initPreference() {
         lifecycleScope.launch {
             getPreferences().collect {
                 it.contains(stringPreferencesKey(Constants.KEY))
             }
         }
+    }
+
+    private fun navigateToAuth() {
+        startActivity(Intent(this@SplashScreenActivity, AuthActivity::class.java))
+        finish()
     }
 }

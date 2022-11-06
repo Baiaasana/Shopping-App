@@ -2,8 +2,7 @@ package com.bendg.bg.presenter.ui.fragment.log_in
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.bendg.bg.R
-import com.bendg.bg.utility.view_states.AuthenticationViewState
+import com.bendg.bg.extensions.view_states.AuthenticationViewState
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow

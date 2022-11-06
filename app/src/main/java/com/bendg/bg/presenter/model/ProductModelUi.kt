@@ -1,4 +1,4 @@
-package com.bendg.bg.presenter.model_ui
+package com.bendg.bg.presenter.model
 
 data class ProductModelUi(
     val brand: String?,

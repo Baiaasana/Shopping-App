@@ -2,10 +2,8 @@ package com.bendg.bg.data.repository
 
 import com.bendg.bg.common.Resource
 import com.bendg.bg.common.ResponseHandler
-import com.bendg.bg.data.local.dao.ProductsDatabase
-import com.bendg.bg.data.local.model.FavoriteProduct
 import com.bendg.bg.data.remote.network.ApiService
-import com.bendg.bg.domain.model_domain.ProductModelDomain
+import com.bendg.bg.domain.model.ProductModelDomain
 import com.bendg.bg.domain.repository.ProductByIdRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

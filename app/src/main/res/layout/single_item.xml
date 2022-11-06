@@ -38,16 +38,38 @@
             android:textColor="@color/grey"
             android:textSize="16sp" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_price"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:fontFamily="@font/font_gordita_regular"
-            android:gravity="center_horizontal"
-            android:layout_gravity="center_horizontal"
-            android:textColor="@color/red_warwera"
-            android:textSize="16sp" />
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:orientation="horizontal"
+           android:layout_gravity="center"
+           android:gravity="center"
+           android:layout_height="match_parent">
+
+           <androidx.appcompat.widget.AppCompatTextView
+               android:id="@+id/tv_price"
+               android:layout_width="wrap_content"
+               android:layout_height="match_parent"
+               android:layout_weight="1"
+               android:paddingEnd="2dp"
+               android:fontFamily="@font/font_gordita_regular"
+               android:gravity="center_horizontal|end"
+               android:layout_gravity="center_horizontal"
+               android:textColor="@color/red_warwera"
+               android:textSize="16sp" />
+
+           <androidx.appcompat.widget.AppCompatTextView
+               android:id="@+id/tv_dollar"
+               android:layout_width="wrap_content"
+               android:layout_height="match_parent"
+               android:layout_weight="1"
+               android:paddingStart="3sp"
+               android:text="@string/dollar"
+               android:fontFamily="@font/font_gordita_regular"
+               android:gravity="center_horizontal|start"
+               android:layout_gravity="center_horizontal"
+               android:textColor="@color/red_warwera"
+               android:textSize="16sp" />
+       </LinearLayout>
 
     </LinearLayout>
 

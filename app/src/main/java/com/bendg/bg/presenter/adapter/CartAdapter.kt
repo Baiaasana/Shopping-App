@@ -1,6 +1,5 @@
 package com.bendg.bg.presenter.adapter
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -8,10 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bendg.bg.databinding.CartItemBinding
 import com.bendg.bg.presenter.model.CartModel
-import com.bendg.bg.utility.Glide
-import java.text.SimpleDateFormat
-import java.util.*
-import javax.security.auth.callback.Callback
+import com.bendg.bg.common.extensions.Glide
 
 class CartAdapter : ListAdapter<CartModel, CartAdapter.CartViewHolder>(ItemCallback) {
 

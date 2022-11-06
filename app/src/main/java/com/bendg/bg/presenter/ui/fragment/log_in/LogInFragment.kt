@@ -1,6 +1,7 @@
 package com.bendg.bg.presenter.ui.fragment.log_in
 
 import android.content.Intent
+import android.view.View
 import androidx.core.util.PatternsCompat.EMAIL_ADDRESS
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -11,7 +12,7 @@ import com.bendg.bg.R
 import com.bendg.bg.common.BaseFragment
 import com.bendg.bg.databinding.FragmentLogInBinding
 import com.bendg.bg.presenter.ui.activity.MainActivity
-import com.bendg.bg.utility.snack
+import com.bendg.bg.extensions.snack
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -22,26 +23,42 @@ class LogInFragment : BaseFragment<FragmentLogInBinding>(FragmentLogInBinding::i
     private val viewModel: LogInViewModel by viewModels()
 
     override fun listeners() {
-        binding.btnLogin.setOnClickListener { snack ->
-            when {
-                isEmptyField() -> snack.snack(getString(R.string.empty_fields_error))
-                !isValidEmail() -> snack.snack(getString(R.string.invalid_email_error))
-                else -> {
-                    login()
-                    loginObserver()
-                    viewLifecycleOwner.lifecycleScope.launch {
-                        viewModel.loginStatus.collectLatest {
-                            snack.snack(it.message.toString())
-                        }
-                    }
-                }
-            }
+        binding.btnLogin.setOnClickListener { view ->
+            login(view)
         }
         binding.tvSignUp.setOnClickListener {
-            findNavController().navigate(R.id.action_logInFragment_to_signUpFragment)
+            navigateToSignUp()
         }
         binding.tvForgotPassword.setOnClickListener {
-            findNavController().navigate(R.id.action_logInFragment_to_forgotPasswordFragment)
+            navigateToForgotPassword()
+        }
+    }
+
+    private fun navigateToSignUp() {
+        findNavController().navigate(R.id.action_logInFragment_to_signUpFragment)
+    }
+
+    private fun navigateToForgotPassword() {
+        findNavController().navigate(R.id.action_logInFragment_to_forgotPasswordFragment)
+    }
+
+    private fun login(view: View) {
+        when {
+            isEmptyField() -> view.snack(getString(R.string.empty_fields_error))
+            !isValidEmail() -> view.snack(getString(R.string.invalid_email_error))
+            else -> {
+                login()
+                loginObserver()
+                collectLoginState(view)
+            }
+        }
+    }
+
+    private fun collectLoginState(view: View) {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.loginStatus.collectLatest {
+                view.snack(it.message.toString())
+            }
         }
     }
 

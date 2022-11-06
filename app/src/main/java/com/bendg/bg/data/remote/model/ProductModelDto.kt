@@ -1,6 +1,6 @@
 package com.bendg.bg.data.remote.model
 
-import com.bendg.bg.domain.model_domain.ProductModelDomain
+import com.bendg.bg.domain.model.ProductModelDomain
 
 data class ProductModelDto(
     val brand: String?,

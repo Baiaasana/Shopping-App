@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bendg.bg.databinding.SingleItemBinding
 import com.bendg.bg.presenter.model.ItemUI
-import com.bendg.bg.utility.Glide
+import com.bendg.bg.common.extensions.Glide
 
 class ProductsAdapter :
     ListAdapter<ItemUI.Product, ProductsAdapter.ProductsViewHolder>(ItemCallback) {

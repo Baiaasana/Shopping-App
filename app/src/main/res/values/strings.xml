@@ -81,7 +81,7 @@
     <string name="subtotal_for_checkout">Subtotal :</string>
     <string name="total">Total :</string>
     <string name="payment_method">Payment method</string>
-    <string name="shopping_card">shop card</string>
+    <string name="shopping_card">Shopping-card</string>
     <string name="payment">Payment</string>
     <string name="title">Title</string>
     <string name="price">price</string>
@@ -105,5 +105,12 @@
     <string name="my_wallet">My Wallet</string>
     <string name="recent_transactions">Recent transactions</string>
     <string name="clear">Clear</string>
-
+    <string name="Terms_and_conditions">https://www.termsfeed.com/public/uploads/2021/12/sample-terms-conditions-agreement.pdf</string>
+    <string name="add_success">Product added successfully!</string>
+    <string name="already_added">Product is already added!</string>
+    <string name="check_method">Please check payment method!</string>
+    <string name="database_path">userInfo</string>
+    <string name="cards">cards</string>
+    <string name="balance">balance</string>
+    <string name="fill_balance">Please fill the balance!</string>
 </resources>

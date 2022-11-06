@@ -2,7 +2,8 @@ package com.bendg.bg.presenter.ui.fragment.change_password
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.bendg.bg.utility.view_states.AuthenticationViewState
+import com.bendg.bg.extensions.view_states.AuthenticationViewState
+import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -20,30 +21,40 @@ class ChangePasswordViewModel : ViewModel() {
     val updateState = _updateState.asSharedFlow()
 
     fun updatePassword(oldPass: String, newPassword: String) {
-
         databaseReference.child(auth.currentUser?.uid!!).get().addOnSuccessListener {
             if (it.exists()) {
                 val password = it.child("password").value
                 if (password.toString() == oldPass) {
-                    auth.currentUser?.updatePassword(newPassword)?.addOnCompleteListener { task ->
-                        viewModelScope.launch {
-                            if (task.isSuccessful) {
-                                databaseReference.child(auth.currentUser?.uid!!).child("password")
-                                    .setValue(newPassword)
-                                _updateState.emit(AuthenticationViewState(message = "success"))
-                            } else {
-                                viewModelScope.launch {
-                                    _updateState.emit(AuthenticationViewState(message = "Password did not changed, try later!"))
-                                }
-                            }
-                        }
-                    }
+                    updatePassword(newPassword = newPassword)
                 } else {
                     viewModelScope.launch {
-                        _updateState.emit(AuthenticationViewState(message = "old Password did not match"))
+                        _updateState.emit(AuthenticationViewState(message = "Old Password is not correct!"))
                     }
                 }
             }
         }
+    }
+
+    private fun updatePassword(newPassword: String) {
+        auth.currentUser?.updatePassword(newPassword)?.addOnCompleteListener { task ->
+            setNewPassword(task = task, newPassword = newPassword)
+        }
+    }
+
+    private fun setNewPassword(task: Task<Void>, newPassword: String) {
+        viewModelScope.launch {
+            if (task.isSuccessful) {
+                updatePasswordInDatabase(newPassword = newPassword)
+                _updateState.emit(AuthenticationViewState(message = "Password updated successfully!"))
+            } else {
+                _updateState.emit(AuthenticationViewState(message = "Password did not changed, try later!"))
+            }
+        }
+    }
+
+    private fun updatePasswordInDatabase(newPassword: String) {
+        databaseReference.child(auth.currentUser?.uid!!)
+            .child("password")
+            .setValue(newPassword)
     }
 }

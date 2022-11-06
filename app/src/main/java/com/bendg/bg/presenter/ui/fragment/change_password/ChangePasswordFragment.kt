@@ -16,11 +16,19 @@ class ChangePasswordFragment : BaseFragment<FragmentChangePasswordBinding>(Fragm
     private val viewModel: ChangePasswordViewModel by viewModels()
 
     override fun listeners() {
+        changeListener()
+        backListener()
+    }
+
+    private fun changeListener() {
         binding.btnChange.setOnClickListener {
             viewModel.updatePassword(binding.etOldPassword.text.toString(),
                 binding.etNewPassword.text.toString())
             observer()
         }
+    }
+
+    private fun backListener() {
         binding.btnBack.setOnClickListener {
             findNavController().navigate(ChangePasswordFragmentDirections.actionChangePasswordFragmentToSettingsFragment())
         }

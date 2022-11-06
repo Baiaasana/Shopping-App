@@ -13,9 +13,7 @@ class AuthActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         FirebaseAuth.getInstance().currentUser?.let {
             startActivity(Intent(this, MainActivity::class.java))
-            finish()
             onBackPressed()
-
         }
         setContentView(R.layout.activity_auth)
     }

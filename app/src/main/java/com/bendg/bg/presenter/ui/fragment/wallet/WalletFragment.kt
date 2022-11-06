@@ -98,5 +98,4 @@ class WalletFragment : BaseFragment<FragmentWalletBinding>(FragmentWalletBinding
             }
         }
     }
-
 }

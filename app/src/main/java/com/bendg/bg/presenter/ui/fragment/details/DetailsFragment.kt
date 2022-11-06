@@ -1,7 +1,5 @@
 package com.bendg.bg.presenter.ui.fragment.details
 
-import android.util.Log
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
@@ -10,9 +8,7 @@ import com.bendg.bg.common.BaseFragment
 import com.bendg.bg.data.local.model.FavoriteProduct
 import com.bendg.bg.databinding.FragmentDetailsBinding
 import com.bendg.bg.presenter.model.CartModel
-import com.bendg.bg.presenter.model_ui.ProductModelUi
-import com.bendg.bg.utility.Glide
-import com.bendg.bg.utility.cartList
+import com.bendg.bg.extensions.cartList
 import com.denzcoskun.imageslider.models.SlideModel
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
@@ -35,10 +31,9 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>(FragmentDetailsBind
         binding.btnAdd.setOnClickListener {
             if(!cartList.contains(cart)){
                 cartList.add(cart)
-                Log.d("log", "list details".plus(cartList))
-                Snackbar.make(binding.root, "added successfully", Snackbar.LENGTH_LONG).show()
+                Snackbar.make(binding.root, getString(R.string.add_success), Snackbar.LENGTH_LONG).show()
             }else{
-                Snackbar.make(binding.root, "already added", Snackbar.LENGTH_LONG).show()
+                Snackbar.make(binding.root, getString(R.string.already_added), Snackbar.LENGTH_LONG).show()
             }
         }
 
@@ -61,7 +56,7 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>(FragmentDetailsBind
             }
             false -> {
                 viewModel.addProduct(product)
-                binding.ivSetFavorite.setImageResource(R.drawable.ic_favorite_true)
+                binding.ivSetFavorite.setImageResource(R.drawable.ic_baseline_favorite_24)
             }
         }
     }
@@ -116,7 +111,6 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>(FragmentDetailsBind
             }
         }
     }
-
 
     private fun getProduct() = FavoriteProduct(
         id = args.id,

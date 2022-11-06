@@ -108,9 +108,19 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView3"
         app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dollar"
+        android:textSize="18sp"
+        android:layout_marginStart="5dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSubtotal"
+        app:layout_constraintStart_toEndOf="@+id/tvSubtotal"
+        app:layout_constraintTop_toTopOf="@+id/tvSubtotal" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textView5"
@@ -132,9 +142,21 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/textView5"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toTopOf="@+id/textView5" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dollar"
+        android:textSize="18sp"
+        android:layout_marginStart="5dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTotal"
+        app:layout_constraintStart_toEndOf="@+id/tvTotal"
+        app:layout_constraintTop_toTopOf="@+id/tvTotal" />
+
+
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/appCompatTextView45"

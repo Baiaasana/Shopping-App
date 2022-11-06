@@ -8,9 +8,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.bendg.bg.R
 import com.bendg.bg.common.BaseFragment
+import com.bendg.bg.common.Constants
 import com.bendg.bg.databinding.FragmentSecondScreenBinding
 import com.bendg.bg.presenter.ui.fragment.onBoarding.OnBoardingViewModel
-import com.bendg.bg.common.Constants
 import kotlinx.coroutines.launch
 
 class SecondScreen : BaseFragment<FragmentSecondScreenBinding>(FragmentSecondScreenBinding::inflate) {
@@ -26,8 +26,12 @@ class SecondScreen : BaseFragment<FragmentSecondScreenBinding>(FragmentSecondScr
         }
         binding.skip.setOnClickListener {
             saveState()
-            findNavController().navigate(R.id.action_onBoardingFragment_to_logInFragment)
+            navigateToLogin()
         }
+    }
+
+    private fun navigateToLogin() {
+        findNavController().navigate(R.id.action_onBoardingFragment_to_logInFragment)
     }
 
     override fun init() {
