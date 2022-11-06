@@ -25,20 +25,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="10dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_profile" />
+
     <FrameLayout
         android:id="@+id/fl_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_profile"
-        app:layout_constraintStart_toStartOf="@+id/tv_profile"
-        app:layout_constraintTop_toBottomOf="@+id/tv_profile">
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/view2">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv_profile_image"
-            android:layout_width="170dp"
+            android:layout_width="150dp"
             android:background="@drawable/image_border"
-            android:layout_height="170dp"
+            android:layout_height="150dp"
             android:src="@mipmap/personsp" />
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -69,12 +80,11 @@
         android:id="@+id/tv_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
         android:fontFamily="@font/gordita_medium"
         android:gravity="center_horizontal"
         android:text="@string/email_address"
-        android:textColor="@color/bold_grey"
-        android:textSize="20sp"
+        android:textColor="@color/grey"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/tv_username"
         app:layout_constraintStart_toStartOf="@+id/tv_username"
         app:layout_constraintTop_toBottomOf="@+id/tv_username" />
@@ -106,7 +116,7 @@
                 android:layout_weight="1"
                 android:text="@string/personal_information"
                 android:textColor="@color/red_back"
-                android:textSize="22sp" />
+                android:textSize="20sp" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_change"
@@ -140,7 +150,7 @@
                 android:fontFamily="@font/gordita_regular"
                 android:text="@string/firstname"
                 android:textColor="@color/red_back"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_first_name"
@@ -153,7 +163,7 @@
                 android:paddingHorizontal="30dp"
                 android:text="@string/name"
                 android:textColor="@color/red_back"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 tools:layout_editor_absoluteX="41dp"
                 tools:layout_editor_absoluteY="409dp" />
 
@@ -172,7 +182,7 @@
                 android:fontFamily="@font/gordita_regular"
                 android:text="@string/lastname"
                 android:textColor="@color/red_back"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_last_name"
@@ -185,7 +195,7 @@
                 android:paddingHorizontal="30dp"
                 android:text="lastname"
                 android:textColor="@color/red_back"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 tools:layout_editor_absoluteX="41dp"
                 tools:layout_editor_absoluteY="409dp" />
 
@@ -204,7 +214,7 @@
                 android:fontFamily="@font/gordita_regular"
                 android:text="@string/location"
                 android:textColor="@color/red_back"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_location"
@@ -217,7 +227,7 @@
                 android:paddingHorizontal="30dp"
                 android:text="@string/location"
                 android:textColor="@color/red_back"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 tools:layout_editor_absoluteX="41dp"
                 tools:layout_editor_absoluteY="409dp" />
 
@@ -237,7 +247,7 @@
                 android:fontFamily="@font/gordita_regular"
                 android:text="@string/phone_number"
                 android:textColor="@color/red_back"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_phone"
@@ -250,7 +260,7 @@
                 android:paddingHorizontal="30dp"
                 android:text="@string/number"
                 android:textColor="@color/red_back"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 tools:layout_editor_absoluteX="41dp"
                 tools:layout_editor_absoluteY="409dp" />
 

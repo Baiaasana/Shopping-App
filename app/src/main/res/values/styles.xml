@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="DrawerFontStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/gordita_regular</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+</resources>
+

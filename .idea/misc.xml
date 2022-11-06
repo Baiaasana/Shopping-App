@@ -29,6 +29,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.3295" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.241" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_baseline_shopping_cart_24.xml" value="0.241" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_change_black.xml" value="0.286" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_credit_card.xml" value="0.241" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_d1.xml" value="0.2555" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/drawable/ic_d2.xml" value="0.2555" />
@@ -80,7 +81,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_carts.xml" value="0.30055579307396324" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_change_password.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_checkout.xml" value="0.2" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_details.xml" value="0.33" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_details.xml" value="0.18" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_faq.xml" value="0.33" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_favorites.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_filter.xml" value="0.3009833262077811" />
@@ -93,7 +94,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_orders.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_payment.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_search.xml" value="0.33" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_search.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_second_screen.xml" value="0.33" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_settings.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/User/AndroidStudioProjects/BG/app/src/main/res/layout/fragment_sign_up.xml" value="0.33" />

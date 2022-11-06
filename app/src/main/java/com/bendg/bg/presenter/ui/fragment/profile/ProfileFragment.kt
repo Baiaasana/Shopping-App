@@ -91,7 +91,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
         AlertDialog.Builder(context)
             .setView(bindingDialog.root)
             .setTitle("Change Personal Information")
-            .setIcon(R.drawable.ic_baseline_settings_24)
+            .setIcon(R.drawable.ic_change_white)
             .setPositiveButton("Change") { dialog, _ ->
                 val firstName = bindingDialog.etFirstname.text.toString()
                 val lastname = bindingDialog.etLastname.text.toString()

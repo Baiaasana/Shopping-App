@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_white"
+    android:background="@color/red_back"
     tools:context=".presenter.ui.fragment.home.HomeFragment">
 
     <androidx.constraintlayout.widget.Guideline
@@ -31,13 +31,11 @@
         android:drawablePadding="5dp"
         android:gravity="center_vertical"
         android:text="@string/b_g"
-        android:src="@mipmap/logo150"
-        android:padding="100dp"
+        android:layout_margin="5dp"
+        android:src="@mipmap/logo400"
         android:textColor="@color/blue_bold"
         android:textSize="26sp"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_menu"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -63,7 +61,7 @@
         android:textColor="@color/grey"
         android:paddingHorizontal="16dp"
         android:layout_marginVertical="10dp"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/tv_explore"
         app:layout_constraintStart_toStartOf="@+id/tv_explore"
         app:layout_constraintTop_toBottomOf="@+id/tv_explore" />
@@ -95,9 +93,10 @@
         android:orientation="horizontal"
         android:paddingVertical="8dp"
         android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="parent"
-        tools:itemCount="1"
+        tools:itemCount="6"
         tools:listitem="@layout/item_category" />
 
     <androidx.appcompat.widget.AppCompatTextView
