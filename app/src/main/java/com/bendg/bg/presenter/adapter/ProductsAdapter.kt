@@ -21,7 +21,7 @@ class ProductsAdapter :
             val item = getItem(adapterPosition)
             binding.apply {
                 tvTitle.text = item.title.toString()
-                tvPrice.text = item.price.toString().plus(" $")
+                tvPrice.text = item.price.toString()
                 Glide().setImage(item.thumbnail.toString(), ivItem)
                 root.setOnClickListener {
                     onItemClickListener?.invoke(item)
