@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/red_back"
     tools:context=".presenter.ui.fragment.settings.SettingsFragment">
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -13,14 +14,24 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="10dp"
-        android:fontFamily="@font/gordita_medium"
+        android:fontFamily="@font/gordita_regular"
         android:gravity="center"
         android:padding="10dp"
         android:src="@drawable/ic_heart_black"
         android:text="@string/settings"
-        android:textColor="@color/black"
+        android:textColor="@color/red_warwera"
         android:textSize="24sp"
         android:visibility="visible" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_settings"
+        app:layout_constraintTop_toBottomOf="@+id/tv_settings" />
 
     <LinearLayout
         android:id="@+id/ll_email_support"
@@ -51,7 +62,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/email_support"
-            android:textColor="@color/black"
+            android:textColor="@color/red_warwera"
             android:textSize="18sp" />
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -91,7 +102,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/faq"
-            android:textColor="@color/black"
+            android:textColor="@color/red_warwera"
             android:textSize="18sp" />
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -130,7 +141,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/dark_mode"
-            android:textColor="@color/black"
+            android:textColor="@color/red_warwera"
             android:textSize="18sp" />
 
         <androidx.appcompat.widget.SwitchCompat
@@ -170,7 +181,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/languages"
-            android:textColor="@color/black"
+            android:textColor="@color/red_warwera"
             android:textSize="18sp" />
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -210,7 +221,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/change_password"
-            android:textColor="@color/black"
+            android:textColor="@color/red_warwera"
             android:textSize="18sp" />
 
         <androidx.appcompat.widget.AppCompatImageView

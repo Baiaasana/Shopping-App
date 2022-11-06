@@ -32,22 +32,22 @@
             android:maxLength="12"
             android:ellipsize="end"
             android:maxLines="1"
-            android:fontFamily="@font/gordita_medium"
+            android:fontFamily="@font/gordita_regular"
             android:gravity="bottom|center_horizontal"
             android:layout_gravity="center_horizontal"
-            android:textColor="@color/grey"
-            android:textSize="16sp" />
+            android:textColor="@color/black"
+            android:textSize="18sp" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_price"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:fontFamily="@font/gordita_medium"
+            android:fontFamily="@font/gordita_regular"
             android:gravity="center_horizontal"
             android:layout_gravity="center_horizontal"
-            android:textColor="@color/grey"
-            android:textSize="18sp" />
+            android:textColor="@color/red_warwera"
+            android:textSize="16sp" />
 
     </LinearLayout>
 

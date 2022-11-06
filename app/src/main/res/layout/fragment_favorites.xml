@@ -36,11 +36,10 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:textColor="@color/blue_bold"
+                android:textColor="@color/red_warwera"
                 android:fontFamily="@font/gordita_medium"
-                android:textSize="24sp"
-                android:text="@string/favorites"
-                android:visibility="visible" />
+                android:textSize="22sp"
+                android:text="@string/favorites" />
 
         </FrameLayout>
 
