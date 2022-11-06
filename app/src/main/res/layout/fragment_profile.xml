@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_white"
+    android:background="@color/red_back"
     tools:context=".presenter.ui.fragment.profile.ProfileFragment">
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -14,11 +14,11 @@
         android:layout_gravity="center"
         android:layout_marginHorizontal="16dp"
         android:layout_marginVertical="16dp"
-        android:fontFamily="@font/gordita_medium"
+        android:fontFamily="@font/gordita_regular"
         android:gravity="center"
         android:src="@drawable/ic_heart_black"
         android:text="@string/profile"
-        android:textColor="@color/black"
+        android:textColor="@color/red_warwera"
         android:textSize="26sp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,8 +37,9 @@
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv_profile_image"
             android:layout_width="170dp"
+            android:background="@drawable/image_border"
             android:layout_height="170dp"
-            android:src="@mipmap/place_holder" />
+            android:src="@mipmap/personsp" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/iv_change_image"
@@ -58,7 +59,7 @@
         android:gravity="center_horizontal"
         android:paddingVertical="5dp"
         android:text="@string/username"
-        android:textColor="@color/blue_light"
+        android:textColor="@color/red_warwera"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="@+id/fl_image"
         app:layout_constraintStart_toStartOf="@+id/fl_image"
@@ -72,75 +73,17 @@
         android:fontFamily="@font/gordita_medium"
         android:gravity="center_horizontal"
         android:text="@string/email_address"
-        android:textColor="@color/grey"
-        android:textSize="18sp"
+        android:textColor="@color/bold_grey"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/tv_username"
         app:layout_constraintStart_toStartOf="@+id/tv_username"
         app:layout_constraintTop_toBottomOf="@+id/tv_username" />
-
-<!--    <com.google.android.material.card.MaterialCardView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="16dp"-->
-<!--        app:strokeWidth="1dp"-->
-<!--        app:strokeColor="@color/blue_bold"-->
-<!--        app:cardBackgroundColor="@color/white"-->
-<!--        app:cardCornerRadius="24dp"-->
-<!--        app:cardElevation="15dp"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/tv_email"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/tv_email"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/tv_email">-->
-
-<!--        <LinearLayout-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:orientation="vertical"-->
-<!--            android:padding="10dp">-->
-
-<!--            <androidx.appcompat.widget.AppCompatImageView-->
-<!--                android:id="@+id/iv_item"-->
-<!--                android:layout_width="80dp"-->
-<!--                android:layout_height="80dp"-->
-<!--                android:layout_gravity="top|center_horizontal"-->
-<!--                android:paddingHorizontal="20dp"-->
-<!--                android:paddingVertical="10dp"-->
-<!--                android:src="@drawable/ic_baseline_shopping_cart_24" />-->
-
-<!--            <androidx.appcompat.widget.AppCompatTextView-->
-<!--                android:id="@+id/tv_title"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_gravity="center_horizontal"-->
-<!--                android:layout_weight="1"-->
-<!--                android:fontFamily="@font/gordita_medium"-->
-<!--                android:gravity="bottom|center_horizontal"-->
-<!--                android:paddingBottom="8dp"-->
-<!--                android:text="@string/progress_orders"-->
-<!--                android:textColor="@color/blue_light"-->
-<!--                android:textSize="16sp" />-->
-
-<!--            <androidx.appcompat.widget.AppCompatTextView-->
-<!--                android:id="@+id/tv_price"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_gravity="center_horizontal"-->
-<!--                android:layout_weight="1"-->
-<!--                android:fontFamily="@font/gordita_medium"-->
-<!--                android:gravity="center_horizontal"-->
-<!--                android:paddingBottom="8dp"-->
-<!--                android:text="@string/_10"-->
-<!--                android:textColor="@color/blue_light"-->
-<!--                android:textSize="16sp" />-->
-
-<!--        </LinearLayout>-->
-
-<!--    </com.google.android.material.card.MaterialCardView>-->
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/details_background"
+        android:background="@drawable/profile_background"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -150,7 +93,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="10dp"
+            android:layout_marginVertical="15dp"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -162,7 +105,7 @@
                 android:gravity="start"
                 android:layout_weight="1"
                 android:text="@string/personal_information"
-                android:textColor="@color/black"
+                android:textColor="@color/red_back"
                 android:textSize="22sp" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -181,7 +124,7 @@
             android:layout_height="1dp"
             android:layout_marginHorizontal="10dp"
             android:layout_marginVertical="5dp"
-            android:background="@color/background"/>
+            android:background="@color/black"/>
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
@@ -196,7 +139,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/gordita_regular"
                 android:text="@string/firstname"
-                android:textColor="@color/black"
+                android:textColor="@color/red_back"
                 android:textSize="18sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -205,11 +148,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:fontFamily="@font/gordita_medium"
+                android:fontFamily="@font/gordita_regular"
                 android:gravity="center_vertical|end"
                 android:paddingHorizontal="30dp"
                 android:text="@string/name"
-                android:textColor="@color/blue_white"
+                android:textColor="@color/red_back"
                 android:textSize="18sp"
                 tools:layout_editor_absoluteX="41dp"
                 tools:layout_editor_absoluteY="409dp" />
@@ -228,7 +171,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/gordita_regular"
                 android:text="@string/lastname"
-                android:textColor="@color/black"
+                android:textColor="@color/red_back"
                 android:textSize="18sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -237,11 +180,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:fontFamily="@font/gordita_medium"
+                android:fontFamily="@font/gordita_regular"
                 android:gravity="center_vertical|end"
                 android:paddingHorizontal="30dp"
                 android:text="lastname"
-                android:textColor="@color/blue_white"
+                android:textColor="@color/red_back"
                 android:textSize="18sp"
                 tools:layout_editor_absoluteX="41dp"
                 tools:layout_editor_absoluteY="409dp" />
@@ -260,7 +203,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/gordita_regular"
                 android:text="@string/location"
-                android:textColor="@color/black"
+                android:textColor="@color/red_back"
                 android:textSize="18sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -269,11 +212,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:fontFamily="@font/gordita_medium"
+                android:fontFamily="@font/gordita_regular"
                 android:gravity="center_vertical|end"
                 android:paddingHorizontal="30dp"
                 android:text="@string/location"
-                android:textColor="@color/blue_white"
+                android:textColor="@color/red_back"
                 android:textSize="18sp"
                 tools:layout_editor_absoluteX="41dp"
                 tools:layout_editor_absoluteY="409dp" />
@@ -293,7 +236,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/gordita_regular"
                 android:text="@string/phone_number"
-                android:textColor="@color/black"
+                android:textColor="@color/red_back"
                 android:textSize="18sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -302,11 +245,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:fontFamily="@font/gordita_medium"
+                android:fontFamily="@font/gordita_regular"
                 android:gravity="center_vertical|end"
                 android:paddingHorizontal="30dp"
                 android:text="@string/number"
-                android:textColor="@color/blue_white"
+                android:textColor="@color/red_back"
                 android:textSize="18sp"
                 tools:layout_editor_absoluteX="41dp"
                 tools:layout_editor_absoluteY="409dp" />

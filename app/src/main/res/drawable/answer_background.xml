@@ -3,8 +3,9 @@
     android:shape="rectangle">
 
     <gradient
-        android:endColor="#F9B121"
-        android:startColor="#E26026" />
+        android:endColor="@color/red_field"
+        android:startColor="@color/red_btn"
+        android:centerColor="@color/red_warwera"/>
 
     <corners android:bottomLeftRadius="30dp"
         android:bottomRightRadius="30dp"/>

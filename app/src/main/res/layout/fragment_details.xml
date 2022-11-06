@@ -85,7 +85,6 @@
         android:orientation="vertical"
         app:cardCornerRadius="34dp"
         app:cardElevation="12dp"
-        android:layout_margin="1dp"
         android:backgroundTint="@color/red_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

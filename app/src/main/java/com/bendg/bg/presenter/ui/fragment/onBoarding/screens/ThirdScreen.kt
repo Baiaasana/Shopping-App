@@ -20,7 +20,6 @@ class ThirdScreen : BaseFragment<FragmentThirdScreenBinding>(FragmentThirdScreen
     override fun listeners() {
         binding.getStarted.setOnClickListener {
             saveState()
-            Log.d("log", "saved")
             findNavController().navigate(R.id.action_onBoardingFragment_to_logInFragment)
         }
     }

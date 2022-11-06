@@ -27,10 +27,13 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding
         }
         binding.apply {
             btnSearch.setOnClickListener {
-                if(etSearch.text!!.isNotEmpty()){
-                    viewLifecycleOwner.lifecycleScope.launch {
-                        viewModel.getProductsBySearch(binding.etSearch.text.toString())
-                        observe()
+                when{
+                    isEmptyField() -> return@setOnClickListener
+                    else -> {
+                        viewLifecycleOwner.lifecycleScope.launch {
+                            viewModel.getProductsBySearch(binding.etSearch.text.toString())
+                            observe()
+                        }
                     }
                 }
                 requireActivity().hideKeyboard()
@@ -41,6 +44,9 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding
         }
     }
 
+    private fun isEmptyField(): Boolean = with(binding) {
+        return@with etSearch.text.toString().isEmpty()
+    }
     override fun init() {
         binding.apply {
             etSearch.requestFocusFromTouch()
