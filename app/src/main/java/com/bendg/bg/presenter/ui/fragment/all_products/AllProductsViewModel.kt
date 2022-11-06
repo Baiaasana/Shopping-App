@@ -35,7 +35,7 @@ class AllProductsViewModel @Inject constructor(private val productsUseCase: Prod
                             errorMessage = it.message.toString())
                     }
                     Resource.Status.LOADING -> {
-                        _productsFlow.value = _productsFlow.value.copy(isLoading = true)
+                        _productsFlow.value = _productsFlow.value.copy(isLoading = true, data = emptyList())
                     }
                 }
             }

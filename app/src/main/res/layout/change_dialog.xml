@@ -2,8 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/background">
+    android:layout_height="wrap_content"
+    android:background="@color/red_back">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_username"
@@ -13,11 +13,12 @@
         android:layout_marginHorizontal="20dp"
         android:layout_marginVertical="10dp"
         android:hint="@string/username"
+        android:textColorHint="@color/grey"
+        app:boxBackgroundColor="@color/red_back"
+        app:boxStrokeColor="@color/red_warwera"
+        app:hintTextColor="@color/red_warwera"
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="0dp"
-        app:boxBackgroundColor="@color/white"
-        app:boxStrokeColor="@color/orange"
-        app:hintTextColor="@color/orange"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -26,11 +27,12 @@
             android:id="@+id/et_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/red_warwera"
             android:layout_gravity="center_vertical"
             android:background="@drawable/custom_et_back"
             android:inputType="textEmailAddress"
             android:maxLines="1"
-            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
             android:textSize="18sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -42,12 +44,13 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         app:boxStrokeWidth="0dp"
+        android:textColorHint="@color/grey"
+        app:boxBackgroundColor="@color/red_back"
+        app:boxStrokeColor="@color/red_warwera"
+        app:hintTextColor="@color/red_warwera"
         app:boxStrokeWidthFocused="0dp"
         android:layout_marginVertical="10dp"
         android:hint="@string/firstname"
-        app:boxBackgroundColor="@color/white"
-        app:boxStrokeColor="@color/orange"
-        app:hintTextColor="@color/orange"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/til_username">
@@ -60,7 +63,8 @@
             android:background="@drawable/custom_et_back"
             android:inputType="textEmailAddress"
             android:maxLines="1"
-            android:textColor="@color/black"
+            android:textColor="@color/red_warwera"
+            android:textColorHint="@color/grey"
             android:textSize="18sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -73,12 +77,13 @@
         android:layout_marginHorizontal="20dp"
         android:layout_marginVertical="10dp"
         android:hint="@string/lastname"
-        app:boxBackgroundColor="@color/white"
-        app:boxStrokeColor="@color/orange"
+        android:textColorHint="@color/grey"
+        app:boxBackgroundColor="@color/red_back"
+        app:boxStrokeColor="@color/red_warwera"
+        app:hintTextColor="@color/red_warwera"
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="0dp"
         app:cardCornerRadius="20dp"
-        app:hintTextColor="@color/orange"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/til_firstname">
@@ -87,11 +92,12 @@
             android:id="@+id/et_lastname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/red_warwera"
             android:layout_gravity="center_vertical"
             android:background="@drawable/custom_et_back"
             android:inputType="textEmailAddress"
             android:maxLines="1"
-            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
             android:textSize="18sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -104,11 +110,12 @@
         android:layout_marginHorizontal="20dp"
         android:layout_marginVertical="10dp"
         android:hint="@string/location"
+        android:textColorHint="@color/grey"
+        app:boxBackgroundColor="@color/red_back"
+        app:boxStrokeColor="@color/red_warwera"
+        app:hintTextColor="@color/red_warwera"
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="0dp"
-        app:boxBackgroundColor="@color/white"
-        app:boxStrokeColor="@color/orange"
-        app:hintTextColor="@color/orange"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/til_lastname">
@@ -117,11 +124,12 @@
             android:id="@+id/et_location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/red_warwera"
             android:layout_gravity="center_vertical"
             android:background="@drawable/custom_et_back"
             android:inputType="textEmailAddress"
             android:maxLines="1"
-            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
             android:textSize="18sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -134,11 +142,12 @@
         android:layout_marginHorizontal="20dp"
         android:layout_marginVertical="10dp"
         android:hint="@string/phone_number"
-        app:boxBackgroundColor="@color/white"
-        app:boxStrokeColor="@color/orange"
+        android:textColorHint="@color/grey"
+        app:boxBackgroundColor="@color/red_back"
+        app:boxStrokeColor="@color/red_warwera"
+        app:hintTextColor="@color/red_warwera"
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="0dp"
-        app:hintTextColor="@color/orange"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/til_location">
@@ -151,7 +160,8 @@
             android:background="@drawable/custom_et_back"
             android:inputType="number"
             android:maxLines="1"
-            android:textColor="@color/black"
+            android:textColor="@color/red_warwera"
+            android:textColorHint="@color/grey"
             android:textSize="18sp" />
 
     </com.google.android.material.textfield.TextInputLayout>

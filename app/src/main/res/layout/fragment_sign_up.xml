@@ -1,73 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#E4E3DB"
-    tools:context=".presenter.ui.fragment.sign_up.SignUpFragment">
+    android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/iv_logo"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@mipmap/logo"
-        android:layout_marginHorizontal="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="@color/red_back"
+        tools:context=".presenter.ui.fragment.sign_up.SignUpFragment">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.20"  />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_sign"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/gordita_medium"
-        android:gravity="center"
-        android:text="@string/sign_up"
-        android:textColor="#0F1B07"
-        android:textSize="26sp"
-        app:layout_constraintEnd_toEndOf="@+id/iv_logo"
-        app:layout_constraintStart_toStartOf="@+id/iv_logo"
-        app:layout_constraintTop_toBottomOf="@+id/guideline" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilFirstname"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="40dp"
-        android:layout_marginVertical="20dp"
-        android:hint="@string/firstname"
-        app:boxBackgroundColor="@color/white"
-        app:boxCornerRadiusTopEnd="20dp"
-        app:boxCornerRadiusTopStart="20dp"
-        app:boxStrokeColor="@color/blue_light"
-        app:boxStrokeWidth="1dp"
-        app:boxStrokeWidthFocused="2dp"
-        app:hintTextColor="@color/blue_light"
-        app:layout_constraintEnd_toEndOf="@+id/tv_sign"
-        app:layout_constraintStart_toStartOf="@+id/tv_sign"
-        app:layout_constraintTop_toBottomOf="@+id/tv_sign">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etFirstname"
-            android:fontFamily="@font/gordita_regular"
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_logo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:inputType="text"
-            android:textColor="@color/blue_bold"
-            android:textSize="18sp" />
+            android:layout_marginHorizontal="50dp"
+            android:src="@mipmap/black300"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_sign"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gordita_medium"
+            android:gravity="center"
+            android:text="@string/sign_up"
+            android:textColor="@color/red_warwera"
+            android:textSize="26sp"
+            app:layout_constraintEnd_toEndOf="@+id/iv_logo"
+            app:layout_constraintStart_toStartOf="@+id/iv_logo"
+            app:layout_constraintTop_toBottomOf="@+id/guideline" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilFirstname"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginVertical="20dp"
+            android:hint="@string/firstname"
+            android:textColorHint="@color/grey"
+            app:boxBackgroundColor="@color/red_back"
+            app:boxStrokeColor="@color/red_btn"
+            app:hintTextColor="@color/red_btn"
+            app:boxStrokeWidth="1dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_sign"
+            app:layout_constraintStart_toStartOf="@+id/tv_sign"
+            app:layout_constraintTop_toBottomOf="@+id/tv_sign">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etFirstname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/gordita_regular"
+                android:inputType="text"
+                android:textColor="@color/red_warwera"
+                android:textSize="18sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilLastname"
@@ -77,13 +80,14 @@
         android:layout_marginHorizontal="40dp"
         android:layout_marginVertical="10dp"
         android:hint="@string/lastname"
-        app:boxBackgroundColor="@color/white"
+        android:textColorHint="@color/grey"
+        app:boxBackgroundColor="@color/red_back"
+        app:boxStrokeColor="@color/red_btn"
+        app:hintTextColor="@color/red_btn"
         app:boxCornerRadiusTopEnd="20dp"
         app:boxCornerRadiusTopStart="20dp"
-        app:boxStrokeColor="@color/blue_light"
         app:boxStrokeWidth="1dp"
         app:boxStrokeWidthFocused="2dp"
-        app:hintTextColor="@color/blue_light"
         app:layout_constraintEnd_toEndOf="@+id/tilFirstname"
         app:layout_constraintStart_toStartOf="@+id/tilFirstname"
         app:layout_constraintTop_toBottomOf="@+id/tilFirstname">
@@ -95,7 +99,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:inputType="text"
-            android:textColor="@color/blue_bold"
+            android:textColor="@color/red_warwera"
             android:textSize="18sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -108,13 +112,12 @@
         android:layout_marginHorizontal="40dp"
         android:layout_marginVertical="10dp"
         android:hint="@string/username"
-        app:boxBackgroundColor="@color/white"
-        app:boxStrokeColor="@color/blue_light"
+        android:textColorHint="@color/grey"
+        app:boxBackgroundColor="@color/red_back"
+        app:boxStrokeColor="@color/red_btn"
+        app:hintTextColor="@color/red_btn"
         app:boxStrokeWidth="1dp"
         app:boxStrokeWidthFocused="2dp"
-        app:boxCornerRadiusTopEnd="20dp"
-        app:boxCornerRadiusTopStart="20dp"
-        app:hintTextColor="@color/blue_light"
         app:layout_constraintEnd_toEndOf="@+id/tilLastname"
         app:layout_constraintStart_toStartOf="@+id/tilLastname"
         app:layout_constraintTop_toBottomOf="@+id/tilLastname">
@@ -126,7 +129,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:inputType="text"
-            android:textColor="@color/blue_bold"
+            android:textColor="@color/red_warwera"
             android:textSize="18sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -139,13 +142,12 @@
         android:layout_marginHorizontal="40dp"
         android:layout_marginVertical="10dp"
         android:hint="@string/email_address"
-        app:boxBackgroundColor="@color/white"
-        app:boxStrokeColor="@color/blue_light"
         app:boxStrokeWidth="1dp"
+        android:textColorHint="@color/grey"
+        app:boxBackgroundColor="@color/red_back"
+        app:boxStrokeColor="@color/red_btn"
+        app:hintTextColor="@color/red_btn"
         app:boxStrokeWidthFocused="2dp"
-        app:boxCornerRadiusTopEnd="20dp"
-        app:boxCornerRadiusTopStart="20dp"
-        app:hintTextColor="@color/blue_light"
         app:layout_constraintEnd_toEndOf="@+id/tilUsername"
         app:layout_constraintStart_toStartOf="@+id/tilUsername"
         app:layout_constraintTop_toBottomOf="@+id/tilUsername">
@@ -157,7 +159,7 @@
             android:layout_gravity="center_vertical"
             android:inputType="textEmailAddress"
             android:fontFamily="@font/gordita_regular"
-            android:textColor="@color/blue_bold"
+            android:textColor="@color/red_warwera"
             android:textSize="18sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -170,14 +172,13 @@
         android:layout_marginHorizontal="40dp"
         android:layout_marginVertical="10dp"
         android:hint="@string/password"
-        app:boxBackgroundColor="@color/white"
-        app:boxStrokeColor="@color/blue_light"
         app:boxStrokeWidth="1dp"
         app:boxStrokeWidthFocused="2dp"
         app:endIconMode="password_toggle"
-        app:hintTextColor="@color/blue_light"
-        app:boxCornerRadiusTopEnd="20dp"
-        app:boxCornerRadiusTopStart="20dp"
+        android:textColorHint="@color/grey"
+        app:boxBackgroundColor="@color/red_back"
+        app:boxStrokeColor="@color/red_btn"
+        app:hintTextColor="@color/red_btn"
         app:layout_constraintEnd_toEndOf="@+id/til_email"
         app:layout_constraintStart_toStartOf="@+id/til_email"
         app:layout_constraintTop_toBottomOf="@+id/til_email">
@@ -188,62 +189,82 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:inputType="textPassword"
-            android:textColor="@color/blue_bold"
+            android:textColor="@color/red_warwera"
             android:fontFamily="@font/gordita_regular"
             android:textSize="18sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:text="@string/terms_conditions"
-        android:textSize="16sp"
-        android:textColor="@color/grey"
-        android:fontFamily="@font/gordita_regular"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toEndOf="@+id/tilPassword"
-        app:layout_constraintStart_toStartOf="@+id/tilPassword"
-        app:layout_constraintTop_toBottomOf="@+id/tilPassword"/>
+        <LinearLayout
+            android:id="@+id/ll_check_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/tilPassword"
+            app:layout_constraintStart_toStartOf="@+id/tilPassword"
+            app:layout_constraintTop_toBottomOf="@+id/tilPassword">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_sign_up"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_marginHorizontal="60dp"
-        android:paddingVertical="12dp"
-        android:layout_marginVertical="10dp"
-        android:backgroundTint="#0F1B07"
-        android:fontFamily="@font/gordita_medium"
-        android:text="@string/sign_up"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:cornerRadius="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/checkBox"
+                android:textColorHighlight="@color/red_btn"
+                android:textColorHint="@color/red_btn"
+                android:textColorLink="@color/red_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.83"   />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_terms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gordita_regular"
+                android:text="@string/terms"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_log_in"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:fontFamily="@font/gordita_medium"
-        android:text="@string/already_have_an_account"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/btn_sign_up"
-        app:layout_constraintStart_toStartOf="@+id/btn_sign_up"
-        app:layout_constraintTop_toBottomOf="@+id/btn_sign_up" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_conditions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gordita_regular"
+                android:text="@string/conditions"
+                android:textSize="14sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_sign_up"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginHorizontal="60dp"
+            android:layout_marginVertical="20dp"
+            android:backgroundTint="@color/red_btn"
+            android:fontFamily="@font/gordita_medium"
+            android:paddingVertical="12dp"
+            android:text="@string/sign_up"
+            android:textAllCaps="false"
+            android:textColor="@color/red_back"
+            android:textSize="20sp"
+            app:cornerRadius="30dp"
+            app:layout_constraintEnd_toEndOf="@+id/ll_check_box"
+            app:layout_constraintStart_toStartOf="@+id/ll_check_box"
+            app:layout_constraintTop_toBottomOf="@+id/ll_check_box" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_log_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:fontFamily="@font/gordita_regular"
+            android:text="@string/already_have_an_account"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/btn_sign_up"
+            app:layout_constraintStart_toStartOf="@+id/btn_sign_up"
+            app:layout_constraintTop_toBottomOf="@+id/btn_sign_up" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

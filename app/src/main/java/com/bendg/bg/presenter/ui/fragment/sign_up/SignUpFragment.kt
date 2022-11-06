@@ -1,5 +1,7 @@
 package com.bendg.bg.presenter.ui.fragment.sign_up
 
+import android.content.Intent
+import android.net.Uri
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -24,6 +26,12 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
 
         binding.tvLogIn.setOnClickListener {
             findNavController().navigate(SignUpFragmentDirections.actionSignUpFragmentToLogInFragment())
+        }
+
+        binding.tvConditions.setOnClickListener {
+            val openURL = Intent(Intent.ACTION_VIEW)
+            openURL.data = Uri.parse("https://www.termsfeed.com/public/uploads/2021/12/sample-terms-conditions-agreement.pdf")
+            startActivity(openURL)
         }
 
         binding.btnSignUp.setOnClickListener {
