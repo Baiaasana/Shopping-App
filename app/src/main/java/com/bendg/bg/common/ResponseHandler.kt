@@ -1,6 +1,5 @@
 package com.bendg.bg.common
 
-import com.bendg.bg.utility.Resource
 import retrofit2.Response
 
 class ResponseHandler {

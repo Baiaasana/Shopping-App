@@ -1,13 +1,244 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/back_color_details"
     tools:context=".presenter.ui.fragment.details.DetailsFragment">
 
-    <TextView
+    <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="24dp"
+            android:scaleX="1.3"
+            android:scaleY="1.3"
+            android:src="@drawable/ic_arrow_back" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_set_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:padding="24dp"
+            android:scaleX="1.3"
+            android:scaleY="1.3"
+            android:src="@drawable/ic_heart_black"
+            android:visibility="visible" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/cv_details"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="invisible"
+            tools:layout_editor_absoluteX="210dp"
+            tools:layout_editor_absoluteY="396dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="6dp">
+
+            <com.denzcoskun.imageslider.ImageSlider
+                android:id="@+id/iv_item"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginVertical="15dp"
+                app:iss_auto_cycle="true"
+                app:iss_delay="0"
+                app:iss_period="2500" />
+
+        </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:cardCornerRadius="34dp"
+        app:cardElevation="12dp"
+        android:backgroundTint="@color/red_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/details_background"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.5"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:fontFamily="@font/font_gordita_regular"
+                    android:gravity="start"
+                    android:paddingHorizontal="30dp"
+                    android:text="@string/title"
+                    android:textColor="@color/red_back"
+                    android:textSize="16sp"
+                    tools:layout_editor_absoluteX="41dp"
+                    tools:layout_editor_absoluteY="409dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:paddingEnd="30dp"
+                    android:paddingStart="1dp"
+                    android:gravity="end"
+                    android:text="@string/price"
+                    android:textColor="@color/red_back"
+                    android:textSize="18sp"
+                    tools:layout_editor_absoluteX="41dp"
+                    tools:layout_editor_absoluteY="409dp" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="5dp"
+                android:background="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_description"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="30dp"
+                android:paddingVertical="10dp"
+                android:text="@string/description"
+                android:textColor="@color/red_back"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="41dp"
+                tools:layout_editor_absoluteY="409dp" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="5dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font_gordita_regular"
+                    android:text="@string/brand"
+                    android:textColor="@color/red_back"
+                    android:textSize="16sp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_brand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="30dp"
+                    android:textColor="@color/red_back"
+                    android:textSize="14sp"
+                    tools:layout_editor_absoluteX="41dp"
+                    tools:layout_editor_absoluteY="409dp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="5dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font_gordita_regular"
+                    android:text="@string/rating"
+                    android:textColor="@color/red_back"
+                    android:textSize="16sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_rating"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="30dp"
+                    android:textColor="@color/red_back"
+                    android:textSize="14sp"
+                    tools:layout_editor_absoluteX="41dp"
+                    tools:layout_editor_absoluteY="409dp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/red_warwera"
+                android:layout_marginBottom="60dp"
+                android:backgroundTint="@color/red_back"
+                android:fontFamily="@font/font_gordita_regular"
+                android:layout_marginHorizontal="100dp"
+                android:paddingVertical="10dp"
+                android:text="@string/add_to_cart"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                app:cornerRadius="30dp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

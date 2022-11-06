@@ -1,13 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/red_back"
     tools:context=".presenter.ui.fragment.home.HomeFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.02" />
 
-</FrameLayout>
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/iv_menu"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/giphy1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:text="@string/b_g"
+        android:layout_margin="5dp"
+        android:src="@mipmap/logo400"
+        android:textColor="@color/blue_bold"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_explore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/font_gordita_regular"
+        android:paddingHorizontal="16dp"
+        android:layout_marginVertical="20dp"
+        android:text="@string/explore"
+        android:textColor="@color/red_warwera"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/iv_menu"
+        app:layout_constraintTop_toBottomOf="@+id/iv_menu" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/font_gordita_regular"
+        android:text="@string/best_outfits_for_you"
+        android:textColor="@color/grey"
+        android:paddingHorizontal="16dp"
+        android:layout_marginVertical="10dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_explore"
+        app:layout_constraintStart_toStartOf="@+id/tv_explore"
+        app:layout_constraintTop_toBottomOf="@+id/tv_explore" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/et_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:background="@drawable/search_background"
+        android:drawableStart="@drawable/ic_baseline_search_24"
+        android:drawablePadding="16dp"
+        android:fontFamily="@font/font_gordita_regular"
+        android:hint="@string/search"
+        android:layout_marginVertical="5dp"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/grey"
+        app:layout_constraintBottom_toTopOf="@+id/tv_arrival"
+        app:layout_constraintEnd_toEndOf="@+id/appCompatTextView3"
+        app:layout_constraintStart_toStartOf="@+id/appCompatTextView3"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView3" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_categories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="8dp"
+        android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:itemCount="6"
+        tools:listitem="@layout/item_category" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_arrival"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/font_gordita_regular"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="10dp"
+        android:text="@string/new_arrival"
+        android:textColor="@color/red_warwera"
+        android:textSize="26sp"
+        android:layout_marginHorizontal="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/rv_categories"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_see_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gordita_medium"
+        android:layout_marginHorizontal="36dp"
+        android:paddingVertical="8dp"
+        android:text="@string/see_all"
+        android:textColor="@color/grey"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_arrival"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_arrival" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.60" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="210dp"
+            android:layout_gravity="center"
+            android:visibility="invisible"
+            tools:layout_editor_absoluteY="396dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_items"
+            android:clipToPadding="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="30dp"
+            tools:itemCount="5"
+            android:paddingBottom="10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/single_item" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

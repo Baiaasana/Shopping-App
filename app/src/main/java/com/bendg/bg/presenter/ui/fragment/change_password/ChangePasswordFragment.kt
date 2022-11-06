@@ -1,20 +1,42 @@
 package com.bendg.bg.presenter.ui.fragment.change_password
 
+import android.widget.Toast
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.bendg.bg.common.BaseFragment
 import com.bendg.bg.databinding.FragmentChangePasswordBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class ChangePasswordFragment : BaseFragment<FragmentChangePasswordBinding>(FragmentChangePasswordBinding::inflate) {
-    override fun listeners() {
 
+    private val viewModel: ChangePasswordViewModel by viewModels()
+
+    override fun listeners() {
+        binding.btnChange.setOnClickListener {
+            viewModel.updatePassword(binding.etOldPassword.text.toString(),
+                binding.etNewPassword.text.toString())
+            observer()
+        }
+        binding.btnBack.setOnClickListener {
+            findNavController().navigate(ChangePasswordFragmentDirections.actionChangePasswordFragmentToSettingsFragment())
+        }
     }
 
     override fun init() {
     }
 
-    override fun observers() {
+    private fun observer() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.updateState.collectLatest {
+                Toast.makeText(context, it.message.toString(), Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
-
+    override fun observers() {
+    }
 }
