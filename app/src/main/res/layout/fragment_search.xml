@@ -26,8 +26,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:background="@drawable/search_backgroun"
-        android:fontFamily="@font/gordita_regular"
+        android:background="@drawable/search_background"
+        android:fontFamily="@font/font_gordita_regular"
         android:hint="@string/search"
         android:maxLines="1"
         android:paddingHorizontal="16dp"
@@ -47,7 +47,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/et_search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/et_search"
-        app:tint="@color/white" />
+        app:tint="@color/white"
+        android:contentDescription="@string/search" />
 
 
     <androidx.recyclerview.widget.RecyclerView

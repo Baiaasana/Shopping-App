@@ -67,7 +67,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:fontFamily="@font/gordita_regular"
+                android:fontFamily="@font/font_gordita_regular"
                 android:inputType="text"
                 android:textColor="@color/red_warwera"
                 android:textSize="18sp" />
@@ -96,7 +96,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etLastname"
-            android:fontFamily="@font/gordita_regular"
+            android:fontFamily="@font/font_gordita_regular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -126,7 +126,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etUsername"
-            android:fontFamily="@font/gordita_regular"
+            android:fontFamily="@font/font_gordita_regular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -160,7 +160,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:inputType="textEmailAddress"
-            android:fontFamily="@font/gordita_regular"
+            android:fontFamily="@font/font_gordita_regular"
             android:textColor="@color/red_warwera"
             android:textSize="18sp" />
 
@@ -192,7 +192,7 @@
             android:layout_gravity="center_vertical"
             android:inputType="textPassword"
             android:textColor="@color/red_warwera"
-            android:fontFamily="@font/gordita_regular"
+            android:fontFamily="@font/font_gordita_regular"
             android:textSize="18sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -220,7 +220,7 @@
                 android:id="@+id/tv_terms"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/gordita_regular"
+                android:fontFamily="@font/font_gordita_regular"
                 android:text="@string/terms"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
@@ -229,7 +229,7 @@
                 android:id="@+id/tv_conditions"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/gordita_regular"
+                android:fontFamily="@font/font_gordita_regular"
                 android:text="@string/conditions"
                 android:textSize="14sp" />
 
@@ -259,7 +259,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="20dp"
-            android:fontFamily="@font/gordita_regular"
+            android:fontFamily="@font/font_gordita_regular"
             android:text="@string/already_have_an_account"
             android:textColor="@color/black"
             android:textSize="16sp"
